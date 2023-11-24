@@ -1,0 +1,40 @@
+import { NextResponse } from 'next/server'
+
+import db from "lib/db";
+import Users from "models/User";
+import bcrypt from "bcrypt";
+import { createAccessToken, createRefreshToken } from "utils/generateToken";
+
+export async function POST(req) {
+  try {
+    await db.connect();
+    const { email, password } = await req.json();
+
+    const user = await Users.findOne({ email });
+
+    if (!user) return NextResponse.json({ err: '找不到此电子邮件的应用程序' }, { status: 400 });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) return NextResponse.json({ err: '电子邮件地址或密码不正确' }, { status: 400 });
+
+    const access_token = createAccessToken({ id: user._id });
+    const refresh_token = createRefreshToken({ id: user._id });
+
+    return NextResponse.json({
+      msg: "登录成功",
+      refresh_token,
+      access_token,
+      user: {
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        avatar: user.avatar,
+        root: user.root,
+      }
+    }, { status: 200 })
+  } catch (error) {
+    console.log('====error====', error.message)
+    return NextResponse.json({ err: error.message }, { status: 500 });
+  }
+}
