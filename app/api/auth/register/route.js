@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
+import bcrypt from "bcrypt";
 
 import db from "lib/db";
 import Users from "models/User";
-import bcrypt from "bcrypt";
+import sendError from "utils/sendError";
 
 export async function POST (req, { params }) {
   try {
@@ -10,16 +11,12 @@ export async function POST (req, { params }) {
     await await db.connect();
     const { name, email, password } = await req.json();
 
-    console.log(name, email, password)
-
     const user = await Users.findOne({ email });
 
-    if (user) return NextResponse.json({ err: '该账户已存在' }, { status: 400});
+    if (user) return sendError(400, "该账户已存在");
 
     const hashPassword = await bcrypt.hash(password, 12);
-
     const newUser = new Users({ name, email, password: hashPassword });
-    
     await newUser.save();
     await db.disconnect();
 
@@ -28,11 +25,8 @@ export async function POST (req, { params }) {
     }, {
       status: 201
     });
+
   } catch (error) {
-    return NextResponse.json({
-      err: error.message
-    }, {
-      status: 500
-    });
+    return sendError(500, error.message);
   }
 }

@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
+import bcrypt from "bcrypt";
 
 import db from "lib/db";
 import Users from "models/User";
-import bcrypt from "bcrypt";
+import sendError from "utils/sendError";
 import { createAccessToken, createRefreshToken } from "utils/generateToken";
 
 export async function POST(req) {
@@ -12,11 +13,11 @@ export async function POST(req) {
 
     const user = await Users.findOne({ email });
 
-    if (!user) return NextResponse.json({ err: '找不到此电子邮件的应用程序' }, { status: 400 });
+    if (!user) return sendError(400, "找不到此电子邮件的应用程序");
 
     const isMatch = await bcrypt.compare(password, user.password);
 
-    if (!isMatch) return NextResponse.json({ err: '电子邮件地址或密码不正确' }, { status: 400 });
+    if (!isMatch) return sendError(400, "电子邮件地址或密码不正确");
 
     const access_token = createAccessToken({ id: user._id });
     const refresh_token = createRefreshToken({ id: user._id });
@@ -35,6 +36,6 @@ export async function POST(req) {
     }, { status: 200 })
   } catch (error) {
     console.log('====error====', error.message)
-    return NextResponse.json({ err: error.message }, { status: 500 });
+    return sendError(500, error.message);
   }
 }
