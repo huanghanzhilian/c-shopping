@@ -6,7 +6,7 @@ import Users from "models/User";
 import db from "lib/db";
 
 export default function auth(handler) {
-  return async (req) => {
+  return async (req, context) => {
     try {
       const method = req.method.toLowerCase();
       const basicAuth = req.headers.get('authorization');
@@ -22,7 +22,7 @@ export default function auth(handler) {
       if (user.role !== "admin") return sendError(400, "无权操作");
       // return NextResponse.json({ msg: "成功", data: { id: user._id, role: user.role, root: user.root } }, { status: 201 });
       // return { id: user._id, role: user.role, root: user.root };
-      return handler(req);
+      return handler.apply(null, [req, context]);
     } catch(error) {
       console.log('error', error)
       return sendError(500, error.message);

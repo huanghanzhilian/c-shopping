@@ -19,11 +19,14 @@ const getCategories = async (req) => {
 const createCategories = auth(async(req) => {
   try {
 
-    const { name } = await req.json()
-    console.log('name', name)
+    const { name } = await req.json();
     if (!name) return sendError(400, "分类名称不能为空");
 
     await db.connect();
+
+    const category = await Categories.findOne({ name });
+    if (category) return sendError(400, "该分类名称已存在");
+
     const newCategory = new Categories({ name });
     await newCategory.save();
     await db.disconnect();
@@ -34,9 +37,6 @@ const createCategories = auth(async(req) => {
     return sendError(500, error.message);
   }
 })
-
-console.log('getCategories', getCategories)
-console.log('createCategories', createCategories)
 
 export const GET  = getCategories;
 export const POST  = createCategories;
