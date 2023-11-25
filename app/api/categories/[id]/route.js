@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import Categories from "models/Categories";
+import Products from "models/Products";
 import auth from "middleware/auth";
 import db from "lib/db";
 import sendError from "utils/sendError";
@@ -11,6 +12,11 @@ export const DELETE = auth(async (req, { params }) => {
     const { id } = params;
 
     await db.connect();
+    const products = await Products.findOne({ category: id });
+    if (products) return sendError(
+      400,
+      "请删除与此组相关的所有产品"
+    );
     await Categories.findByIdAndDelete(id);
     await db.disconnect();
 
