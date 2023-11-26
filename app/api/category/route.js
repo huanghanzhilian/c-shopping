@@ -20,6 +20,8 @@ const createCategory = auth(async(req) => {
   try {
 
     const { name } = await req.json();
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
     if (!name) return sendError(400, "分类名称不能为空");
 
     await db.connect();

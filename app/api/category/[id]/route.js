@@ -10,6 +10,8 @@ export const DELETE = auth(async (req, { params }) => {
   try {
 
     const { id } = params;
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
 
     await db.connect();
     const product = await Product.findOne({ category: id });
@@ -35,6 +37,10 @@ export const PUT = auth(async (req, { params }) => {
 
     const { id } = params;
     const { name } = await req.json();
+
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
+    
     await db.connect();
     const newCategory = await Category.findByIdAndUpdate(
       { _id: id },

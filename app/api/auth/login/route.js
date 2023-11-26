@@ -35,7 +35,6 @@ const login = async (req) => {
       }
     }, { status: 200 })
   } catch (error) {
-    console.log('====error====', error.message)
     return sendError(500, error.message);
   }
 }

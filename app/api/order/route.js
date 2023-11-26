@@ -2,18 +2,20 @@ import { NextResponse } from "next/server";
 
 import Order from "models/Order";
 import auth from "middleware/auth";
+import User from "models/User";
 import db from "lib/db";
 import sendError from "utils/sendError";
 
 
 export const GET = auth(async (req) => {
   try {
-    const userInfo = req.headers.get('userInfo');
+    const userId = req.headers.get('userId');
+    const role = req.headers.get('userRole');
     let orders;
 
-    if (userInfo.role !== "admin") {
+    if (role !== "admin") {
       await db.connect();
-      orders = await Order.find({ user: userInfo.id }).populate(
+      orders = await Order.find({ user: userId }).populate(
         "user",
         "-password"
       );
@@ -33,12 +35,12 @@ export const GET = auth(async (req) => {
 
 export const POST = auth(async (req) => {
   try {
-    const userInfo = req.headers.get('userInfo');
+    const userId = req.headers.get('userId');
     const { address, mobile, cart, total } = await req.json();
 
     await db.connect();
     const newOrder = new Order({
-      user: userInfo.id,
+      user: userId,
       address,
       mobile,
       cart,

@@ -39,6 +39,9 @@ export const PUT = auth(async (req, { params }) => {
       images,
     } = await req.json();
 
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
+
     if (
       !title ||
       !price ||
@@ -76,7 +79,11 @@ export const PUT = auth(async (req, { params }) => {
 
 export const DELETE = auth(async (req, { params }) => {
   try {
+    
     const { id } = params;
+
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
 
     await db.connect();
     await Products.findByIdAndDelete(id);

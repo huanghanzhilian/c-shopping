@@ -35,6 +35,9 @@ export const POST = auth(async (req) => {
       images,
     } = await req.json();
 
+    const role = req.headers.get('userRole');
+    if (role !== "admin") return sendError(400, "无权操作");
+
     if (
       !title ||
       !price ||
