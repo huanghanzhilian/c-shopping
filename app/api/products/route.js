@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import sendError from "utils/sendError";
-import Products from "models/Products";
+import Products from "models/Product";
 import auth from "middleware/auth";
 import db from "lib/db";
 
@@ -46,7 +46,7 @@ export const POST = auth(async (req) => {
     ) return sendError(400, "请填写所有字段");
 
     await db.connect();
-    const newProduct = new Products({
+    const newProducts = new Products({
       title,
       price,
       inStock,
@@ -55,7 +55,7 @@ export const POST = auth(async (req) => {
       category,
       images,
     });
-    await newProduct.save();
+    await newProducts.save();
     await db.disconnect();
 
     return NextResponse.json({

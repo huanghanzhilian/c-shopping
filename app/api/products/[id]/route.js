@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import db from "lib/db";
-import Products from "models/Products";
+import Products from "models/Product";
 import auth from "middleware/auth";
 import sendError from "utils/sendError";
 
@@ -10,13 +10,13 @@ export const GET = async (req, { params }) => {
     const { id } = params;
 
     db.connect();
-    const product = await Products.findById(id);
+    const products = await Products.findById(id);
     db.disconnect();
 
-    if (!product) return sendError(500, "此产品不存在");
+    if (!products) return sendError(500, "此产品不存在");
     
     return NextResponse.json({
-      product
+      products
     }, {
       status: 200
     })

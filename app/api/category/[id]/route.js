@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import Categories from "models/Categories";
-import Products from "models/Products";
+import Category from "models/Category";
+import Product from "models/Product";
 import auth from "middleware/auth";
 import db from "lib/db";
 import sendError from "utils/sendError";
@@ -12,12 +12,12 @@ export const DELETE = auth(async (req, { params }) => {
     const { id } = params;
 
     await db.connect();
-    const products = await Products.findOne({ category: id });
-    if (products) return sendError(
+    const product = await Product.findOne({ category: id });
+    if (product) return sendError(
       400,
       "请删除与此组相关的所有产品"
     );
-    await Categories.findByIdAndDelete(id);
+    await Category.findByIdAndDelete(id);
     await db.disconnect();
 
     return NextResponse.json({
@@ -36,7 +36,7 @@ export const PUT = auth(async (req, { params }) => {
     const { id } = params;
     const { name } = await req.json();
     await db.connect();
-    const newCategory = await Categories.findByIdAndUpdate(
+    const newCategory = await Category.findByIdAndUpdate(
       { _id: id },
       { name }
     );

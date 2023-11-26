@@ -1,22 +1,22 @@
 import { NextResponse } from 'next/server'
 
-import Categories from "models/Categories";
+import Category from "models/Category";
 import auth from "middleware/auth";
 import db from "lib/db";
 import sendError from "utils/sendError";
 
-const getCategories = async (req) => {
+const getCategory = async (req) => {
   try {
     db.connect();
-    const categories = await Categories.find();
+    const category = await Category.find();
     db.disconnect();
-    return NextResponse.json({ categories }, { status: 200 });
+    return NextResponse.json({ category }, { status: 200 });
   } catch (error) {
     return sendError(500, error.message);
   }
 }
 
-const createCategories = auth(async(req) => {
+const createCategory = auth(async(req) => {
   try {
 
     const { name } = await req.json();
@@ -24,10 +24,10 @@ const createCategories = auth(async(req) => {
 
     await db.connect();
 
-    const category = await Categories.findOne({ name });
+    const category = await Category.findOne({ name });
     if (category) return sendError(400, "该分类名称已存在");
 
-    const newCategory = new Categories({ name });
+    const newCategory = new Category({ name });
     await newCategory.save();
     await db.disconnect();
 
@@ -38,5 +38,5 @@ const createCategories = auth(async(req) => {
   }
 })
 
-export const GET  = getCategories;
-export const POST  = createCategories;
+export const GET  = getCategory;
+export const POST  = createCategory;
