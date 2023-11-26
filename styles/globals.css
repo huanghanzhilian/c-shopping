@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "VazirRegular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/vazir/Vazirmatn-Regular.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "VazirMedium";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/vazir/Vazirmatn-Medium.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "VazirBold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/vazir/Vazirmatn-Bold.woff2") format("woff2");
+    font-display: swap;
+  }
+}
