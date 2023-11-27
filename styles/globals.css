@@ -41,6 +41,12 @@
   p {
     @apply text-base;
   }
+  button {
+    @apply cursor-pointer;
+  }
+  a {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {
@@ -58,5 +64,11 @@
 
   .btn {
     @apply text-white bg-red-500 py-3 px-4 rounded-3xl block outline-none;
+  }
+  .icon {
+    @apply w-6 h-6 text-gray-700;
+  }
+  .b {
+    @apply border border-red-600;
   }
 }

@@ -3,15 +3,27 @@ import {
   BsEye,
   BsCart2,
   BsShieldExclamation,
+  BsQuestionSquare,
 } from "react-icons/bs";
-import { FiLogIn } from "react-icons/fi";
+import { FiLogIn ,FiLogOut } from "react-icons/fi";
+import { VscThreeBars } from "react-icons/vsc";
+import { HiOutlineUser } from "react-icons/hi";
+import { IoSearch } from "react-icons/io5";
+import { RiArrowDownSFill, RiArrowDropLeftLine } from "react-icons/ri";
 
 const Icons = {
   Eye: BsEye,
   EyeSlash: BsEyeSlash,
   Cart: BsCart2,
   Login: FiLogIn,
+  Logout:FiLogOut,
   Exclamation: BsShieldExclamation,
+  Bars: VscThreeBars,
+  User: HiOutlineUser,
+  Question: BsQuestionSquare,
+  Search: IoSearch,
+  ArrowDown: RiArrowDownSFill,
+  ArrowLeft: RiArrowDropLeftLine,
 };
 
 export default Icons;
