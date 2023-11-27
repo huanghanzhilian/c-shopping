@@ -1,0 +1,194 @@
+[
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/pb8fnxyickqqe9krov82",
+        "url": "/images/p/phone2.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 500,
+    "sold": 0,
+    "title": "تبلت سامسونگ مدل Galaxy Tab A7 Lite SM-T220 ظرفیت 32 گیگابایت و رم سه گیگابایت",
+    "price": 5,
+    "features": [
+      { "مقدار رم ": "سه گیگابایت" },
+      { "حافظه داخلی ": "32 گیگابایت" },
+      { "بازه‌ی اندازه صفحه نمایش": "بین 8 تا 10 اینچ" },
+      { "شبکه های ارتباطی": "بدون سیم‌کارت" },
+      {
+        "رابط‌ها": "Bluetooth، USB Type-C، Wireless، جک 3.5 میلی‌متری صدا، شیار کارت حافظه MicroSD"
+      }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
+        "url": "/images/p/phone1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 300,
+    "sold": 10,
+    "title": "گوشی موبایل سامسونگ مدل Galaxy A33 5G SM-A336E/DSN دو سیم کارت ظرفیت 128 گیگابایت و رم 6 گیگابایت",
+    "price": 5,
+    "features": [
+      { "حافظه داخلی": "128 گیگابایت" },
+      { "مقدار RAM": "شش گیگابایت" },
+      { "بازه‌ی اندازه صفحه نمایش": "6.0 اینچ و بزرگتر" },
+      { "شبکه های ارتباطی": "2G، 3G، 4G، 5G" },
+      { "رزولوشن عکس": "48 مگاپیکسل" }
+    ],
+    "category": "5faa35b58fdff228384d51da"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/shiert1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "پیراهن آستین بلند مردانه مدل bn02 رنگ طوسی",
+    "price": 25,
+    "features": [
+      { "قد": "روی باسن" },
+      { "یقه": "برگردان" },
+      { "آستین": ":بلند" },
+      { "مورد استفاده": "اسپرت، روزمره، مهمانی" },
+      { "طرح": "ساده" }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/shiert2.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "پیراهن آستین بلند مردانه آیبکس مدل 1030رنگ مشکی",
+    "price": 25,
+    "features": [
+      { "قد": "روی باسن" },
+      { "یقه": "برگردان" },
+      { "آستین": ":بلند" },
+      { "مورد استفاده": "اسپرت، مهمانی" },
+      { "طرح": "طرح‌دار" }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/doll1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "فیگور لگو مدل Dynamite Boy",
+    "price": 25,
+    "features": [{ "رده سنی": "کودک، نوجوان، بزرگسال" }, { "جنس": "پلاستیک" }],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/doll2.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "عروسک طرح اختاپوس مدل مودی ارتفاع 15 سانتی متر",
+    "price": 25,
+    "features": [
+      { "جنس": "پولیشی" },
+      { "رده سنی ": "خردسال، کودک، نوجوان، بزرگسال" },
+      { "ویژگی‌های نظافتی": "قابلیت شست‌وشو در ماشین لباسشویی" }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/food1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "ماکارونی پنه ریگاته زر ماکارون مقدار 500 گرم",
+    "price": 25,
+    "features": [{ "قیمت تولید‌کننده ": "۱۶,۲۱۶ تومان" }],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/shiert1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "اسپاگتی قطر 1.5 زر ماکارون مقدار 500 گرم",
+    "price": 25,
+    "features": [{ "قیمت تولید‌کننده": "۱۳,۹۲۳ تومان" }],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/book1.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "کتاب کیمیاگر اثر پائولو کوئیلو انتشارات آتیسا",
+    "price": 25,
+    "features": [
+      { "رده‌بندی کتاب": "ادبیات دیگر زبان‌ها (شعر و ادبیات)" },
+      { "قطع": "رقعی" },
+      { "نوع جلد": "شومیز" },
+      { "نوع چاپ": "چاپ اصلی" },
+      { "گروه سنی": "بزرگسال" }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  },
+  {
+    "images": [
+      {
+        "public_id": "nextjs_media/u8qltexka25minj2rj46",
+        "url": "/images/p/book2.jpg"
+      }
+    ],
+    "checked": false,
+    "inStock": 153,
+    "sold": 5,
+    "title": "کتاب اثر مرکب اثر دارن هاردی انتشارات آتیسا",
+    "price": 25,
+    "features": [
+      { "رده‌بندی کتاب": "ادبیات دیگر زبان‌ها (شعر و ادبیات)" },
+      { "قطع": "رقعی" },
+      { "نوع جلد": "شومیز" },
+      { "نوع چاپ": "چاپ اصلی" },
+      { "گروه سنی": "بزرگسال" }
+    ],
+    "category": "5faa35a88fdff228384d51d8"
+  }
+]

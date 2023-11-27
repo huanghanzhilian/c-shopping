@@ -6,3 +6,6 @@ export { default as User } from "./User";
 export { default as Cart } from "./Cart";
 export { default as Search } from "./Search";
 export { default as RefreshTokenHandler } from "./RefreshTokenHandler";
+export { default as ClientLayout } from "./Lyouts/ClientLayout";
+export { default as ProfileLayout } from "./Lyouts/ProfileLayout";
+export { default as DashboardLayout } from "./Lyouts/DashboardLayout";

@@ -6,7 +6,7 @@ import sendError from "utils/sendError";
 import { createAccessToken } from "utils/generateToken";
 import jwt from "jsonwebtoken";
 
-const accessToken = async (req) => {
+const getAccessToken = async (req) => {
   try {
 
     const { value : rf_token } = req.cookies.get('refreshToken');
@@ -37,4 +37,4 @@ const accessToken = async (req) => {
   }
 };
 
-export const GET = accessToken;
+export const GET = getAccessToken;

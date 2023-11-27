@@ -50,7 +50,12 @@ export default function User({ user, dispatch }) {
           <Link href='/profile' passHref>
             <span className='flex items-center py-3 border-b border-gray-200 gap-x-2'>
               <div className='relative w-6 h-6'>
-                <Image src={"/images/person.png"} layout='fill' />
+                <Image
+                  src={"/images/person.png"}
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                />
               </div>
               <span className='min-w-max'>{user.name}</span>
               <Icons.ArrowLeft className='icon mr-auto' />

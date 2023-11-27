@@ -18,9 +18,14 @@ export default function Navbar() {
           </button>
           <div className='relative w-24 h-14 '>
             <Link passHref href='/'>
-              <span>
-                <Image src='/images/logo.svg' layout='fill' />
-              </span>
+              <div>
+                <Image
+                  src='/images/logo.svg'
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                />
+              </div>
             </Link>
           </div>
           <Icons.Question className='icon lg:hidden' />
