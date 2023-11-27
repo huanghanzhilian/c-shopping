@@ -4,24 +4,59 @@
 
 @layer base {
   @font-face {
-    font-family: "VazirRegular";
+    font-family: "Vazir";
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/vazir/Vazirmatn-Regular.woff2") format("woff2");
     font-display: swap;
   }
   @font-face {
-    font-family: "VazirMedium";
+    font-family: "Vazir";
     font-style: normal;
     font-weight: 500;
     src: url("/fonts/vazir/Vazirmatn-Medium.woff2") format("woff2");
     font-display: swap;
   }
   @font-face {
-    font-family: "VazirBold";
+    font-family: "Vazir";
     font-style: normal;
     font-weight: 700;
     src: url("/fonts/vazir/Vazirmatn-Bold.woff2") format("woff2");
     font-display: swap;
+  }
+}
+
+@layer base {
+  body {
+    font-family: "Vazir";
+  }
+
+  input {
+    box-shadow: 0 0 0px 1000px #fafafa inset;
+    -webkit-box-shadow: 0 0 0px 1000px #fafafa inset;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  p {
+    @apply text-base;
+  }
+}
+
+@layer components {
+  .input {
+    @apply bg-zinc-50 w-full block
+     outline-none py-2 px-3 rounded-md
+     text-base lg:text-lg  text-center
+     border border-gray-200
+   focus:border-blue-600 transition-colors;
+  }
+
+  .error-msg {
+    @apply mt-1.5 inline-flex gap-x-1 justify-center text-sm text-red-600;
+  }
+
+  .btn {
+    @apply text-white bg-red-500 py-3 px-4 rounded-3xl block outline-none;
   }
 }

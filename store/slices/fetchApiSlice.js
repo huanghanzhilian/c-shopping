@@ -13,29 +13,29 @@ const fetchApi = createApi({
     }),
 
     postData: builder.mutation({
-      query: ({ url, data, token }) => ({
+      query: ({ url, body, token }) => ({
         url,
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: token },
-        body: data,
+        body,
       }),
     }),
 
     patchData: builder.mutation({
-      query: ({ url, data, token }) => ({
+      query: ({ url, body, token }) => ({
         url,
         method: "PATCH",
         headers: { "Content-Type": "application/json", Authorization: token },
-        body: data,
+        body,
       }),
     }),
 
     putData: builder.mutation({
-      query: ({ url, data, token }) => ({
+      query: ({ url, body, token }) => ({
         url,
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: token },
-        body: data,
+        body,
       }),
     }),
 
@@ -54,7 +54,7 @@ export const {
   usePostDataMutation,
   usePatchDataMutation,
   usePutDataMutation,
-  useDeleteDataMutation
+  useDeleteDataMutation,
 } = fetchApi;
 
 export default fetchApi;
