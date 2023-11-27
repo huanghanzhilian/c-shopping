@@ -21,7 +21,7 @@ export default function Logout() {
         onClick={() => handleLogout()}
       >
         <Icons.Logout className='icon text-black' />
-        <span className='ml-auto mr-3'>其他组织者</span>
+        <span className='ml-auto mr-3'>退出</span>
       </div>
     </div>
   );

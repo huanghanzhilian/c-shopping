@@ -18,8 +18,8 @@ export default function Orders() {
               <span className='absolute order-badge'>0</span>
             </div>
             <div className='text-gray-700'>
-              <span className='hidden lg:block'> 0 سفارش</span>
-              <span>جاری</span>
+              <span className='hidden lg:block'> 0 顺序</span>
+              <span>现在的</span>
             </div>
           </div>
 

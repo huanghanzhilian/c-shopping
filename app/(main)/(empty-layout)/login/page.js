@@ -76,7 +76,7 @@ export default function LoginPage() {
             <Image src='/images/logo.svg' layout='fill' />
           </Link>
         </div>
-        <h2>ورود</h2>
+        <h2>登录</h2>
         <form className='space-y-5' onSubmit={handleSubmit(submitHander)}>
           <div>
             <input

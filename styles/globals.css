@@ -68,6 +68,16 @@
   .icon {
     @apply w-6 h-6 text-gray-700;
   }
+  .order-badge {
+    @apply bottom-0 left-1 bg-slate-200 p-1 rounded-md w-6 h-6 text-center text-sm text-black/80 lg:hidden;
+  }
+  .section-divide-y {
+    @apply h-3 bg-gray-200 lg:hidden;
+  }
+
+  .section-divide-x {
+    @apply w-0.5 bg-gray-200;
+  }
   .b {
     @apply border border-red-600;
   }

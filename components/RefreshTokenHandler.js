@@ -1,3 +1,5 @@
+"use client"
+
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -8,6 +10,7 @@ import { useGetDataQuery } from "store/slices/fetchApiSlice";
 import { useDispatch } from "react-redux";
 
 import { confirmAlert } from "utils/alert";
+
 
 export default function RefreshTokenHandler() {
   const dispatch = useDispatch();
@@ -37,5 +40,5 @@ export default function RefreshTokenHandler() {
     }, [isSuccess, isError]);
   }
 
-  return 'null';
+  return null;
 }
