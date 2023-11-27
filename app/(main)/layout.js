@@ -7,10 +7,6 @@ export default function Layout({ children }) {
   return (
     <StoreProvider>
       {children}
-      <Toaster
-        position='top-right'
-        toastOptions={{ style: { fontSize: "1rem" } }}
-      />
     </StoreProvider>
   )
 }

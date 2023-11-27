@@ -10,9 +10,10 @@ import * as Yup from "yup";
 import { usePostDataMutation } from "store/slices/fetchApiSlice";
 import { DisplayError, Loading } from "components";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { userLogin } from "store/slices/authSlice";
+import alert from "utils/alert";
+import { useRouter } from "next/navigation";
 
 //? Validation Schema
 const schema = Yup.object().shape({
@@ -25,7 +26,8 @@ const schema = Yup.object().shape({
 });
 
 export default function LoginPage() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const router = useRouter();
   //? Post query
   const [
     postData,
@@ -35,11 +37,12 @@ export default function LoginPage() {
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
-      toast.success(data.msg);
+      alert("success", data.msg);
       dispatch(userLogin(data.data));
       reset();
+      router.push("/");
     }
-    if (isError) toast.error(error?.data.err);
+    if (isError) alert("error", error?.data.err);
   }, [isSuccess, isError]);
 
   //? Form Hook
@@ -53,8 +56,8 @@ export default function LoginPage() {
   });
 
   //? Handlers
-  const submitHander = async ({  email, password }) => {
-    if (email && password ) {
+  const submitHander = async ({ email, password }) => {
+    if (email && password) {
       await postData({
         url: "/api/auth/login",
         body: { email, password },

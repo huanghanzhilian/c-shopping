@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { userLogin } from "store/slices/authSlice";
 
 import { DisplayError, Loading } from "components";
-import toast from "react-hot-toast";
+import alert, { confirmAlert } from "utils/alert";
 
 //? Validation Schema
 const schema = Yup.object().shape({
@@ -33,6 +34,7 @@ const schema = Yup.object().shape({
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   //? Post query
   const [
@@ -43,11 +45,21 @@ export default function RegisterPage() {
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
-      toast.success(data.msg);
+      alert("success", data.msg);
       dispatch(userLogin(data.data));
       reset();
+      router.push("/");
     }
-    if (isError) toast.error(error?.data.err);
+    if (isError) {
+      confirmAlert({
+        title: "您的注册有问题",
+        text: error?.data.err,
+        icon: "warning",
+        confirmButtonText: "去登录",
+      }).then((result) => {
+        if (result.isConfirmed) router.push("/login");
+      });
+    }
   }, [isSuccess, isError]);
 
   //? Form Hook
@@ -61,8 +73,8 @@ export default function RegisterPage() {
   });
 
   //? Handlers
-  const submitHander = async ({ name, email, password, confirmPassword }) => {
-    if (name && email && password && confirmPassword) {
+  const submitHander = async ({ name, email, password }) => {
+    if (name && email && password) {
       await postData({
         url: "/api/auth/register",
         body: { name, email, password },

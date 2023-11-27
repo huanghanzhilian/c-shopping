@@ -22,6 +22,8 @@
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.12.0",
     "react-redux": "^8.0.2",
+    "sweetalert2": "^11.4.17",
+    "sweetalert2-react-content": "^5.0.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
