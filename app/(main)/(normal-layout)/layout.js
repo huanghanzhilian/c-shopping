@@ -1,6 +1,6 @@
 "use client"
 
-import { Navbar } from "components";
+import { Navbar, RefreshTokenHandler } from "components";
 
 export default function Layout({ children }) {
   return (
@@ -8,6 +8,7 @@ export default function Layout({ children }) {
       <Navbar />
       {children}
       <footer>footer</footer>
+      <RefreshTokenHandler />
     </>
   )
 }

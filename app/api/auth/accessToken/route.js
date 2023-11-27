@@ -9,7 +9,7 @@ import jwt from "jsonwebtoken";
 const accessToken = async (req) => {
   try {
 
-    const { value : rf_token } = req.cookies.get('refreshtoken');
+    const { value : rf_token } = req.cookies.get('refreshToken');
     
     if (!rf_token) return sendError(400, "无刷新token");
     const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET);
