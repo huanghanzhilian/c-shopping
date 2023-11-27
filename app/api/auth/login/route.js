@@ -24,14 +24,16 @@ const login = async (req) => {
 
     return NextResponse.json({
       msg: "登录成功",
-      refresh_token,
-      access_token,
-      user: {
-        name: user.name,
-        email: user.email,
-        role: user.role,
-        avatar: user.avatar,
-        root: user.root,
+      data: {
+        refresh_token,
+        access_token,
+        user: {
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          avatar: user.avatar,
+          root: user.root,
+        },
       }
     }, { status: 200 })
   } catch (error) {

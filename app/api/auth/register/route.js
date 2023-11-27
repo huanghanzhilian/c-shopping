@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import db from "lib/db";
 import Users from "models/User";
 import sendError from "utils/sendError";
+import { createAccessToken, createRefreshToken } from "utils/generateToken";
 
 export async function POST (req, { params }) {
   try {
@@ -20,8 +21,22 @@ export async function POST (req, { params }) {
     await newUser.save();
     await db.disconnect();
 
+    const access_token = createAccessToken({ id: newUser._id });
+    const refresh_token = createRefreshToken({ id: newUser._id });
+
     return NextResponse.json({
-      meg: "注册成功"
+      meg: "注册成功",
+      data: {
+        refresh_token,
+        access_token,
+        user: {
+          name: newUser.name,
+          email: newUser.email,
+          role: newUser.role,
+          avatar: newUser.avatar,
+          root: newUser.root,
+        },
+      }
     }, {
       status: 201
     });
