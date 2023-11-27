@@ -8,7 +8,9 @@ export default function BoxLink({ children, path, name }) {
   return (
     <div
       className={`transition-colors hover:bg-gray-200 px-3 ${
-        router.asPath === path && "border-r-4 border-red-600"
+        router.asPath === path
+          ? "border-r-4 border-red-600"
+          : "border-r-4 border-white"
       }`}
     >
       <Link href={path}>
