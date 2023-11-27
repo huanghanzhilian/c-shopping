@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className='inline-flex gap-x-10 justify-between py-2 w-full items-center border-b lg:border-b-0'>
           <Search />
           <div className='inline-flex items-center gap-x-4 '>
-            <User user={user} dispatch={dispatch} />
+            <User user={user} />
             <span className='hiden lg:block lg:border lg:border-gray-300 lg:h-6'></span>
             <Cart />
           </div>
