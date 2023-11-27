@@ -6,7 +6,7 @@ import {
   BsQuestionSquare,
   BsClockHistory,
 } from "react-icons/bs";
-import { FiLogIn, FiLogOut, FiEdit } from "react-icons/fi";
+import { FiLogIn, FiLogOut, FiEdit,FiPlus } from "react-icons/fi";
 import { VscThreeBars } from "react-icons/vsc";
 import { HiOutlineUser } from "react-icons/hi";
 import { IoSearch } from "react-icons/io5";
@@ -42,6 +42,7 @@ const Icons = {
   Comment: RiChat1Line,
   Location: RiUserLocationLine,
   Home: RiHome6Line,
+  Plus:FiPlus
 };
 
 export default Icons;

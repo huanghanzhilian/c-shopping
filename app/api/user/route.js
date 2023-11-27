@@ -9,19 +9,27 @@ import sendError from "utils/sendError";
 const uploadInfo = auth(async (req) => {
   try {
     const userId = req.headers.get('userId');
-    const { name, avatar } = await req.json();
-    const userInfo = await User.findOne({ _id: userId });
+    const result = await req.json();
 
     await db.connect();
-    const newUser = await User.findByIdAndUpdate(
-      { _id: userInfo._id },
-      { name, avatar }
+    
+    await User.findByIdAndUpdate(
+      { _id: userId },
+      { ...result }
     );
+    const newUser = await User.findOne({ _id: userId });
     await db.disconnect();
 
     return NextResponse.json({
       msg: "已成功更新用户信息",
-      user: { name, avatar, email: newUser.email, role: newUser.role },
+      user: {
+        avatar: newUser.avatar,
+        name: newUser.name,
+        mobile: newUser.mobile,
+        email: newUser.email,
+        role: newUser.role,
+        root: newUser.root,
+      }
     }, {
       status: 201
     });

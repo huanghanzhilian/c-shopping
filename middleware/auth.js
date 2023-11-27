@@ -9,10 +9,7 @@ export default function auth(handler) {
   return async (req, context) => {
     try {
       const method = req.method.toLowerCase();
-      const basicAuth = req.headers.get('authorization');
-      if (!basicAuth) return sendError(400, "authorization 缺失！");
-
-      const token = basicAuth.split(' ')[1];
+      const token = req.headers.get('authorization');
       if (!token) return sendError(400, "token 缺失！");
 
       const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);

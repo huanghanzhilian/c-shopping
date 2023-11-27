@@ -44,7 +44,7 @@ export default function ProfileAside({user}) {
           <Image src={user.avatar} layout='fill' />
         </div>
         <span className='ml-auto mr-2 font-bold '>{user.name}</span>
-        <Link href='profile/personal-info'>
+        <Link href='/profile/personal-info'>
           <span>
             <Icons.Edit className='text-blue-400 w-6 h-6' />
           </span>
