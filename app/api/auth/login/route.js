@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import db from "lib/db";
 import Users from "models/User";
 import sendError from "utils/sendError";
-import { createAccessToken, createRefreshToken } from "utils/generateToken";
+import { createAccessToken } from "utils/generateToken";
 
 const login = async (req) => {
   try {
@@ -20,18 +20,16 @@ const login = async (req) => {
     if (!isMatch) return sendError(400, "电子邮件地址或密码不正确");
 
     const access_token = createAccessToken({ id: user._id });
-    const refresh_token = createRefreshToken({ id: user._id });
 
     return NextResponse.json({
       msg: "登录成功",
       data: {
-        refresh_token,
         access_token,
         user: {
           name: user.name,
           email: user.email,
+          mobile: user.mobile,
           role: user.role,
-          avatar: user.avatar,
           root: user.root,
         },
       }

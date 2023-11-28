@@ -15,8 +15,6 @@ import { useDispatch } from "react-redux";
 import { userLogin } from "store/slices/authSlice";
 import alert from "utils/alert";
 
-import Cookies from "js-cookie";
-
 //? Validation Schema
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -41,7 +39,6 @@ export default function LoginPage() {
     if (isSuccess) {
       alert("success", data.msg);
       dispatch(userLogin(data.data));
-      Cookies.set("refreshToken", data?.data.refresh_token, { expires: 7 });
       reset();
       router.push("/");
     }

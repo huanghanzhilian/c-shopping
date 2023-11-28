@@ -49,7 +49,7 @@ export default function User({ user, dispatch }) {
         >
           <BoxLink path='/profile' name={user.name} className='border-t-0'>
             <div className='relative w-6 h-6'>
-              <Image src={user.avatar} layout='fill' />
+              <Image src='/images/person.svg' layout='fill' />
             </div>
           </BoxLink>
           <Logout />

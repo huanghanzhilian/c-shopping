@@ -10,9 +10,9 @@ const uploadInfo = auth(async (req) => {
   try {
     const userId = req.headers.get('userId');
     const result = await req.json();
+    if (!result) return sendError(400, "请提交数据");
 
     await db.connect();
-    
     await User.findByIdAndUpdate(
       { _id: userId },
       { ...result }
@@ -23,7 +23,6 @@ const uploadInfo = auth(async (req) => {
     return NextResponse.json({
       msg: "已成功更新用户信息",
       user: {
-        avatar: newUser.avatar,
         name: newUser.name,
         mobile: newUser.mobile,
         email: newUser.email,
