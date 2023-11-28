@@ -21,7 +21,7 @@ export const confirmAlert = ({ title, text, icon, confirmButtonText }) =>
     confirmButtonText,
   });
 
-  export const editInfo = (type, title, patchData, token, isError, error) =>
+export const editInfo = (type, title, patchData, token, isError, error) =>
   Swal.fire({
     title,
     input: "text",
@@ -32,11 +32,12 @@ export const confirmAlert = ({ title, text, icon, confirmButtonText }) =>
     showLoaderOnConfirm: true,
     preConfirm: (data) => {
       if (type === "mobile") {
-        const mobile = Number(data);
-        if (mobile.length < 11 || mobile.length >= 12)
+        // if (String(mobile).length < 11 || String(mobile).length >= 12)
+        if (data.length < 11 || data.length >= 12)
           return Swal.showValidationMessage(
             "请完整输入您的手机号码"
           );
+        const mobile = Number(data);
         patchData({
           url: "/api/user",
           body: { mobile },
@@ -54,6 +55,16 @@ export const confirmAlert = ({ title, text, icon, confirmButtonText }) =>
         patchData({
           url: "/api/user",
           body: { name },
+          token,
+        });
+      }
+
+      if (type === "address") {
+        const address = data;
+
+        patchData({
+          url: "/api/user",
+          body: { address },
           token,
         });
       }

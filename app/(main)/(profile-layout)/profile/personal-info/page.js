@@ -9,7 +9,7 @@ import { editInfo } from "utils/alert";
 
 export default function PersonalInfo() {
   const { user, token } = useSelector((state) => state.auth);
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
   const [
     patchData,
     { data, isSuccess, isError, error },
@@ -18,7 +18,7 @@ export default function PersonalInfo() {
   console.log({ data, isSuccess, isError, error });
 
   useEffect(() => {
-    if (isSuccess) dispach(updateUser(data.user));
+    if (isSuccess) dispatch(updateUser(data.user));
   }, [isSuccess]);
 
   const mobilEditHandler = () => {
