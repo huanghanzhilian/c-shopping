@@ -29,6 +29,7 @@ const login = async (req) => {
           name: user.name,
           email: user.email,
           mobile: user.mobile,
+          address: user.address,
           role: user.role,
           root: user.root,
         },
