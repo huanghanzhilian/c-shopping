@@ -15,8 +15,6 @@ const deleteCategory = apiHandler(async (req, { params }) => {
   identity: 'admin'
 });
 
-
-
 const updateCategory = apiHandler(async (req, { params }) => {
   const { id } = params;
   const { name } = await req.json();

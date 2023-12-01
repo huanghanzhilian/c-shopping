@@ -1,43 +1,24 @@
-import { NextResponse } from "next/server";
+import joi from "joi";
 
-import Order from "models/Order";
-import auth from "middleware/auth";
-import db from "lib/db";
-import sendError from "utils/sendError";
+import { setJson, apiHandler } from "@/helpers/api";
+import { orderRepo } from "@/helpers";
 
 
-const deliveredOrder = auth(async (req, { params }) => {
-  try {
-    const { id } = params;
-
-    const role = req.headers.get('userRole');
-    if (role !== "admin") return sendError(400, "无权操作");
-
-    await db.connect();
-    await Order.findByIdAndUpdate(
-      { _id: id },
-      {
-        paid: true,
-        dateOfPayment: new Date().toISOString(),
-        method: "在线付款",
-        deliverd: true,
-      }
-    );
-    await db.disconnect();
-
-    return NextResponse.json({
-      msg: "已经通过确认",
-      paid: true,
-      dateOfPayment: new Date().toISOString(),
-      method: "在线付款",
-      deliverd: true,
-    }, {
-      status: 200
-    });
-    
-  } catch (error) {
-    return sendError(500, error.message);
+const deliveredOrder = apiHandler(async (req, { params }) => {
+  const { id } = params;
+  const body = {
+    paid: true,
+    dateOfPayment: new Date().toISOString(),
+    method: "在线付款",
+    deliverd: true,
   }
+  await orderRepo.update(id, body)
+  return setJson({
+    message: '已经通过确认'
+  })
+}, {
+  isJwt: true,
+  identity: 'admin'
 });
 
 export const PATCH = deliveredOrder;

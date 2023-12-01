@@ -1,4 +1,4 @@
-import db from "lib/db";
+import { db } from "../";
 import Category from "models/Category";
 import Product from "models/Product";
 

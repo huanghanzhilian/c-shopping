@@ -1,72 +1,39 @@
-import { NextResponse } from "next/server";
+import joi from "joi";
 
-import sendError from "utils/sendError";
-import Products from "models/Product";
-import auth from "middleware/auth";
-import db from "lib/db";
+import { setJson, apiHandler } from "@/helpers/api";
+import { productRepo } from "@/helpers";
 
-export const GET = async (req) => {
-  try {
-    await db.connect();
-    const products = await Products.find();
-    await db.disconnect();
 
-    return NextResponse.json({
-      result: products.length,
-      products,
-    }, {
-      status: 200
-    })
-  } catch (error) {
-    return sendError(500, error.message);
-  }
-};
-
-export const POST = auth(async (req) => {
-  try {
-
-    const {
-      title,
-      price,
-      inStock,
-      description,
-      content,
-      category,
-      images,
-    } = await req.json();
-
-    const role = req.headers.get('userRole');
-    if (role !== "admin") return sendError(400, "无权操作");
-
-    if (
-      !title ||
-      !price ||
-      !inStock ||
-      !description ||
-      !content ||
-      category === "all" ||
-      images.length === 0
-    ) return sendError(400, "请填写所有字段");
-
-    await db.connect();
-    const newProducts = new Products({
-      title,
-      price,
-      inStock,
-      description,
-      content,
-      category,
-      images,
-    });
-    await newProducts.save();
-    await db.disconnect();
-
-    return NextResponse.json({
-      msg: "新增产品成功"
-    }, {
-      status: 201
-    })
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+const getProduct = apiHandler(async (req) => {
+  const result = await productRepo.getAll();
+  return setJson({
+    data: result
+  })
 });
+
+
+
+const createProduct = apiHandler(async (req) => {
+  const body = await req.json();
+  console.log('body', body)
+  await productRepo.create(body);
+  return setJson({
+    message: '新增产品成功'
+  })
+}, {
+  isJwt: true,
+  identity: 'admin',
+  schema: joi.object({
+    title: joi.string().required(),
+    price: joi.number().required(),
+    inStock: joi.number().required(),
+    description: joi.string().required(),
+    content: joi.string().required(),
+    category: joi.string().required(),
+    images: joi.array().required(),
+  })
+});
+
+
+export const GET = getProduct;
+export const POST = createProduct;

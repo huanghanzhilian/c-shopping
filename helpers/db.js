@@ -37,5 +37,4 @@ async function disconnect() {
   }
 }
 
-const db = { connect, disconnect };
-export default db;
+export const db = { connect, disconnect };

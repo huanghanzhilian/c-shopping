@@ -1,8 +1,7 @@
 import bcrypt from "bcrypt";
 
-import db from "lib/db";
 import User from "models/User";
-import { createAccessToken } from "@/utils/generateToken";
+import { auth, db } from "../";
 
 
 const getAll = async () => {
@@ -46,7 +45,7 @@ const authenticate = async ({ email, password } = {}) => {
   if (!isMatch) {
     throw '电子邮件地址或密码不正确';
   }
-  const token = createAccessToken({ id: user._id });
+  const token = auth.createAccessToken({ id: user._id });
   return {
     user: {
       name: user.name,
@@ -57,14 +56,6 @@ const authenticate = async ({ email, password } = {}) => {
     token
   };
 };
-
-const updateRole = async (id, role) => {
-  await db.connect();
-  const user = await User.findById(id);
-  if (!user) throw '用户不存在';
-  await User.findByIdAndUpdate({ _id: id }, { role });
-  await db.disconnect();
-}
 
 const _delete = async (id) => {
   await db.connect();
@@ -96,11 +87,10 @@ const getById = async (id) => {
 
 export const usersRepo = {
   create,
-  authenticate,
   getAll,
   getById,
   update,
   delete: _delete,
-  updateRole,
-  resetPassword
+  resetPassword,
+  authenticate
 }

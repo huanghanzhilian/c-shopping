@@ -7,9 +7,8 @@ import { setJson } from '@/helpers/api';
 
 const updateRole = apiHandler(async (req, { params }) => {
   const { id } = params;
-  const { role } = await req.json();
-
-  await usersRepo.updateRole(id, role);
+  const body = await req.json();
+  await usersRepo.update(id, body);
 
   return setJson({
     message: '更新成功'

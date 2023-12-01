@@ -1,67 +1,38 @@
-import { NextResponse } from "next/server";
+import joi from "joi";
 
-import Order from "models/Order";
-import auth from "middleware/auth";
-import User from "models/User";
-import db from "lib/db";
-import sendError from "utils/sendError";
+import { setJson, apiHandler } from "@/helpers/api";
+import { orderRepo } from "@/helpers";
 
 
-export const GET = auth(async (req) => {
-  try {
-    const userId = req.headers.get('userId');
-    const role = req.headers.get('userRole');
-    let orders;
-
-    if (role !== "admin") {
-      await db.connect();
-      orders = await Order.find({ user: userId }).populate(
-        "user",
-        "-password"
-      );
-    } else {
-      orders = await Order.find().populate("user", "-password");
-    }
-
-    return NextResponse.json({
-      orders
-    }, {
-      status: 200
-    });
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+const getOrders = apiHandler(async (req) => {
+  const userId = req.headers.get('userId');
+  const role = req.headers.get('userRole');
+  const result = await orderRepo.getAll(userId, role);
+  return setJson({
+    data: result
+  })
+}, {
+  isJwt: true
 });
 
-export const POST = auth(async (req) => {
-  try {
-    const userId = req.headers.get('userId');
-    const { address, mobile, cart, total } = await req.json();
 
-    await db.connect();
-    const newOrder = new Order({
-      user: userId,
-      address,
-      mobile,
-      cart,
-      total,
-    });
-
-    //? update product beside on new order
-    // cart.forEach((item) =>
-    //   sold(item._id, item.quantity, item.inStock, item.sold)
-    // );
-
-    await newOrder.save();
-    await db.disconnect();
-
-    return NextResponse.json({
-      msg: "创建订单成功",
-      newOrder
-    }, {
-      status: 200
-    });
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+const createOrder = apiHandler(async (req) => {
+  const userId = req.headers.get('userId');
+  const body = await req.json();
+  await orderRepo.create(userId, body);
+  return setJson({
+    message: '创建订单成功'
+  })
+}, {
+  isJwt: true,
+  schema: joi.object({
+    address: joi.string().required(),
+    mobile: joi.string().required(),
+    cart: joi.array().required(),
+    total: joi.number().required()
+  })
 });
+
+
+export const GET = getOrders;
+export const POST = createOrder;

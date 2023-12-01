@@ -1,11 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export const auth = {
-    verifyToken,
-    createAccessToken
-}
-
-function verifyToken(req, isJwt) {
+const verifyToken = (req, isJwt) => {
     try {
         const token = req.headers.get('authorization');
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
@@ -19,9 +14,13 @@ function verifyToken(req, isJwt) {
     
 }
   
-function createAccessToken(payload) {
+const createAccessToken = (payload) => {
     return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: "1d",
     });
 };
-  
+
+export const auth = {
+  verifyToken,
+  createAccessToken
+}
