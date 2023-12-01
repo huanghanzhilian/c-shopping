@@ -1,55 +1,34 @@
-import { NextResponse } from "next/server";
+import joi from 'joi';
 
-import db from "lib/db";
-import User from "models/User";
-import auth from "middleware/auth";
-import sendError from "utils/sendError";
+import { usersRepo } from 'helpers';
+import { apiHandler } from 'helpers/api';
+import { setJson } from '@/helpers/api';
 
 
-const updateRole = auth(async (req, { params }) => {
-  try {
+const updateRole = apiHandler(async (req, { params }) => {
+  const { id } = params;
+  const { role } = await req.json();
 
-    const { id } = params;
-    const { role } = await req.json();
+  await usersRepo.updateRole(id, role);
 
-    const userRole = req.headers.get('userRole');
-    if (userRole !== "admin") return sendError(400, "无权操作");
-
-    await db.connect();
-    await User.findOneAndUpdate({ _id: id }, { role });
-    await db.disconnect();
-
-    return NextResponse.json({
-      msg: "用户信息已成功更新"
-    }, {
-      status: 200
-    });
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+  return setJson({
+    message: '更新成功'
+  })
+}, {
+  schema: joi.object({
+    role: joi.string().required().valid('user', 'admin')
+  }),
+  identity: 'root'
 });
 
-const deleteUser = auth(async (req, { params }) => {
-  try {
-
-    const { id } = params;
-
-    const role = req.headers.get('userRole');
-    const userRoot = req.headers.get('userRoot');
-    if (role !== "admin" || !userRoot) return sendError(400, "无权操作");
-
-    await db.connect();
-    await User.findByIdAndDelete( id );
-    await db.disconnect();
-
-    return NextResponse.json({
-      msg: "用户信息已经删除"
-    }, {
-      status: 200
-    });
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+const deleteUser = apiHandler(async (req, { params }) => {
+  const { id } = params;
+  await usersRepo.delete(id);
+  return setJson({
+    message: '用户信息已经删除'
+  })
+}, {
+  identity: 'root'
 });
 
 export const PATCH = updateRole;

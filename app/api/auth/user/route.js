@@ -1,33 +1,21 @@
-import { NextResponse } from 'next/server'
+import joi from 'joi';
 
-import db from "lib/db";
-import User from "models/User";
-import sendError from "utils/sendError";
-import auth from "middleware/auth";
+import { usersRepo } from 'helpers';
+import { apiHandler } from 'helpers/api';
+import { setJson } from '@/helpers/api';
 
-const getUertInfo = auth(async (req) => {
-  try {
+const getUertInfo = apiHandler(async (req) => {
+  const userId = req.headers.get('userId');
+  const user = await usersRepo.getById(userId);
 
-    const userId = req.headers.get('userId');
-
-    await db.connect();
-    const user = await User.findOne({ _id: userId });
-    await db.disconnect();
-
-    return NextResponse.json({
-      user: {
-        name: user.name,
-        email: user.email,
-        mobile: user.mobile,
-        address: user.address,
-        role: user.role,
-        root: user.root
-      },
-    }, { status: 200 });
-
-  } catch (error) {
-    return sendError(500, error.message);
-  }
+  return setJson({
+    data: {
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      root: user.root
+    }
+  })
 });
 
 export const GET = getUertInfo;
