@@ -5,11 +5,18 @@ export const auth = {
     createAccessToken
 }
 
-function verifyToken(req) {
-    const token = req.headers.get('authorization');
-    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    const id = decoded.id;
-    return id;
+function verifyToken(req, isJwt) {
+    try {
+        const token = req.headers.get('authorization');
+        const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+        const id = decoded.id;
+        return id;
+    } catch (error) {
+        if (isJwt) {
+            throw error
+        }
+    }
+    
 }
   
 function createAccessToken(payload) {

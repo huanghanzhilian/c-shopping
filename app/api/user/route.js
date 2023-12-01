@@ -10,6 +10,7 @@ const getUsers = apiHandler(async (req) => {
     data: result
   })
 }, {
+  isJwt: true,
   identity: 'admin'
 });
 
@@ -21,6 +22,7 @@ const uploadInfo = apiHandler(async (req,) => {
     data: result
   })
 }, {
+  isJwt: true,
   schema: joi.object({
     name: joi.string().required()
   })

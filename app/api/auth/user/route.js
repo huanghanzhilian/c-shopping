@@ -16,6 +16,8 @@ const getUertInfo = apiHandler(async (req) => {
       root: user.root
     }
   })
+}, {
+  isJwt: true,
 });
 
 export const GET = getUertInfo;

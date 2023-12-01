@@ -4,7 +4,7 @@ import { errorHandler, jwtMiddleware, validateMiddleware, identityMiddleware } f
 
 export { apiHandler };
 
-function apiHandler(handler, { identity, schema } = {}) {
+function apiHandler(handler, { identity, schema, isJwt } = {}) {
     return async (req, ...args) => {
         try {
             // monkey patch req.json() because it can only be called once
@@ -14,7 +14,7 @@ function apiHandler(handler, { identity, schema } = {}) {
 
         try {
             // global middleware
-            await jwtMiddleware(req);
+            await jwtMiddleware(req, isJwt);
             await identityMiddleware(req, identity);
             await validateMiddleware(req, schema);
 

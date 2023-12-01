@@ -15,6 +15,7 @@ const updateRole = apiHandler(async (req, { params }) => {
     message: '更新成功'
   })
 }, {
+  isJwt: true,
   schema: joi.object({
     role: joi.string().required().valid('user', 'admin')
   }),
@@ -28,6 +29,7 @@ const deleteUser = apiHandler(async (req, { params }) => {
     message: '用户信息已经删除'
   })
 }, {
+  isJwt: true,
   identity: 'root'
 });
 

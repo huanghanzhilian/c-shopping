@@ -13,6 +13,7 @@ const resetPassword = apiHandler(async (req, res) => {
     message: '密码更新成功'
   })
 }, {
+  isJwt: true,
   schema: joi.object({
     password: joi.string().min(6).required()
   })

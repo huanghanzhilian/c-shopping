@@ -1,43 +1,29 @@
-import { NextResponse } from 'next/server'
+import joi from "joi";
 
-import Category from "models/Category";
-import auth from "middleware/auth";
-import db from "lib/db";
-import sendError from "utils/sendError";
+import { setJson, apiHandler } from "@/helpers/api";
+import { categoryRepo } from "@/helpers";
 
-const getCategory = async (req) => {
-  try {
-    db.connect();
-    const category = await Category.find();
-    db.disconnect();
-    return NextResponse.json({ category }, { status: 200 });
-  } catch (error) {
-    return sendError(500, error.message);
-  }
-}
+const getCategory = apiHandler(async (req) => {
+  const userId = req.headers.get('userId');
+  const result = await categoryRepo.getAll();
+  return setJson({
+    data: result
+  })
+});
 
-const createCategory = auth(async(req) => {
-  try {
+const createCategory = apiHandler(async(req) => {
+  const { name } = await req.json();
+  await categoryRepo.create({ name });
 
-    const { name } = await req.json();
-    const role = req.headers.get('userRole');
-    if (role !== "admin") return sendError(400, "无权操作");
-    if (!name) return sendError(400, "分类名称不能为空");
-
-    await db.connect();
-
-    const category = await Category.findOne({ name });
-    if (category) return sendError(400, "该分类名称已存在");
-
-    const newCategory = new Category({ name });
-    await newCategory.save();
-    await db.disconnect();
-
-    return NextResponse.json({ msg: "创建分类成功", newCategory }, { status: 201 });
-  } catch (error) {
-    console.log('error', error)
-    return sendError(500, error.message);
-  }
+  return setJson({
+    message: '创建分类成功'
+  })
+}, {
+  isJwt: true,
+  identity: 'admin',
+  schema: joi.object({
+    name: joi.string().required()
+  })
 })
 
 export const GET  = getCategory;

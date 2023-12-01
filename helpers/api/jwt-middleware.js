@@ -2,12 +2,10 @@ import { auth } from '../';
 
 export { jwtMiddleware };
 
-async function jwtMiddleware(req) {
-    if (isPublicPath(req))
-        return;
+async function jwtMiddleware(req, isJwt = false) {
+    if (isPublicPath(req)) return;
 
-    // verify token in request cookie
-    const id = auth.verifyToken(req);
+    const id = auth.verifyToken(req, isJwt);
     req.headers.set('userId', id);
 }
 
