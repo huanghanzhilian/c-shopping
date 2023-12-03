@@ -11,7 +11,7 @@ import * as Yup from "yup";
 
 import { usePostDataMutation } from "store/slices/fetchApiSlice";
 import { useDispatch } from "react-redux";
-import { userLogin } from "store/slices/authSlice";
+import { userLogin } from "store/slices/userSlice";
 
 import { DisplayError, Loading } from "components";
 import alert, { confirmAlert } from "utils/alert";

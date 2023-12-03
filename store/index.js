@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import fetchApi from "./slices/fetchApiSlice";
-import authReducer from "./slices/authSlice";
+import userReducer from "./slices/userSlice";
 import cartReducer from "./slices/cartSlice";
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
+    user: userReducer,
     cart: cartReducer,
     [fetchApi.reducerPath]: fetchApi.reducer,
   },

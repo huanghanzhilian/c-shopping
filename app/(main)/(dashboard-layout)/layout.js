@@ -1,6 +1,6 @@
 "use client"
 
-import { DashboardLayout, RefreshTokenHandler } from "components";
+import { DashboardLayout } from "components";
 
 export default function Layout({ children }) {
   return (
@@ -8,7 +8,6 @@ export default function Layout({ children }) {
       <DashboardLayout>
         {children}
       </DashboardLayout>
-      <RefreshTokenHandler />
     </>
   )
 }

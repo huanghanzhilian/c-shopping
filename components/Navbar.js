@@ -7,7 +7,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   //? Store
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.user);
 
   return (
     <header className='px-4 lg:shadow'>

@@ -37,7 +37,10 @@ const create = async (params) => {
 }
 
 const authenticate = async ({ email, password } = {}) => {
+  await db.connect();
   const user = await User.findOne({ email });
+  await db.disconnect();
+
   if (!user) {
     throw '找不到此电子邮件的应用程序';
   }

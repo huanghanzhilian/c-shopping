@@ -1,6 +1,5 @@
 "use client"
 
-import { ClientLayout, Orders, ProfileAside } from "components";
 import { useSelector } from "react-redux";
 
 export default function ProfilePage() {
@@ -8,7 +7,7 @@ export default function ProfilePage() {
 
   return (
     <>
-      <Orders />
+      hello
     </>
   );
 }

@@ -12,7 +12,7 @@ import { usePostDataMutation } from "store/slices/fetchApiSlice";
 import { DisplayError, Loading } from "components";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { userLogin } from "store/slices/authSlice";
+import { userLogin } from "store/slices/userSlice";
 import alert from "utils/alert";
 
 //? Validation Schema
@@ -37,8 +37,9 @@ export default function LoginPage() {
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
-      alert("success", data.msg);
-      dispatch(userLogin(data.data));
+      console.log('data', data)
+      alert("success", data.message);
+      dispatch(userLogin(data.data.token));
       reset();
       router.push("/");
     }

@@ -1,6 +1,6 @@
 "use client"
 
-import { ClientLayout, RefreshTokenHandler } from "components";
+import { ClientLayout } from "components";
 
 export default function Layout({ children }) {
   return (
@@ -8,7 +8,6 @@ export default function Layout({ children }) {
       <ClientLayout>
         {children}
       </ClientLayout>
-      <RefreshTokenHandler />
     </>
   )
 }

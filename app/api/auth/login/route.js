@@ -7,7 +7,8 @@ const login = apiHandler(async (req) => {
   const body = await req.json();
   const result = await usersRepo.authenticate(body);
   return setJson({
-    data: result
+    data: result,
+    message: '登录成功'
   });
 }, {
   schema: joi.object({
