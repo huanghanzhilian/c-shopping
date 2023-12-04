@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import fetchApi from './slices/fetchApiSlice'
-import userReducer from './slices/userSlice'
-import cartReducer from './slices/cartSlice'
+//? Reducers
+import userReducer from './slices/user.slice'
+import apiSlice from './services/api'
+
+//? Actions
+export * from './slices/user.slice'
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    cart: cartReducer,
-    [fetchApi.reducerPath]: fetchApi.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(fetchApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware),
 })

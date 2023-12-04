@@ -5,9 +5,15 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { Icons, Logout, BoxLink } from 'components'
+import { useUserInfo } from '@/hooks'
 
-export default function User({ user, dispatch }) {
+export default function User() {
+  const { userInfo: user, isLoading, isVerify } = useUserInfo()
   const [isOpen, setIsOpen] = useState(false)
+
+  console.log('user', user)
+
+  if (isLoading) return null
 
   if (!user) {
     return (

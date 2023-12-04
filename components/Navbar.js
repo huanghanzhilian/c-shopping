@@ -1,14 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icons, User, Cart, Search } from 'components'
-import { useDispatch, useSelector } from 'react-redux'
 
 export default function Navbar() {
-  const dispatch = useDispatch()
-
-  //? Store
-  const { user } = useSelector(state => state.user)
-
   return (
     <header className="px-4 lg:shadow">
       <div className="container max-w-[1550px] lg:flex lg:py-2 ">
@@ -33,7 +27,7 @@ export default function Navbar() {
         <div className="inline-flex gap-x-10 justify-between py-2 w-full items-center border-b lg:border-b-0">
           <Search />
           <div className="inline-flex items-center gap-x-4 ">
-            <User user={user} />
+            <User />
             <span className="hiden lg:block lg:border lg:border-gray-300 lg:h-6"></span>
             <Cart />
           </div>

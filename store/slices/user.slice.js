@@ -1,26 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
+import LocalStorage from '@/utils/localstorage'
 
-const token = window.localStorage.getItem('token') || ''
-const userInfo = null
+const token = LocalStorage.getItem('token') || ''
 
-const initialState = { userInfo, token }
+const initialState = { token }
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
     userLogout: state => {
-      localStorage.removeItem('token')
+      LocalStorage.removeItem('token')
       state.token = ''
     },
 
     userLogin: (state, action) => {
-      localStorage.setItem('token', action.payload)
+      LocalStorage.setItem('token', action.payload)
       state.token = action.payload
-    },
-
-    userInfo: (state, action) => {
-      state.userInfo = action.payload
     },
   },
 })

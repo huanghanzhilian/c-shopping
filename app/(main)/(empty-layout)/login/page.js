@@ -3,16 +3,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
-import { usePostDataMutation } from 'store/slices/fetchApiSlice'
 import { DisplayError, Loading } from 'components'
-import { useEffect } from 'react'
+
 import { useDispatch } from 'react-redux'
-import { userLogin } from 'store/slices/userSlice'
+import { useLoginMutation } from '@/store/services'
+import { userLogin } from 'store'
+
 import alert from 'utils/alert'
 
 //? Validation Schema
@@ -25,8 +27,7 @@ export default function LoginPage() {
   const dispatch = useDispatch()
   const router = useRouter()
   //? Post query
-  const [postData, { data, isSuccess, isError, isLoading, error }] = usePostDataMutation()
-  console.log('test')
+  const [postData, { data, isSuccess, isError, isLoading, error }] = useLoginMutation()
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
@@ -53,9 +54,7 @@ export default function LoginPage() {
   const submitHander = async ({ email, password }) => {
     if (email && password) {
       await postData({
-        url: '/api/auth/login',
         body: { email, password },
-        token: '',
       })
     }
   }

@@ -9,9 +9,9 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
-import { usePostDataMutation } from 'store/slices/fetchApiSlice'
+import { useCreateUserMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
-import { userLogin } from 'store/slices/userSlice'
+import { userLogin } from 'store'
 
 import { DisplayError, Loading } from 'components'
 import alert, { confirmAlert } from 'utils/alert'
@@ -31,7 +31,7 @@ export default function RegisterPage() {
   const router = useRouter()
 
   //? Post query
-  const [postData, { data, isSuccess, isError, isLoading, error }] = usePostDataMutation()
+  const [postData, { data, isSuccess, isError, isLoading, error }] = useCreateUserMutation()
 
   //? Handle Response
   useEffect(() => {
@@ -67,9 +67,7 @@ export default function RegisterPage() {
   const submitHander = async ({ name, email, password }) => {
     if (name && email && password) {
       await postData({
-        url: '/api/auth/register',
         body: { name, email, password },
-        token: '',
       })
     }
   }
