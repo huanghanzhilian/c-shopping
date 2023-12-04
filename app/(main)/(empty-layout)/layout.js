@@ -1,9 +1,5 @@
-"use client"
+'use client'
 
 export default function Layout({ children }) {
-  return (
-    <>
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

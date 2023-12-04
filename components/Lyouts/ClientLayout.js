@@ -1,4 +1,4 @@
-import { Navbar } from "components";
+import { Navbar } from 'components'
 
 export default function Layout({ children }) {
   return (
@@ -6,5 +6,5 @@ export default function Layout({ children }) {
       <Navbar />
       {children}
     </>
-  );
+  )
 }

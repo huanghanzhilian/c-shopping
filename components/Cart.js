@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { Icons } from "components";
+import Link from 'next/link'
+import { Icons } from 'components'
 export default function Cart() {
   return (
-    <Link href='/cart'>
+    <Link href="/cart">
       <span>
-        <Icons.Cart className='icon' />
+        <Icons.Cart className="icon" />
       </span>
     </Link>
-  );
+  )
 }

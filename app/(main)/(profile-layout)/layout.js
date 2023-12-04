@@ -1,13 +1,11 @@
-"use client"
+'use client'
 
-import { ProfileLayout } from "components";
+import { ProfileLayout } from 'components'
 
 export default function Layout({ children }) {
   return (
     <>
-      <ProfileLayout>
-        {children}
-      </ProfileLayout>
+      <ProfileLayout>{children}</ProfileLayout>
     </>
   )
 }

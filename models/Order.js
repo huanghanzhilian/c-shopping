@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Types.ObjectId,
-      ref: "user",
+      ref: 'user',
     },
     address: String,
     mobile: String,
@@ -23,7 +23,7 @@ const orderSchema = new mongoose.Schema(
     dateOfPayment: Date,
   },
   { timestamps: true }
-);
+)
 
-const Order = mongoose.models.order || mongoose.model("order", orderSchema);
-export default Order;
+const Order = mongoose.models.order || mongoose.model('order', orderSchema)
+export default Order

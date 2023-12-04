@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    BASE_URL: "http://localhost:3000",
-    MONGODB_URL: "mongodb://localhost:27017/exercise-full-next",
-    ACCESS_TOKEN_SECRET: "h1n0U6LHJtCZuWitwjn3oLd5qCRIgUFtemnjTrpfZLzVZ3ff0f"
+    BASE_URL: 'http://localhost:3000',
+    MONGODB_URL: 'mongodb://localhost:27017/exercise-full-next',
+    ACCESS_TOKEN_SECRET: 'h1n0U6LHJtCZuWitwjn3oLd5qCRIgUFtemnjTrpfZLzVZ3ff0f',
   },
   images: {
     remotePatterns: [

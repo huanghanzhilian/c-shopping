@@ -1,8 +1,8 @@
-import { auth } from '../';
+import { auth } from '../'
 
-export { jwtMiddleware };
+export { jwtMiddleware }
 
 async function jwtMiddleware(req, isJwt = false) {
-    const id = auth.verifyToken(req, isJwt);
-    req.headers.set('userId', id);
+  const id = auth.verifyToken(req, isJwt)
+  req.headers.set('userId', id)
 }

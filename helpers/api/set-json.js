@@ -1,9 +1,9 @@
-const setJson = ({code, message, data} = {}) => {
+const setJson = ({ code, message, data } = {}) => {
   return {
     code: code || 0,
     message: message || 'ok',
-    data: data || null
+    data: data || null,
   }
-};
+}
 
 export { setJson }

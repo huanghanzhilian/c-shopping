@@ -1,16 +1,15 @@
 export default function Loading() {
   return (
     <div>
-      <div className='bar bar1'></div>
-      <div className='bar bar2'></div>
-      <div className='bar bar3'></div>
-      <div className='bar bar4'></div>
-      <div className='bar bar5'></div>
-      <div className='bar bar6'></div>
-      <div className='bar bar7'></div>
-      <div className='bar bar8'></div>
+      <div className="bar bar1"></div>
+      <div className="bar bar2"></div>
+      <div className="bar bar3"></div>
+      <div className="bar bar4"></div>
+      <div className="bar bar5"></div>
+      <div className="bar bar6"></div>
+      <div className="bar bar7"></div>
+      <div className="bar bar8"></div>
       <style jsx>{`
-  
         .bar {
           width: 8px;
           height: 15px;
@@ -50,7 +49,7 @@ export default function Loading() {
         @keyframes loader {
           0% {
             transform: scaleY(0.1);
-            background: ;
+            background:;
           }
           50% {
             transform: scaleY(1);
@@ -63,5 +62,5 @@ export default function Loading() {
         }
       `}</style>
     </div>
-  );
+  )
 }

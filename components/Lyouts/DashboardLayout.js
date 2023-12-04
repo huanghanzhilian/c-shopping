@@ -1,3 +1,3 @@
 export default function DashboardLayout({ children }) {
-  return <div>{children}d layout</div>;
+  return <div>{children}d layout</div>
 }

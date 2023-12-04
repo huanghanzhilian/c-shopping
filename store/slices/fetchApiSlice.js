@@ -1,22 +1,22 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const fetchApi = createApi({
-  reducerPath: "fetchApi",
+  reducerPath: 'fetchApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.BASE_URL }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getData: builder.query({
       query: ({ url, token }) => ({
         url,
-        method: "GET",
-        headers: { "Content-Type": "application/json", Authorization: token },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json', Authorization: token },
       }),
     }),
 
     postData: builder.mutation({
       query: ({ url, body, token }) => ({
         url,
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: token },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: token },
         body,
       }),
     }),
@@ -24,8 +24,8 @@ const fetchApi = createApi({
     patchData: builder.mutation({
       query: ({ url, body, token }) => ({
         url,
-        method: "PATCH",
-        headers: { "Content-Type": "application/json", Authorization: token },
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', Authorization: token },
         body,
       }),
     }),
@@ -33,8 +33,8 @@ const fetchApi = createApi({
     putData: builder.mutation({
       query: ({ url, body, token }) => ({
         url,
-        method: "PUT",
-        headers: { "Content-Type": "application/json", Authorization: token },
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', Authorization: token },
         body,
       }),
     }),
@@ -42,12 +42,12 @@ const fetchApi = createApi({
     deleteData: builder.mutation({
       query: ({ url, token }) => ({
         url,
-        method: "DELETE",
-        headers: { "Content-Type": "application/json", Authorization: token },
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', Authorization: token },
       }),
     }),
   }),
-});
+})
 
 export const {
   useGetDataQuery,
@@ -55,6 +55,6 @@ export const {
   usePatchDataMutation,
   usePutDataMutation,
   useDeleteDataMutation,
-} = fetchApi;
+} = fetchApi
 
-export default fetchApi;
+export default fetchApi

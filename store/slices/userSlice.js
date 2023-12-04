@@ -9,7 +9,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    userLogout: (state) => {
+    userLogout: state => {
       localStorage.removeItem('token')
       state.token = ''
     },
@@ -21,7 +21,7 @@ const userSlice = createSlice({
 
     userInfo: (state, action) => {
       state.userInfo = action.payload
-    }
+    },
   },
 })
 

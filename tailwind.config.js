@@ -1,8 +1,5 @@
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}"
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +8,7 @@ module.exports = {
         cRegular: ['var(--font-Vazirmatn-Regular)'],
         cMedium: ['var(--font-Vazirmatn-Medium)'],
         cBold: ['var(--font-Vazirmatn-Bold)'],
-        vazir: "VazirBold",
+        vazir: 'VazirBold',
       },
       colors: {
         blue: {
