@@ -26,7 +26,7 @@ export default function LoginPage() {
   const router = useRouter()
   //? Post query
   const [postData, { data, isSuccess, isError, isLoading, error }] = usePostDataMutation()
-
+  console.log('test')
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
