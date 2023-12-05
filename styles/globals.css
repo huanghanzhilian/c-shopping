@@ -79,3 +79,47 @@
   }
 
 }
+
+@layer components {
+  /* text input */
+  .text-field__input {
+    @apply block w-full px-3 py-1.5 text-base transition-colors border border-gray-200 rounded-md outline-none bg-zinc-50/30 lg:text-lg focus:border-blue-600;
+  }
+
+  .text-field__label {
+    @apply text-xs text-gray-700 lg:text-sm md:min-w-max;
+  }
+  /* text input */
+
+  /* button */
+  .button {
+    @apply text-white py-3 px-8 flex-center outline-none rounded-md active:scale-[.98] bg-red-500;
+  }
+  /* button */
+
+  /* dropdown */
+  .dropdown {
+    @apply relative inline-block text-left;
+  }
+
+  .dropdown__button {
+    @apply flex-center p-1.5 transition-colors rounded-md hover:bg-red-100;
+  }
+
+  .dropdown__items {
+    @apply absolute left-2 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-3xl ring-1 ring-black  ring-opacity-5 focus:outline-none z-40;
+  }
+  /* dropdown */
+
+  .order-badge {
+    @apply bottom-0 left-1 bg-slate-200 p-1 rounded-md w-5 h-5  text-center text-xs  text-black/80 lg:hidden;
+  }
+
+  .input {
+    @apply block w-full px-3 py-1.5 text-base transition-colors border border-gray-200 rounded-md outline-none bg-zinc-50/30 lg:text-lg focus:border-blue-600;
+  }
+
+  .btn {
+    @apply text-white bg-red-500 py-3 px-8 flex items-center justify-center rounded-md outline-none;
+  }
+}

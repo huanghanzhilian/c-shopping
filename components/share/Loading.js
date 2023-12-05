@@ -1,63 +1,65 @@
 export default function Loading() {
   return (
-    <div>
-      <div className="bar bar1"></div>
-      <div className="bar bar2"></div>
-      <div className="bar bar3"></div>
-      <div className="bar bar4"></div>
-      <div className="bar bar5"></div>
-      <div className="bar bar6"></div>
-      <div className="bar bar7"></div>
-      <div className="bar bar8"></div>
+    <div className="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
       <style jsx>{`
-        .bar {
-          width: 8px;
-          height: 15px;
-          background: #fff;
+        .lds-ellipsis {
           display: inline-block;
-          transform-origin: bottom center;
-          border-top-right-radius: 20px;
-          border-top-left-radius: 20px;
-          /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
-          animation: loader 1.2s linear infinite;
+          position: relative;
+          width: 80px;
+          height: 24px;
         }
-        .bar1 {
-          animation-delay: 0.1s;
+        .lds-ellipsis div {
+          position: absolute;
+          top: 15%;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background: #fff;
+          // background: #ee384e;
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
         }
-        .bar2 {
-          animation-delay: 0.2s;
+        .lds-ellipsis div:nth-child(1) {
+          left: 8px;
+          animation: lds-ellipsis1 0.6s infinite;
         }
-        .bar3 {
-          animation-delay: 0.3s;
+        .lds-ellipsis div:nth-child(2) {
+          left: 8px;
+          animation: lds-ellipsis2 0.6s infinite;
         }
-        .bar4 {
-          animation-delay: 0.4s;
+        .lds-ellipsis div:nth-child(3) {
+          left: 32px;
+          animation: lds-ellipsis2 0.6s infinite;
         }
-        .bar5 {
-          animation-delay: 0.5s;
+        .lds-ellipsis div:nth-child(4) {
+          left: 56px;
+          animation: lds-ellipsis3 0.6s infinite;
         }
-        .bar6 {
-          animation-delay: 0.6s;
-        }
-        .bar7 {
-          animation-delay: 0.7s;
-        }
-        .bar8 {
-          animation-delay: 0.8s;
-        }
-
-        @keyframes loader {
+        @keyframes lds-ellipsis1 {
           0% {
-            transform: scaleY(0.1);
-            background:;
-          }
-          50% {
-            transform: scaleY(1);
-            background: #e3e2e9;
+            transform: scale(0);
           }
           100% {
-            transform: scaleY(0.1);
-            background: transparent;
+            transform: scale(1);
+          }
+        }
+        @keyframes lds-ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds-ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(24px, 0);
           }
         }
       `}</style>

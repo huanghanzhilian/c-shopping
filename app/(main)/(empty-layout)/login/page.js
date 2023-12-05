@@ -1,100 +1,112 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as Yup from 'yup'
 
-import { DisplayError, Loading } from 'components'
+import { logInSchema } from 'utils'
 
-import { useDispatch } from 'react-redux'
+import { Logo, TextField, LoginBtn } from '@/components'
+
 import { useLoginMutation } from '@/store/services'
+import { useDispatch } from 'react-redux'
 import { userLogin } from 'store'
-
-import alert from 'utils/alert'
-
-//? Validation Schema
-const schema = Yup.object().shape({
-  email: Yup.string().required('必须输入电子邮件地址').email('输入的电子邮件地址无效'),
-  password: Yup.string().required('需要记录密码').min(6, '密码必须多于5个矢量'),
-})
+import alert, { confirmAlert } from 'utils/alert'
 
 export default function LoginPage() {
+  //? Assets
   const dispatch = useDispatch()
-  const router = useRouter()
-  //? Post query
-  const [postData, { data, isSuccess, isError, isLoading, error }] = useLoginMutation()
+  const { replace, query } = useRouter()
+
+  //? Login User
+  const [login, { data, isSuccess, isError, isLoading, error }] = useLoginMutation()
+
   //? Handle Response
   useEffect(() => {
     if (isSuccess) {
-      console.log('data', data)
       alert('success', data.message)
       dispatch(userLogin(data.data.token))
       reset()
-      router.push('/')
+      replace(query?.redirectTo || '/')
     }
-    if (isError) alert('error', error?.data.err)
+    if (isError) {
+      confirmAlert({
+        title: '您的登录有问题',
+        text: error?.data.err,
+        icon: 'warning',
+      })
+    }
   }, [isSuccess, isError])
 
   //? Form Hook
   const {
     handleSubmit,
-    register,
     formState: { errors: formErrors },
     reset,
+    setFocus,
+    control,
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(logInSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
   })
+
+  //? Focus On Mount
+  useEffect(() => {
+    setFocus('email')
+  }, [])
 
   //? Handlers
   const submitHander = async ({ email, password }) => {
     if (email && password) {
-      await postData({
+      await login({
         body: { email, password },
       })
     }
   }
   return (
-    <div className="grid items-center min-h-screen ">
-      <div className="container max-w-xl px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
-        <div className="relative w-44 h-24 mx-auto">
-          <Link passHref href="/">
-            <Image src="/images/logo.svg" layout="fill" />
-          </Link>
-        </div>
-        <h2>登录</h2>
-        <form className="space-y-5" onSubmit={handleSubmit(submitHander)}>
-          <div>
-            <input
-              className="input"
-              type="text"
-              placeholder="电子邮件地址"
-              {...register('email')}
-            />
-            <DisplayError errors={formErrors.email} />
-          </div>
+    <main className="grid items-center min-h-screen">
+      <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
+        <Link passHref href="/">
+          <Logo className="h-24 mx-auto w-44" />
+        </Link>
+        <h1>
+          <font className="">
+            <font>登录 | </font>
+            <font>登记</font>
+          </font>
+        </h1>
+        <form className="space-y-4" onSubmit={handleSubmit(submitHander)} autoComplete="off">
+          <TextField
+            errors={formErrors.email}
+            placeholder="请输入您的账户邮箱"
+            name="email"
+            control={control}
+            type="email"
+            inputMode="email"
+          />
 
-          <div>
-            <input className="input" type="password" placeholder="密码" {...register('password')} />
-            <DisplayError errors={formErrors.password} />
-          </div>
-
-          <button className="btn mx-auto w-60" type="submit" disabled={isLoading}>
-            {isLoading ? <Loading /> : '登录'}
-          </button>
+          <TextField
+            errors={formErrors.password}
+            type="password"
+            placeholder="请输入您的账户密码"
+            name="password"
+            control={control}
+          />
+          <LoginBtn isLoading={isLoading}>登录</LoginBtn>
         </form>
-
-        <div>
-          <p className="inline ml-2">你还没有注册</p>
-          <Link href="/register">
-            <span className="text-blue-400 text-lg ">注册</span>
+        <div className="text-xs">
+          <p className="inline mr-2 text-gray-800 text-xs">我还没有账户</p>
+          <Link href="/authentication/register" className="text-blue-400 text-xs">
+            去注册
           </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }

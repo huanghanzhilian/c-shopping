@@ -1,8 +1,6 @@
 'use client'
 
-export { default as Icons } from './share/Icons'
 export { default as Loading } from './share/Loading'
-export { default as DisplayError } from './share/DisplayError'
 export { default as Navbar } from './Navbar'
 export { default as User } from './User'
 export { default as Search } from './Search'
@@ -24,3 +22,9 @@ export { default as Logo } from './svgs/logo.svg'
 
 //* CART COMPONENTS
 export { default as Cart } from './cart/Cart'
+
+//* COMMON COMPONENTS
+export { default as Icons } from './common/Icons'
+export { default as DisplayError } from './common/DisplayError'
+export { default as TextField } from './common/TextField'
+export * from './common/Buttons'
