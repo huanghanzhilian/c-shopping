@@ -7,9 +7,9 @@ async function identityMiddleware(req, identity = 'user', isJwt = false) {
   if (identity === 'user' && isJwt === false) return
 
   const userId = req.headers.get('userId')
-  db.connect()
+  await db.connect()
   const user = await User.findOne({ _id: userId })
-  db.disconnect()
+  await db.disconnect()
   req.headers.set('userRole', user.role)
   req.headers.set('userRoot', user.root)
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import LocalStorage from '@/utils/localstorage'
+import Cookies from 'js-cookie'
 
-const token = LocalStorage.getItem('token') || ''
+const token = Cookies.get('token') || ''
 
 const initialState = { token }
 
@@ -10,12 +10,12 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     userLogout: state => {
-      LocalStorage.removeItem('token')
+      Cookies.remove('token')
       state.token = ''
     },
 
     userLogin: (state, action) => {
-      LocalStorage.setItem('token', action.payload)
+      Cookies.set('token', action.payload, { expires: 10 })
       state.token = action.payload
     },
   },

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-const verifyToken = (req, isJwt) => {
+const verifyToken = async (req, isJwt) => {
   try {
     const token = req.headers.get('authorization')
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)

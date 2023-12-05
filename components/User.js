@@ -11,8 +11,6 @@ export default function User() {
   const { userInfo: user, isLoading, isVerify } = useUserInfo()
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log('user', user)
-
   if (isLoading) return null
 
   if (!user) {

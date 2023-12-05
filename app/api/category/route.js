@@ -4,7 +4,6 @@ import { setJson, apiHandler } from '@/helpers/api'
 import { categoryRepo } from '@/helpers'
 
 const getCategory = apiHandler(async req => {
-  const userId = req.headers.get('userId')
   const result = await categoryRepo.getAll()
   return setJson({
     data: result,
