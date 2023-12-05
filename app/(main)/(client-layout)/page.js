@@ -11,7 +11,7 @@ export default async function Home({ searchParams }) {
   const currentPage = searchParams.page || 1
   const users = await usersRepo.getAll()
   return (
-    <main>
+    <main className="xl:mt-28">
       <div>Hello World</div>
       <div>query: {query}</div>
       <div>currentPage: {currentPage}</div>

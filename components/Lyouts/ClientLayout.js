@@ -1,9 +1,9 @@
-import { Navbar } from 'components'
+import { Header } from 'components'
 
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar />
+      <Header />
       {children}
     </>
   )

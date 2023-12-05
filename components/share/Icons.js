@@ -5,23 +5,65 @@ import {
   BsShieldExclamation,
   BsQuestionSquare,
   BsClockHistory,
+  BsSignpost,
+  BsSortDown,
+  BsShieldCheck,
+  BsFillXCircleFill,
 } from 'react-icons/bs'
-import { FiLogIn, FiLogOut, FiEdit, FiPlus } from 'react-icons/fi'
-import { VscThreeBars } from 'react-icons/vsc'
-import { HiOutlineUser } from 'react-icons/hi'
-import { IoSearch } from 'react-icons/io5'
+import { FiLogIn, FiLogOut, FiEdit, FiPlus, FiMinus } from 'react-icons/fi'
+import { VscThreeBars, VscLocation } from 'react-icons/vsc'
+import { HiOutlineUser, HiOutlineUsers } from 'react-icons/hi'
+import { IoSearch, IoImagesOutline } from 'react-icons/io5'
+import { BiAbacus, BiCategory } from 'react-icons/bi'
+import { TfiLayoutSlider } from 'react-icons/tfi'
+
 import {
   RiArrowDownSFill,
   RiArrowDropLeftLine,
+  RiArrowDropDownLine,
+  RiArrowDropUpLine,
+  RiArrowDropRightLine,
   RiArrowRightLine,
   RiHandbagLine,
   RiHeartLine,
   RiChat1Line,
   RiUserLocationLine,
   RiHome6Line,
+  RiCloseLine,
+  RiUserLocationFill,
+  RiPhoneFill,
+  RiDeleteBinLine,
+  RiStarFill,
+  RiSave2Line,
+  RiCheckboxCircleLine,
+  RiMore2Fill,
+  RiPencilRuler2Line,
+  RiWallet3Line,
+  RiTimeFill,
+  RiTwitterFill,
+  RiLinkedinFill,
+  RiInstagramFill,
+  RiYoutubeFill,
 } from 'react-icons/ri'
 
+import { CgSandClock } from 'react-icons/cg'
+
 const Icons = {
+  Twitter: RiTwitterFill,
+  Linkedin: RiLinkedinFill,
+  Instagram: RiInstagramFill,
+  Youtube: RiYoutubeFill,
+  Cross: BsFillXCircleFill,
+  Times: RiTimeFill,
+  Wallet: RiWallet3Line,
+  Rule: RiPencilRuler2Line,
+  More: RiMore2Fill,
+  ShieldCheck: BsShieldCheck,
+  Check: RiCheckboxCircleLine,
+  Filter: BiAbacus,
+  Save: RiSave2Line,
+  Star: RiStarFill,
+  Sort: BsSortDown,
   Eye: BsEye,
   EyeSlash: BsEyeSlash,
   Cart: BsCart2,
@@ -30,19 +72,34 @@ const Icons = {
   Exclamation: BsShieldExclamation,
   Bars: VscThreeBars,
   User: HiOutlineUser,
+  Users: HiOutlineUsers,
+  Category: BiCategory,
   Question: BsQuestionSquare,
   Search: IoSearch,
   ArrowDown: RiArrowDownSFill,
   ArrowLeft: RiArrowDropLeftLine,
+  ArrowDown: RiArrowDropDownLine,
+  ArrowUp: RiArrowDropUpLine,
   ArrowRight: RiArrowRightLine,
+  ArrowRight2: RiArrowDropRightLine,
   Edit: FiEdit,
   Clock: BsClockHistory,
+  Clock2: CgSandClock,
   Heart: RiHeartLine,
   Bag: RiHandbagLine,
   Comment: RiChat1Line,
   Location: RiUserLocationLine,
+  Location2: VscLocation,
   Home: RiHome6Line,
   Plus: FiPlus,
+  Minus: FiMinus,
+  Close: RiCloseLine,
+  UserLocation: RiUserLocationFill,
+  Post: BsSignpost,
+  Phone: RiPhoneFill,
+  Delete: RiDeleteBinLine,
+  Slider: TfiLayoutSlider,
+  Image: IoImagesOutline,
 }
 
 export default Icons
