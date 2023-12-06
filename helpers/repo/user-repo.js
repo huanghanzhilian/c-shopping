@@ -51,7 +51,7 @@ const authenticate = async ({ email, password } = {}) => {
   await db.disconnect()
 
   if (!user) {
-    throw '找不到此电子邮件的应用程序'
+    throw '用户不存在'
   }
   const isMatch = await bcrypt.compare(password, user.password)
   if (!isMatch) {

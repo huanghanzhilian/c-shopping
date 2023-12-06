@@ -107,8 +107,6 @@ export default function RegisterPage() {
               placeholder="请输入您的账户邮箱"
               name="email"
               control={control}
-              type="email"
-              inputMode="email"
             />
 
             <TextField

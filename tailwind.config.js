@@ -7,19 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        mono: ['var(--font-lusitana)'],
-        cRegular: ['var(--font-Vazirmatn-Regular)'],
-        cMedium: ['var(--font-Vazirmatn-Medium)'],
-        cBold: ['var(--font-Vazirmatn-Bold)'],
-        vazir: 'VazirBold',
+        vazir: 'Vazir',
       },
-      colors: {
-        blue: {
-          400: '#2589FE',
-          500: '#0070F3',
-          600: 'red',
-        },
+      boxShadow: {
+        '3xl': '0 0 10px 3px rgba(0,0,0,0.08)',
       },
     },
     container: {

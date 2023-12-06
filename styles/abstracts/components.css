@@ -45,7 +45,7 @@
   }
 
   .dropdown__items {
-    @apply absolute left-2 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-3xl ring-1 ring-black  ring-opacity-5 focus:outline-none z-40;
+    @apply absolute -left-1 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-3xl ring-1 ring-black  ring-opacity-5 focus:outline-none z-40;
   }
   /* dropdown */
 

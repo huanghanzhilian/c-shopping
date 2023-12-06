@@ -60,7 +60,7 @@ export default function LoginPage() {
         <HandleResponse
           isError={isError}
           isSuccess={isSuccess}
-          error={error?.data?.error}
+          error={error?.data?.message}
           message={data?.message}
           onSuccess={() => {
             dispatch(userLogin(data.data.token))
@@ -76,8 +76,7 @@ export default function LoginPage() {
           </Link>
           <h1>
             <font className="">
-              <font>登录 | </font>
-              <font>登记</font>
+              <font>登录</font>
             </font>
           </h1>
           <form className="space-y-4" onSubmit={handleSubmit(submitHander)} autoComplete="off">
@@ -86,8 +85,6 @@ export default function LoginPage() {
               placeholder="请输入您的账户邮箱"
               name="email"
               control={control}
-              type="email"
-              inputMode="email"
             />
 
             <TextField
