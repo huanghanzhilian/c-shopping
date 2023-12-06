@@ -27,7 +27,7 @@ export default function UserDropdown(props) {
       >
         <Menu.Items className="w-56 dropdown__items">
           <Menu.Item>
-            <div className=" transition-colors hover:bg-gray-100">
+            <div className="transition-colors hover:bg-gray-100">
               <Link
                 href="/profile"
                 className="px-7 py-4 flex justify-between items-center text-xs font-medium text-gray-700 flex-center gap-x-1 md:text-sm"

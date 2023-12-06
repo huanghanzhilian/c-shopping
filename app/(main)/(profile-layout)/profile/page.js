@@ -5,5 +5,9 @@ import { useSelector } from 'react-redux'
 export default function ProfilePage() {
   const { user } = useSelector(state => state.user)
 
-  return <>hello</>
+  return (
+    <>
+      <div className="px-4">hello</div>
+    </>
+  )
 }

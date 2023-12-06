@@ -7,6 +7,7 @@ export { default as Header } from './Header'
 export { default as Signup } from './Signup'
 export { default as UserDropdown } from './UserDropdown'
 export { default as Logout } from './Logout'
+export { default as ProfileAside } from './ProfileAside'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
@@ -27,6 +28,9 @@ export { default as TextField } from './common/TextField'
 export { default as HandleResponse } from './common/HandleResponse'
 export { default as Modal } from './common/Modal'
 export { default as Skeleton } from './common/Skeleton'
+export { default as BoxLink } from './common/BoxLink'
+export { default as ArrowLink } from './common/ArrowLink'
+export { default as ResponsiveImage } from './common/ResponsiveImage'
 export * from './common/Buttons'
 
 //* LOADING
@@ -34,3 +38,6 @@ export { default as Loading } from './loading/Loading'
 
 //* MODAL COMPONENTS
 export { default as RedirectToLogin } from './modals/RedirectToLogin'
+
+//* ORDERS COMPONENTS
+// export { default as Orders } from './order/Orders'

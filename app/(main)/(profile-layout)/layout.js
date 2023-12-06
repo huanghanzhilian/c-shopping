@@ -1,9 +1,9 @@
-import { ClientLayout } from 'components'
+import { ProfileLayout } from 'components'
 
 export default function Layout({ children }) {
   return (
     <>
-      <ClientLayout>{children}</ClientLayout>
+      <ProfileLayout>{children}</ProfileLayout>
     </>
   )
 }
