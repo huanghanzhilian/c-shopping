@@ -1,135 +1,140 @@
 'use client'
 
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as Yup from 'yup'
+
+import { registerSchema } from 'utils'
+
+import { Logo, TextField, LoginBtn, HandleResponse, RedirectToLogin } from '@/components'
 
 import { useCreateUserMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
 import { userLogin } from 'store'
 
-import { DisplayError, Loading } from 'components'
-import alert, { confirmAlert } from 'utils/alert'
-
-//? Validation Schema
-const schema = Yup.object().shape({
-  name: Yup.string().required('需要登记姓氏和姓名').min(3, '姓氏必须是两个以上的因素'),
-  email: Yup.string().required('必须输入电子邮件地址').email('输入的电子邮件地址无效'),
-  password: Yup.string().required('身份验证所需的密码').min(6, '密码必须多于5个矢量'),
-  confirmPassword: Yup.string()
-    .required('这是一个再次通过字母表的单词')
-    .oneOf([Yup.ref('password'), null], '这个词又不对了'),
-})
+import { useDisclosure } from '@/hooks'
 
 export default function RegisterPage() {
+  //? Assets
+  const [isShowRedirectModal, redirectModalHandlers] = useDisclosure()
   const dispatch = useDispatch()
-  const router = useRouter()
+  const { replace } = useRouter()
+  const searchParams = useSearchParams()
+  const redirectTo = searchParams.get('redirectTo')
 
-  //? Post query
-  const [postData, { data, isSuccess, isError, isLoading, error }] = useCreateUserMutation()
-
-  //? Handle Response
-  useEffect(() => {
-    if (isSuccess) {
-      alert('success', data.msg)
-      dispatch(userLogin(data.data))
-      reset()
-      router.push('/')
-    }
-    if (isError) {
-      confirmAlert({
-        title: '您的注册有问题',
-        text: error?.data.err,
-        icon: 'warning',
-        confirmButtonText: '去登录',
-      }).then(result => {
-        if (result.isConfirmed) router.push('/login')
-      })
-    }
-  }, [isSuccess, isError])
+  //? Create User
+  const [createUser, { data, isSuccess, isError, isLoading, error }] = useCreateUserMutation()
 
   //? Form Hook
   const {
     handleSubmit,
-    register,
     formState: { errors: formErrors },
     reset,
+    setFocus,
+    control,
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(registerSchema),
+    defaultValues: { name: '', email: '', password: '', confirmPassword: '' },
   })
+
+  //? Focus On Mount
+  useEffect(() => {
+    setFocus('name')
+  }, [])
 
   //? Handlers
   const submitHander = async ({ name, email, password }) => {
     if (name && email && password) {
-      await postData({
+      await createUser({
         body: { name, email, password },
       })
     }
   }
 
+  const onError = () => {
+    if (error.status === 422) {
+      redirectModalHandlers.open()
+    }
+  }
+
+  const onSuccess = () => {
+    dispatch(userLogin(data.data.token))
+    reset()
+    replace(redirectTo || '/')
+  }
+
   return (
-    <div className=" grid items-center min-h-screen ">
-      <div className="container max-w-xl px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
-        <div className="relative w-44 h-24 mx-auto">
+    <>
+      <RedirectToLogin
+        title="注册异常"
+        text={error?.data?.message}
+        onClose={redirectModalHandlers.close}
+        isShow={isShowRedirectModal}
+      />
+      {/*  Handle Login Response */}
+      {(isSuccess || isError) && (
+        <HandleResponse
+          isError={isError}
+          isSuccess={isSuccess}
+          error={error?.data?.message}
+          message={data?.message}
+          onSuccess={onSuccess}
+          onError={onError}
+        />
+      )}
+      <main className="grid items-center min-h-screen">
+        <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            <Image src="/images/logo.svg" layout="fill" />
+            <Logo className="h-24 mx-auto w-44" />
           </Link>
-        </div>
-        <h2>需要注册</h2>
-        <form className="space-y-5" onSubmit={handleSubmit(submitHander)}>
-          <div>
-            <input
-              className="input"
-              type="text"
+          <h1>
+            <font className="">
+              <font>注册</font>
+            </font>
+          </h1>
+          <form className="space-y-4" onSubmit={handleSubmit(submitHander)} autoComplete="off">
+            <TextField
+              errors={formErrors.name}
+              placeholder="请输入您的账户名称"
               name="name"
-              placeholder="名称"
-              {...register('name')}
+              control={control}
             />
-            <DisplayError errors={formErrors.name} />
-          </div>
-
-          <div>
-            <input
-              className="input"
-              type="text"
-              placeholder="电子邮件地址"
-              {...register('email')}
+            <TextField
+              errors={formErrors.email}
+              placeholder="请输入您的账户邮箱"
+              name="email"
+              control={control}
+              type="email"
+              inputMode="email"
             />
-            <DisplayError errors={formErrors.email} />
-          </div>
 
-          <div>
-            <input className="input" type="password" placeholder="密码" {...register('password')} />
-            <DisplayError errors={formErrors.password} />
-          </div>
-
-          <div>
-            <input
-              className="input"
+            <TextField
+              errors={formErrors.password}
               type="password"
-              placeholder="重复密码"
-              {...register('confirmPassword')}
+              placeholder="请输入您的账户密码"
+              name="password"
+              control={control}
             />
-            <DisplayError errors={formErrors.confirmPassword} />
+            <TextField
+              control={control}
+              errors={formErrors.confirmPassword}
+              type="password"
+              placeholder="确认密码，请再次输入"
+              name="confirmPassword"
+            />
+            <LoginBtn isLoading={isLoading}>注册</LoginBtn>
+          </form>
+          <div className="text-xs">
+            <p className="inline mr-2 text-gray-800 text-xs">我已经有账户了</p>
+            <Link href="/login" className="text-blue-400 text-xs">
+              去登录
+            </Link>
           </div>
-
-          <button className="btn mx-auto w-60" type="submit" disabled={isLoading}>
-            {isLoading ? <Loading /> : '注册'}
-          </button>
-        </form>
-
-        <div>
-          <p className="inline ml-2">已经拥有账户</p>
-          <Link href="/login">
-            <span className="text-blue-400 text-lg ">登录</span>
-          </Link>
-        </div>
-      </div>
-    </div>
+        </section>
+      </main>
+    </>
   )
 }

@@ -1,7 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+
+// ? Store
 import StoreProvider from 'app/StoreProvider'
+
+// ? Conponents
+import { Alert } from 'components'
 
 export default function Layout({ children }) {
   //? Fix Hydration failed
@@ -14,5 +19,10 @@ export default function Layout({ children }) {
     return null
   }
 
-  return <StoreProvider>{children}</StoreProvider>
+  return (
+    <StoreProvider>
+      {children}
+      <Alert />
+    </StoreProvider>
+  )
 }

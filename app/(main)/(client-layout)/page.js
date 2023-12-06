@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata = {
-  title: 'My Page Title',
+  title: '首页',
 }
 
 import { usersRepo } from '@/helpers'

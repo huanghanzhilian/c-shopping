@@ -1,21 +1,15 @@
 'use client'
 
-export { default as Loading } from './share/Loading'
-export { default as Navbar } from './Navbar'
-export { default as User } from './User'
+//* OTHER COMPONENTS
+export { default as Alert } from './Alert'
 export { default as Search } from './Search'
+export { default as Header } from './Header'
+export { default as Signup } from './Signup'
+
+//* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
 export { default as ProfileLayout } from './Lyouts/ProfileLayout'
 export { default as DashboardLayout } from './Lyouts/DashboardLayout'
-export { default as Orders } from './Orders'
-export { default as Logout } from './Logout'
-export { default as ArrowLink } from './share/ArrowLink'
-export { default as BoxLink } from './share/BoxLink'
-export { default as BackButton } from './share/BackButton'
-export { default as ProfileAside } from './ProfileAside'
-
-export { default as Header } from './Header'
-export { default as Signup } from './Signup'
 
 //* SVGs
 export { default as Logo } from './svgs/logo.svg'
@@ -27,4 +21,12 @@ export { default as Cart } from './cart/Cart'
 export { default as Icons } from './common/Icons'
 export { default as DisplayError } from './common/DisplayError'
 export { default as TextField } from './common/TextField'
+export { default as HandleResponse } from './common/HandleResponse'
+export { default as Modal } from './common/Modal'
 export * from './common/Buttons'
+
+//* LOADING
+export { default as Loading } from './loading/Loading'
+
+//* MODAL COMPONENTS
+export { default as RedirectToLogin } from './modals/RedirectToLogin'

@@ -6,15 +6,7 @@ import { apiHandler, setJson } from 'helpers/api'
 const register = apiHandler(
   async req => {
     const body = await req.json()
-    const newUser = await usersRepo.create(body)
-    const result = {
-      name: newUser.name,
-      email: newUser.email,
-      mobile: newUser.mobile,
-      address: newUser.address,
-      role: newUser.role,
-      root: newUser.root,
-    }
+    const result = await usersRepo.create(body)
     return setJson({
       data: result,
     })

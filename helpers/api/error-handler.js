@@ -28,6 +28,16 @@ function errorHandler(err) {
     )
   }
 
+  if (err.name === 'UserExistsError') {
+    return NextResponse.json(
+      setJson({
+        message: err.message,
+        code: '422',
+      }),
+      { status: 422 }
+    )
+  }
+
   // default to 500 server error
   console.error(err)
   return NextResponse.json(

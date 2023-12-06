@@ -1,0 +1,30 @@
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-vazir;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-sm lg:text-base;
+  }
+  h5 {
+    @apply text-sm lg:text-base font-normal leading-6 tracking-wide;
+  }
+  p {
+    @apply text-sm tracking-wide text-gray-700;
+  }
+  button {
+    @apply cursor-pointer inline-block;
+  }
+  a {
+    @apply cursor-pointer;
+  }
+  label,
+  span {
+    @apply text-xs text-gray-500 md:text-sm font-light;
+  }
+}

@@ -1,0 +1,47 @@
+/* ******** scrollbar ******** */
+/* Firefox */
+* {
+  scrollbar-width: thin; /* none | auto  */
+  scrollbar-color: #ef4056 transparent;
+}
+
+@media (min-width: 1024px) {
+  * {
+    scrollbar-width: thin; /* none | auto  */
+    scrollbar-color: #b7bdc2 transparent;
+  }
+}
+
+/* The first applies to the thumb of the scrollbar, the second to the track. */
+/* Firefox */
+
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  width: 10px; /* vertical scrollbar */
+  height: 10px; /* horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #e8e8e8;
+  border-radius: 14px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #b7bdc2;
+  border-radius: 14px;
+}
+
+/* Chrome, Edge, Safari */
+
+/* ******** Remove Arrows ******** */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,5 @@
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@keyframes check {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }</style><circle cx="12" cy="12" r="8" stroke="#22C55E" stroke-width="1.5"/><path stroke="#22C55E" stroke-linecap="round" stroke-width="1.5" d="M9.215 12.052l1.822 1.805 3.748-3.714" style="animation:check 2s infinite cubic-bezier(.99,-.1,.01,1.02)" stroke-dashoffset="100" stroke-dasharray="100"/></svg>                                      

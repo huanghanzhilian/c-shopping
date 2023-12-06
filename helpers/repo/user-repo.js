@@ -24,14 +24,25 @@ const create = async params => {
   const { name, email, password } = params
   await db.connect()
   if (await User.findOne({ email })) {
-    throw 'email "' + email + '" 账户已存在'
+    const userExistsError = new Error('email "' + email + '" 账户已存在')
+    userExistsError.name = 'UserExistsError'
+    throw userExistsError
   }
   const hashPassword = await bcrypt.hash(password, 12)
   const newUser = new User({ name, email, password: hashPassword })
   await newUser.save()
   await db.disconnect()
+  const token = auth.createAccessToken({ id: newUser._id })
 
-  return newUser
+  return {
+    user: {
+      name: newUser.name,
+      email: newUser.email,
+      role: newUser.role,
+      root: newUser.root,
+    },
+    token,
+  }
 }
 
 const authenticate = async ({ email, password } = {}) => {

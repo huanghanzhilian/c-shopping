@@ -1,62 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  @font-face {
-    font-family: "Vazir";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/fonts/vazir/Vazirmatn-Regular.woff2") format("woff2");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Vazir";
-    font-style: normal;
-    font-weight: 500;
-    src: url("/fonts/vazir/Vazirmatn-Medium.woff2") format("woff2");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Vazir";
-    font-style: normal;
-    font-weight: 700;
-    src: url("/fonts/vazir/Vazirmatn-Bold.woff2") format("woff2");
-    font-display: swap;
-  }
-}
-
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
-  body {
-    @apply font-vazir;
-  }
-  h2 {
-    @apply text-xl;
-  }
-  h4 {
-    @apply text-sm lg:text-base;
-  }
-  h5 {
-    @apply text-sm lg:text-base font-normal leading-6 tracking-wide;
-  }
-  p {
-    @apply text-sm tracking-wide text-gray-700;
-  }
-  button {
-    @apply cursor-pointer inline-block;
-  }
-  a {
-    @apply cursor-pointer;
-  }
-  label,
-  span {
-    @apply text-xs text-gray-500 md:text-sm font-light;
-  }
-}
-
 @layer components {
   .farsi-digits {
     font-feature-settings: 'ss01';
@@ -78,9 +19,6 @@
     @apply flex items-center justify-center;
   }
 
-}
-
-@layer components {
   /* text input */
   .text-field__input {
     @apply block w-full px-3 py-1.5 text-base transition-colors border border-gray-200 rounded-md outline-none bg-zinc-50/30 lg:text-lg focus:border-blue-600;
