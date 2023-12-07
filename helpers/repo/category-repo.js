@@ -10,11 +10,11 @@ const getAll = async () => {
 }
 
 const create = async params => {
-  const { name } = params
+  console.log('params', params)
   await db.connect()
-  const category = await Category.findOne({ name })
+  const category = await Category.findOne({ name: params.name })
   if (category) throw '该分类名称已存在'
-  const newCategory = new Category({ name })
+  const newCategory = new Category(params)
   await newCategory.save()
   await db.disconnect()
 }

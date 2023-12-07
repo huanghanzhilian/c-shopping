@@ -6,14 +6,16 @@ import { categoryRepo } from '@/helpers'
 const getCategory = apiHandler(async req => {
   const result = await categoryRepo.getAll()
   return setJson({
-    data: result,
+    data: {
+      categories: result,
+    },
   })
 })
 
 const createCategory = apiHandler(
   async req => {
-    const { name } = await req.json()
-    await categoryRepo.create({ name })
+    const body = await req.json()
+    await categoryRepo.create(body)
 
     return setJson({
       message: '创建分类成功',
@@ -24,6 +26,11 @@ const createCategory = apiHandler(
     identity: 'admin',
     schema: joi.object({
       name: joi.string().required(),
+      slug: joi.string().required(),
+      image: joi.string().required(),
+      colors: joi.object().required(),
+      level: joi.number().required(),
+      parent: joi.string(),
     }),
   }
 )
