@@ -1,8 +1,7 @@
-'use client'
+export const metadata = {
+  title: '404 Not Found!',
+}
 
-import Head from 'next/head'
-
-// ? Store
 import StoreProvider from 'app/StoreProvider'
 import { ArrowLink, ResponsiveImage, ClientLayout } from '@/components'
 

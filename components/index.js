@@ -8,6 +8,7 @@ export { default as Signup } from './Signup'
 export { default as UserDropdown } from './UserDropdown'
 export { default as Logout } from './Logout'
 export { default as ProfileAside } from './ProfileAside'
+export { default as DashboardAside } from './DashboardAside'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
@@ -31,6 +32,8 @@ export { default as Skeleton } from './common/Skeleton'
 export { default as BoxLink } from './common/BoxLink'
 export { default as ArrowLink } from './common/ArrowLink'
 export { default as ResponsiveImage } from './common/ResponsiveImage'
+export { default as PageContainer } from './common/PageContainer'
+export * from './common/IconButtons'
 export * from './common/Buttons'
 
 //* LOADING
