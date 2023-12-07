@@ -2,9 +2,7 @@
   html {
     @apply scroll-smooth;
   }
-  body {
-    @apply font-vazir;
-  }
+  body { }
   h2 {
     @apply text-xl;
   }

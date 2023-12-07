@@ -3,11 +3,29 @@ import bcrypt from 'bcrypt'
 import User from 'models/User'
 import { auth, db } from '../'
 
-const getAll = async () => {
+const getAll = async ({ page, page_size }) => {
   await db.connect()
-  const users = await User.find().select('-password')
+  const users = await User.find()
+    .select('-password')
+    .skip((page - 1) * page_size)
+    .limit(page_size)
+    .sort({
+      createdAt: 'desc',
+    })
+  const usersLength = await User.countDocuments()
   await db.disconnect()
-  return users
+  return {
+    users,
+    usersLength,
+    pagination: {
+      currentPage: page,
+      nextPage: page + 1,
+      previousPage: page - 1,
+      hasNextPage: page_size * page < usersLength,
+      hasPreviousPage: page > 1,
+      lastPage: Math.ceil(usersLength / page_size),
+    },
+  }
 }
 
 const update = async (id, params) => {

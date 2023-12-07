@@ -22,7 +22,7 @@ export const BackIconBtn = props => {
   //? Render(s)
   return (
     <IconButton
-      title="برگشت"
+      title="返回"
       icon={
         <Icons.ArrowRight className="text-gray-500 rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95 bg-gray-50" />
       }
@@ -34,7 +34,7 @@ export const BackIconBtn = props => {
 
 export const EditIconBtn = props => (
   <IconButton
-    title="تغییر"
+    title="编辑"
     icon={
       <Icons.Edit className="rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95 text-amber-500 bg-amber-100" />
     }
@@ -44,7 +44,7 @@ export const EditIconBtn = props => (
 
 export const DeleteIconBtn = props => (
   <IconButton
-    title="حذف"
+    title="删除"
     icon={
       <Icons.Delete className="text-red-500 bg-red-100 rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95" />
     }
@@ -54,7 +54,7 @@ export const DeleteIconBtn = props => (
 
 export const AddIconBtn = props => (
   <IconButton
-    title="اضافه"
+    title="添加"
     icon={
       <Icons.Plus className="text-green-500 bg-green-100 rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95" />
     }
@@ -64,12 +64,12 @@ export const AddIconBtn = props => (
 
 export const AddToListIconBtn = props => (
   <AddIconBtn className="border-2 border-green-100 rounded-full flex-center gap-x-4" {...props}>
-    <span className="pl-2 text-base text-green-500">افزودن به لیست</span>
+    <span className="pl-2 text-base text-green-500">添加到列表</span>
   </AddIconBtn>
 )
 
 export const DeleteFromListIconBtn = props => (
   <DeleteIconBtn className="border-2 border-red-100 rounded-full flex-center gap-x-4" {...props}>
-    <span className="pl-2 text-base text-red-500">حذف از لیست</span>
+    <span className="pl-2 text-base text-red-500">从列表删除</span>
   </DeleteIconBtn>
 )

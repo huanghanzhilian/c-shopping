@@ -5,7 +5,7 @@ import { apiHandler } from 'helpers/api'
 import { setJson } from '@/helpers/api'
 
 const resetPassword = apiHandler(
-  async (req, res) => {
+  async req => {
     const userId = req.headers.get('userId')
     const { password } = await req.json()
     await usersRepo.resetPassword(userId, password)

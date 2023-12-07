@@ -6,7 +6,14 @@ import { setJson } from '@/helpers/api'
 
 const getUsers = apiHandler(
   async req => {
-    const result = await usersRepo.getAll()
+    const searchParams = req.nextUrl.searchParams
+    const page = +searchParams.get('page') || 1
+    const page_size = +searchParams.get('page_size') || 5
+
+    const result = await usersRepo.getAll({
+      page,
+      page_size,
+    })
     return setJson({
       data: result,
     })
