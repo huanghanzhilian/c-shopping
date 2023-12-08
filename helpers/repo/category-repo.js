@@ -10,7 +10,6 @@ const getAll = async () => {
 }
 
 const create = async params => {
-  console.log('params', params)
   await db.connect()
   const category = await Category.findOne({ name: params.name })
   if (category) throw '该分类名称已存在'
@@ -30,11 +29,11 @@ const _delete = async id => {
   await db.disconnect()
 }
 
-const update = async (id, { name }) => {
+const update = async (id, params) => {
   await db.connect()
   const category = await Category.findById(id)
   if (!category) throw '分类不存在'
-  await Category.findByIdAndUpdate({ _id: id }, { name })
+  await Category.findByIdAndUpdate({ _id: id }, params)
   await db.disconnect()
 }
 

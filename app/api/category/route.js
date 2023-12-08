@@ -5,9 +5,31 @@ import { categoryRepo } from '@/helpers'
 
 const getCategory = apiHandler(async req => {
   const result = await categoryRepo.getAll()
+  async function getCategoriesWithChildren() {
+    const allCategories = await categoryRepo.getAll()
+
+    function findChildren(category) {
+      const children = allCategories.filter(c => c.parent && c.parent.equals(category._id))
+      if (children.length > 0) {
+        category.children = children.map(child => {
+          return findChildren(child)
+        })
+      }
+      return category
+    }
+
+    const rootCategories = allCategories.filter(c => !c.parent)
+    const categoriesWithChildren = rootCategories.map(category => {
+      return findChildren(category)
+    })
+
+    return categoriesWithChildren
+  }
+  const categoriesList = await getCategoriesWithChildren()
   return setJson({
     data: {
       categories: result,
+      categoriesList: categoriesList[0],
     },
   })
 })

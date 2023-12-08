@@ -65,6 +65,7 @@ export { default as ArrowLink } from './common/ArrowLink'
 export { default as ResponsiveImage } from './common/ResponsiveImage'
 export { default as PageContainer } from './common/PageContainer'
 export { default as ShowWrapper } from './common/ShowWrapper'
+// export { default as UploadImage } from './common/UploadImage'
 export * from './common/IconBtns'
 export * from './common/Buttons'
 
@@ -83,6 +84,10 @@ export { default as BigLoading } from './loading/BigLoading'
 //* MODAL COMPONENTS
 export { default as RedirectToLogin } from './modals/RedirectToLogin'
 export { default as ConfirmDeleteModal } from './modals/ConfirmDeleteModal'
+export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
+
+//* FORMS
+export { default as CategoryForm } from './forms/CategoryForm'
 
 //* ORDERS COMPONENTS
 // export { default as Orders } from './order/Orders'

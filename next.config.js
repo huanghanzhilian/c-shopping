@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'blog.huanghanlian.com',
+        hostname: 'www.cheerspublishing.com',
         port: '',
         pathname: '/**',
       },
