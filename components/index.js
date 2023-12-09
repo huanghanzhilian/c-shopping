@@ -11,6 +11,7 @@ export { default as ProfileAside } from './ProfileAside'
 export { default as DashboardAside } from './DashboardAside'
 export { default as UsersTable } from './UsersTable'
 export { default as Pagination } from './Pagination'
+export { default as DetailsList } from './DetailsList'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'

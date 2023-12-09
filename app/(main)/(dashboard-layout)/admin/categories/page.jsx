@@ -86,7 +86,7 @@ export default function CategoriesPage() {
                         </Link>
                         {category.level === 2 && (
                           <Link
-                            href={`/admin/details/${category._id}`}
+                            href={`/admin/details/${category._id}?category_name=${category.name}`}
                             className="bg-blue-50 text-blue-500 rounded-sm py-1 px-1.5 max-w-min"
                           >
                             规格和特点

@@ -56,17 +56,22 @@ export default function UsersPage() {
     setDeleteInfo({ id })
     confirmDeleteModalHandlers.open()
   }
+  const onConfirmUserDelete = () => deleteUser({ id: deleteInfo.id })
+
+  const onCancelUserDelete = () => {
+    confirmDeleteModalHandlers.close()
+    setDeleteInfo({ id: '' })
+  }
 
   return (
     <>
       <ConfirmDeleteModal
         title="用户"
-        deleteFunc={deleteUser}
         isLoading={isLoading_delete}
         isShow={isShowConfirmDeleteModal}
-        onClose={confirmDeleteModalHandlers.close}
-        deleteInfo={deleteInfo}
-        setDeleteInfo={setDeleteInfo}
+        onClose={onCancelUserDelete}
+        onCancel={onCancelUserDelete}
+        onConfirm={onConfirmUserDelete}
       />
       {/* Handle Delete Response */}
       {(isSuccess_delete || isError_delete) && (
@@ -76,12 +81,10 @@ export default function UsersPage() {
           error={error_delete?.data?.message}
           message={data_delete?.message}
           onSuccess={() => {
-            confirmDeleteModalHandlers.close()
-            setDeleteInfo({ id: '' })
+            onCancelUserDelete()
           }}
           onError={() => {
-            confirmDeleteModalHandlers.close()
-            setDeleteInfo({ id: '' })
+            onCancelUserDelete()
           }}
         />
       )}

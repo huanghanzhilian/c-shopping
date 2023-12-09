@@ -3,7 +3,7 @@ import joi from 'joi'
 import { setJson, apiHandler } from '@/helpers/api'
 import { productRepo } from '@/helpers'
 
-const getProduct = apiHandler(async req => {
+const getAllProduct = apiHandler(async req => {
   const result = await productRepo.getAll()
   return setJson({
     data: result,
@@ -13,7 +13,6 @@ const getProduct = apiHandler(async req => {
 const createProduct = apiHandler(
   async req => {
     const body = await req.json()
-    console.log('body', body)
     await productRepo.create(body)
     return setJson({
       message: '新增产品成功',
@@ -34,5 +33,5 @@ const createProduct = apiHandler(
   }
 )
 
-export const GET = getProduct
+export const GET = getAllProduct
 export const POST = createProduct
