@@ -1,0 +1,8 @@
+export { default as Banner } from './Banner'
+export { default as Category } from './Category'
+export { default as Details } from './Details'
+export { default as Order } from './Order'
+export { default as Product } from './Product'
+export { default as Review } from './Review'
+export { default as Slider } from './Slider'
+export { default as User } from './User'
