@@ -1,11 +1,18 @@
 import joi from 'joi'
 
 import { setJson, apiHandler } from '@/helpers/api'
-import { bannerRepo } from '@/helpers'
+import { bannerRepo, getQuery } from '@/helpers'
 
 const getAll = apiHandler(
   async req => {
-    const result = await bannerRepo.getAll()
+    const query = getQuery(req)
+    const category = query?.category
+    const result = await bannerRepo.getAll(
+      {},
+      {
+        category_id: category,
+      }
+    )
     return setJson({
       data: result,
     })
@@ -29,9 +36,11 @@ const create = apiHandler(
     identity: 'root',
     schema: joi.object({
       category_id: joi.string().required(),
-      info: joi.array().required(),
-      optionsType: joi.string().required(),
-      specification: joi.array().required(),
+      image: joi.object().required(),
+      isPublic: joi.boolean().required(),
+      title: joi.string().required(),
+      type: joi.string().required(),
+      uri: joi.string().required(),
     }),
   }
 )

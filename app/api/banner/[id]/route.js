@@ -25,9 +25,11 @@ const update = apiHandler(
     identity: 'root',
     schema: joi.object({
       category_id: joi.string().required(),
-      info: joi.array().required(),
-      optionsType: joi.string().required(),
-      specification: joi.array().required(),
+      image: joi.object().required(),
+      isPublic: joi.boolean().required(),
+      title: joi.string().required(),
+      type: joi.string().required(),
+      uri: joi.string().required(),
     }),
   }
 )

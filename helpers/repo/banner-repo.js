@@ -1,9 +1,9 @@
 import { db } from '..'
 import Banner from '@/models/Banner'
 
-const getAll = async () => {
+const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Banner.find()
+  const result = await Banner.find(filter)
   await db.disconnect()
   return result
 }
@@ -16,12 +16,9 @@ const getById = async id => {
   return result
 }
 
-const create = async (id, params) => {
+const create = async params => {
   await db.connect()
-  const newBanner = new Banner({
-    user: id,
-    ...params,
-  })
+  const newBanner = new Banner(params)
   await newBanner.save()
   await db.disconnect()
 }

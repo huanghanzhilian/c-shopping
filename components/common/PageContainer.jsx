@@ -15,7 +15,7 @@ const PageContainer = props => {
           {title}
         </h3>
       </div>
-      <div className="section-divide-y" />
+      <div className="section-divide-y"></div>
 
       {children}
     </>

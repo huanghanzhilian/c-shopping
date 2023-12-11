@@ -69,10 +69,10 @@ export { default as PageContainer } from './common/PageContainer'
 export { default as ShowWrapper } from './common/ShowWrapper'
 export { default as SelectBox } from './common/SelectBox'
 export { default as TextArea } from './common/TextArea'
-
 export { default as UploadImage } from './common/UploadImage'
 export * from './common/IconBtns'
 export * from './common/Buttons'
+export * from './common/Checkbox'
 
 //* EMPTY LIST COMPONENTS
 export { default as EmptyCommentsList } from './emptyList/EmptyCommentsList'
@@ -94,6 +94,7 @@ export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
 //* FORMS
 export { default as CategoryForm } from './forms/CategoryForm'
 export { default as ProductsForm } from './forms/ProductsForm'
+export { default as BannerForm } from './forms/BannerForm'
 
 //* ORDERS COMPONENTS
 // export { default as Orders } from './order/Orders'

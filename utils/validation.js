@@ -22,3 +22,13 @@ export const categorySchema = Yup.object().shape({
     .url('无效的图像地址')
     .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
 })
+
+export const bannerSchema = Yup.object().shape({
+  title: Yup.string().required('名称不能为空'),
+  image: Yup.object().shape({
+    url: Yup.string()
+      .required('请输入图片地址')
+      .url('地址无效')
+      .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
+  }),
+})
