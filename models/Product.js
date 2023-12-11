@@ -5,32 +5,50 @@ const productSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      trim: true,
     },
     price: {
       type: Number,
       required: true,
-      trim: true,
     },
     description: {
       type: String,
-      required: true,
     },
-    content: {
-      type: String,
-      required: true,
-    },
-    images: {
-      type: Array,
-      required: true,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
+    discount: { type: Number, default: 0 },
+    images: [
+      {
+        url: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    sizes: [
+      {
+        id: { type: String, required: true },
+        size: { type: String, required: true },
+      },
+    ],
+    colors: [
+      {
+        id: { type: String, required: true },
+        name: { type: String, required: true },
+        hashCode: { type: String, required: true },
+      },
+    ],
+    category: [{ type: String, required: true }],
+    category_levels: {
+      level_one: {
+        type: mongoose.Types.ObjectId,
+        ref: 'category',
+      },
+      level_two: {
+        type: mongoose.Types.ObjectId,
+        ref: 'category',
+      },
+      Level_three: {
+        type: mongoose.Types.ObjectId,
+        ref: 'category',
+      },
     },
     inStock: {
       type: Number,
@@ -40,6 +58,20 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    info: [
+      {
+        title: { type: String, required: true },
+        value: { type: String, required: false },
+      },
+    ],
+    specification: [
+      {
+        title: { type: String, required: true },
+        value: { type: String, required: false },
+      },
+    ],
+    rating: { type: Number, required: true, default: 0 },
+    numReviews: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,

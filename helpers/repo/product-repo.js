@@ -2,11 +2,30 @@ import { db } from '../'
 import Category from 'models/Category'
 import Product from 'models/Product'
 
-const getAll = async () => {
+const getAll = async ({ page, page_size }, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Product.find()
+  console.log('filter', filter)
+  const products = await Product.find(filter)
+    .select(
+      '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
+    )
+    .skip((page - 1) * page_size)
+    .limit(page_size)
+    .sort(sort)
+  const productsLength = await Product.countDocuments(filter)
   await db.disconnect()
-  return result
+  return {
+    products,
+    productsLength,
+    pagination: {
+      currentPage: page,
+      nextPage: page + 1,
+      previousPage: page - 1,
+      hasNextPage: page_size * page < productsLength,
+      hasPreviousPage: page > 1,
+      lastPage: Math.ceil(productsLength / page_size),
+    },
+  }
 }
 
 const getById = async id => {
@@ -19,8 +38,13 @@ const getById = async id => {
 
 const create = async params => {
   await db.connect()
-  const newProducts = new Product(params)
-  await newProducts.save()
+  const newProduct = new Product(params)
+  const mainCategory = await Category.findOne({
+    parent: undefined,
+  })
+
+  if (mainCategory) newProduct.category.unshift(mainCategory?._id)
+  await newProduct.save()
   await db.disconnect()
 }
 

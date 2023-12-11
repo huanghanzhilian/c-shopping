@@ -55,7 +55,8 @@ export default function ProfileAside() {
   return (
     <aside className="sticky mt-6 lg:border lg:border-gray-200 lg:rounded-md lg:pt-4 min-w-max top-6">
       <Link passHref href="/admin">
-        <Logo className="w-40 h-12 mx-auto" />
+        {/* <Logo className="w-40 h-12 mx-auto" /> */}
+        <div className="w-40 h-12 mx-auto bg-red-200"></div>
       </Link>
 
       <div className="mt-4">
