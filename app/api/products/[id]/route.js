@@ -26,11 +26,16 @@ const updateProduct = apiHandler(
     schema: joi.object({
       title: joi.string().required(),
       price: joi.number().required(),
-      inStock: joi.number().required(),
-      description: joi.string().required(),
-      content: joi.string().required(),
-      category: joi.string().required(),
+      category: joi.array().required(),
       images: joi.array().required(),
+      info: joi.array().required(),
+      specification: joi.array().required(),
+      inStock: joi.number(),
+      description: joi.string().allow(''),
+      discount: joi.number(),
+      sizes: joi.array(),
+      colors: joi.array(),
+      category_levels: joi.object(),
     }),
   }
 )

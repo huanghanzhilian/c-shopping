@@ -268,32 +268,6 @@ const Products = () => {
                   </tbody>
                 </table>
               </div>
-
-              {/* <section className="overflow-x mt-7">
-                <table className="w-full overflow-scroll table-auto">
-                  <thead className="bg-zinc-50 h-9">
-                    <tr className="text-zinc-500">
-                      <th className="w-28"></th>
-                      <th className="border-r-2 border-zinc-200">
-                        结果数量：({data?.data?.productsLength})
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data?.data?.products.map(item => (
-                      <tr key={item._id} className="border-b-2 border-gray-100">
-                        <td className="flex items-center justify-center p-2 gap-x-4">
-                          <DeleteIconBtn onClick={() => handleDelete(item._id)} />
-                          <Link href={`/admin/products/edit/${item._id}`}>
-                            <EditIconBtn />
-                          </Link>
-                        </td>
-                        <td className="p-2">{item.title}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </section> */}
             </ShowWrapper>
 
             {data && data?.data?.productsLength > 10 && (

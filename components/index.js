@@ -68,7 +68,9 @@ export { default as ResponsiveImage } from './common/ResponsiveImage'
 export { default as PageContainer } from './common/PageContainer'
 export { default as ShowWrapper } from './common/ShowWrapper'
 export { default as SelectBox } from './common/SelectBox'
-// export { default as UploadImage } from './common/UploadImage'
+export { default as TextArea } from './common/TextArea'
+
+export { default as UploadImage } from './common/UploadImage'
 export * from './common/IconBtns'
 export * from './common/Buttons'
 
@@ -91,6 +93,13 @@ export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
 
 //* FORMS
 export { default as CategoryForm } from './forms/CategoryForm'
+export { default as ProductsForm } from './forms/ProductsForm'
 
 //* ORDERS COMPONENTS
 // export { default as Orders } from './order/Orders'
+
+//* PRODUCT COMPONENTS
+
+export { default as AddColors } from './product/AddColors'
+export { default as AddSizes } from './product/AddSizes'
+export { default as ImageList } from './product/ImageList'
