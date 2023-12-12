@@ -105,3 +105,7 @@ export { default as SliderForm } from './forms/SliderForm'
 export { default as AddColors } from './product/AddColors'
 export { default as AddSizes } from './product/AddSizes'
 export { default as ImageList } from './product/ImageList'
+
+//* REVIEW COMPONENTS
+export { default as ReviewsTable } from './review/ReviewsTable'
+export { default as ReveiwCard } from './review/ReveiwCard'

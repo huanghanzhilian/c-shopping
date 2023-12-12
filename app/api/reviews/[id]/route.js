@@ -24,10 +24,7 @@ const update = apiHandler(
     isJwt: true,
     identity: 'root',
     schema: joi.object({
-      category_id: joi.string().required(),
-      info: joi.array().required(),
-      optionsType: joi.string().required(),
-      specification: joi.array().required(),
+      status: joi.number().required(),
     }),
   }
 )
@@ -47,5 +44,5 @@ const _delete = apiHandler(
 )
 
 export const GET = getDetail
-export const PUT = update
+export const PATCH = update
 export const DELETE = _delete
