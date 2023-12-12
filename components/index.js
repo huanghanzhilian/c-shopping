@@ -95,6 +95,7 @@ export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
 export { default as CategoryForm } from './forms/CategoryForm'
 export { default as ProductsForm } from './forms/ProductsForm'
 export { default as BannerForm } from './forms/BannerForm'
+export { default as SliderForm } from './forms/SliderForm'
 
 //* ORDERS COMPONENTS
 // export { default as Orders } from './order/Orders'

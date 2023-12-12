@@ -95,7 +95,7 @@ export default function CategoriesPage() {
                         {category.level < 2 && (
                           <>
                             <Link
-                              href={`/admin/sliders/${category._id}`}
+                              href={`/admin/sliders?category_id=${category._id}&category_name=${category.name}`}
                               className="bg-fuchsia-50 text-fuchsia-500 rounded-sm py-1 px-1.5 max-w-min"
                             >
                               滑块

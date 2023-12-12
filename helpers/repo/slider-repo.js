@@ -1,9 +1,9 @@
 import { db } from '..'
 import Slider from '@/models/Slider'
 
-const getAll = async () => {
+const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Slider.find()
+  const result = await Slider.find(filter)
   await db.disconnect()
   return result
 }
@@ -16,12 +16,9 @@ const getById = async id => {
   return result
 }
 
-const create = async (id, params) => {
+const create = async params => {
   await db.connect()
-  const newSlider = new Slider({
-    user: id,
-    ...params,
-  })
+  const newSlider = new Slider(params)
   await newSlider.save()
   await db.disconnect()
 }

@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { TextField, Button } from 'components'
+import { TextField, Button, UploadImage } from 'components'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
@@ -62,7 +62,7 @@ const CategoryForm = props => {
 
         <TextField label="图片地址" control={control} errors={formErrors.image} name="image" />
 
-        {/* <UploadImage folder="/icons" handleAddUploadedImageUrl={handleAddUploadedImageUrl} /> */}
+        <UploadImage folder="/icons" handleAddUploadedImageUrl={handleAddUploadedImageUrl} />
 
         {categorySchema.isValidSync(watch()) && (
           <div className="mx-auto max-w-max">
