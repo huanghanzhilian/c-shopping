@@ -1,7 +1,7 @@
 import joi from 'joi'
 
 import { setJson, apiHandler } from '@/helpers/api'
-import { getQuery, productRepo } from '@/helpers'
+import { db, getQuery, productRepo } from '@/helpers'
 import Category from '@/models/Category'
 
 const getAllProduct = apiHandler(async req => {
@@ -14,7 +14,9 @@ const getAllProduct = apiHandler(async req => {
   const { category, search, inStock, discount, price } = query
 
   //? Filters
+  await db.connect()
   const currentCategory = await Category.findOne({ slug: category })
+  await db.disconnect()
 
   const categoryFilter = currentCategory
     ? {

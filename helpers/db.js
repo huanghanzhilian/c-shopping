@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+mongoose.Promise = global.Promise
 const connection = {}
 
 async function connect() {
@@ -29,9 +30,10 @@ async function connect() {
 async function disconnect() {
   if (connection.isConnected) {
     if (process.env.NODE_ENV === 'production') {
-      await mongoose.disconnect()
-      connection.isConnected = false
-      console.log('had disconnected')
+      console.log('not disconnected')
+      // await mongoose.disconnect()
+      // connection.isConnected = false
+      // console.log('had disconnected')
     } else {
       console.log('not disconnected')
     }
