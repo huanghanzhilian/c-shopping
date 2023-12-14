@@ -3,10 +3,6 @@ import basePlugin from './base_model'
 
 const SliderSchema = new mongoose.Schema(
   {
-    _id: {
-      type: mongoose.Schema.Types.ObjectId,
-      // get: v => v.toString(),
-    },
     category_id: {
       type: mongoose.Types.ObjectId,
       ref: 'category',
@@ -36,6 +32,14 @@ const SliderSchema = new mongoose.Schema(
   { timestamps: true }
 )
 SliderSchema.plugin(basePlugin)
+SliderSchema.post('find', function (docs) {
+  if (this.op === 'find') {
+    docs.forEach(doc => {
+      doc._id = doc._id.toString()
+      doc.category_id = doc.category_id.toString()
+    })
+  }
+})
 const Slider = mongoose.models.slider || mongoose.model('slider', SliderSchema)
 
 export default Slider

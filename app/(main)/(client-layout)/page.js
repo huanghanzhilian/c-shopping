@@ -17,13 +17,12 @@ export default async function Home({ searchParams }) {
     parent: currentCategory?._id,
   }).lean()
 
-  const sliders = await Slider.find({ category_id: currentCategory?._id })
-  // console.log('sliders', sliders)
+  let sliders = await Slider.find({ category_id: currentCategory?._id })
+    .lean()
+    .exec()
+  // sliders = JSON.parse(JSON.stringify(sliders))
   console.log('sliders', sliders)
-  console.log('sliders toObject', sliders[0].toObject())
-  console.log('sliders toJSON', sliders[0].toJSON())
-  // console.log('JSON.parse(JSON.stringify())', JSON.parse(JSON.stringify(currentCategory)))
-  // console.log('currentCategory lean', currentCategory.lean())
+  console.log('Array.isArray(sliders)', Array.isArray(sliders))
 
   const bannerOneType = await Banner.find({
     category_id: currentCategory?._id,
