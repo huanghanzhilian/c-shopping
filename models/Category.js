@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const CategorySchema = new mongoose.Schema(
   {
@@ -28,7 +29,7 @@ const CategorySchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
-
+CategorySchema.plugin(basePlugin)
 const Category = mongoose.models.category || mongoose.model('category', CategorySchema)
 
 export default Category

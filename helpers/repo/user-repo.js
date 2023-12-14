@@ -48,6 +48,11 @@ const create = async params => {
   }
   const hashPassword = await bcrypt.hash(password, 12)
   const newUser = new User({ name, email, password: hashPassword })
+  // console.log('newUser', newUser)
+  // console.log('newUser toObject', newUser.toObject())
+  // console.log('newUser toJSON', newUser.toJSON())
+
+  throw '用户不存在'
   await newUser.save()
   await db.disconnect()
   const token = auth.createAccessToken({ id: newUser._id })

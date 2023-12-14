@@ -1,11 +1,17 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const SliderSchema = new mongoose.Schema(
   {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      // get: v => v.toString(),
+    },
     category_id: {
       type: mongoose.Types.ObjectId,
       ref: 'category',
       required: true,
+      // get: v => v.toString(),
     },
     image: {
       url: {
@@ -29,7 +35,7 @@ const SliderSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
-
+SliderSchema.plugin(basePlugin)
 const Slider = mongoose.models.slider || mongoose.model('slider', SliderSchema)
 
 export default Slider

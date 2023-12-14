@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const ReviewSchema = new mongoose.Schema(
   {
@@ -38,6 +39,7 @@ const ReviewSchema = new mongoose.Schema(
   }
 )
 
+ReviewSchema.plugin(basePlugin)
 const Review = mongoose.models.review || mongoose.model('review', ReviewSchema)
 
 export default Review

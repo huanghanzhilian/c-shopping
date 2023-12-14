@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const DetailsSchema = new mongoose.Schema(
   {
@@ -17,6 +18,7 @@ const DetailsSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+DetailsSchema.plugin(basePlugin)
 
 const Details = mongoose.models.details || mongoose.model('details', DetailsSchema)
 

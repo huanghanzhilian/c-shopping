@@ -28,6 +28,7 @@
     "react-redux": "^8.0.2",
     "sweetalert2": "^11.4.17",
     "sweetalert2-react-content": "^5.0.0",
+    "swiper": "^8.3.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {

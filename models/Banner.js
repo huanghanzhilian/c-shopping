@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const BannerSchema = new mongoose.Schema(
   {
@@ -33,7 +34,7 @@ const BannerSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
-
+BannerSchema.plugin(basePlugin)
 const Banner = mongoose.models.banner || mongoose.model('banner', BannerSchema)
 
 export default Banner

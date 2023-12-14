@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -77,6 +78,6 @@ const ProductSchema = new mongoose.Schema(
     timestamps: true,
   }
 )
-
+ProductSchema.plugin(basePlugin)
 const Product = mongoose.models.product || mongoose.model('product', ProductSchema)
 export default Product

@@ -109,3 +109,6 @@ export { default as ImageList } from './product/ImageList'
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
 export { default as ReveiwCard } from './review/ReveiwCard'
+
+//* SLIDER COMPONENTS
+export { default as Slider } from './sliders/Slider'

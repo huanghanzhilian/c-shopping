@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import basePlugin from './base_model'
 
 const OrderSchema = new mongoose.Schema(
   {
@@ -24,6 +25,6 @@ const OrderSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
-
+OrderSchema.plugin(basePlugin)
 const Order = mongoose.models.order || mongoose.model('order', OrderSchema)
 export default Order
