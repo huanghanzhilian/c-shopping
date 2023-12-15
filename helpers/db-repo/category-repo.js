@@ -16,8 +16,8 @@ const getOne = async filter => {
     await db.disconnect()
     return result
   } catch (error) {
-    console.log(error)
-    throw '无此数据'
+    console.log('error', error)
+    throw '无此数据Category'
   }
 }
 

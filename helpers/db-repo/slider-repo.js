@@ -22,8 +22,9 @@ const getOne = async filter => {
     const result = await Slider.findOne(filter).lean().exec()
     await db.disconnect()
     return result
-  } catch {
-    throw '无此数据'
+  } catch (error) {
+    console.log(error)
+    throw '无此数据Slider'
   }
 }
 

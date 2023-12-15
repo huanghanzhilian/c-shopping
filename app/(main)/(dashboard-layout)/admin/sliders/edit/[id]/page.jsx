@@ -90,6 +90,8 @@ const EditSliderPage = ({ params: { id: sliderId } }) => {
   const onSuccessUpdate = () => {
     setUpdateInfo(initialUpdataInfo)
     confirmUpdateModalHandlers.close()
+    console.log('isSuccessUpdate', isSuccessUpdate)
+    console.log('isErrorUpdate', isErrorUpdate)
     back()
   }
 

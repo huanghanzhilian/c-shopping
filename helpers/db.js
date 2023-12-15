@@ -14,10 +14,11 @@ async function connect() {
       console.log('use previous connection')
       return
     }
-    await mongoose.disconnect()
+    // await mongoose.disconnect()
   }
 
   try {
+    await mongoose.set('strictQuery', false)
     const db = await mongoose.connect(process.env.MONGODB_URL)
     console.log('new connection')
     connection.isConnected = db.connections[0].readyState

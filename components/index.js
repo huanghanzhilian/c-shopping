@@ -13,6 +13,7 @@ export { default as UsersTable } from './UsersTable'
 export { default as Pagination } from './Pagination'
 export { default as DetailsList } from './DetailsList'
 export { default as SelectCategories } from './SelectCategories'
+export { default as Categories } from './Categories'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
@@ -112,3 +113,4 @@ export { default as ReveiwCard } from './review/ReveiwCard'
 
 //* SLIDER COMPONENTS
 export { default as Slider } from './sliders/Slider'
+// export { default as DiscountSlider } from './sliders/DiscountSlider'
