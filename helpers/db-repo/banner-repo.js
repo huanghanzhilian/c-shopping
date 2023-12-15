@@ -1,16 +1,16 @@
 import { db } from '..'
-import Slider from '@/models/Slider'
+import Banner from '@/models/Banner'
 
 const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Slider.find(filter)
+  const result = await Banner.find(filter).lean().exec()
   await db.disconnect()
   return result
 }
 
 const getById = async id => {
   await db.connect()
-  const result = await Slider.findById(id)
+  const result = await Banner.findById(id)
   if (!result) throw '数据不存在'
   await db.disconnect()
   return result
@@ -18,28 +18,28 @@ const getById = async id => {
 
 const create = async params => {
   await db.connect()
-  const newSlider = new Slider(params)
-  await newSlider.save()
+  const newBanner = new Banner(params)
+  await newBanner.save()
   await db.disconnect()
 }
 
 const _delete = async id => {
   await db.connect()
-  const result = await Slider.findById(id)
+  const result = await Banner.findById(id)
   if (!result) throw '数据不存在'
-  await Slider.findByIdAndDelete(id)
+  await Banner.findByIdAndDelete(id)
   await db.disconnect()
 }
 
 const update = async (id, params) => {
   await db.connect()
-  const result = await Slider.findById(id)
+  const result = await Banner.findById(id)
   if (!result) throw '数据不存在'
-  await Slider.findByIdAndUpdate({ _id: id }, { ...params })
+  await Banner.findByIdAndUpdate({ _id: id }, { ...params })
   await db.disconnect()
 }
 
-export const sliderRepo = {
+export const bannerRepo = {
   getAll,
   getById,
   create,

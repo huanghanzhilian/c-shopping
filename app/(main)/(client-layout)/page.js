@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
-import { db } from '@/helpers'
-import { Banner, Category, Slider } from '@/models'
+import { bannerRepo, categoryRepo, sliderRepo } from '@/helpers'
 import { Slider as MainSlider } from '@/components'
 
 export const metadata = {
@@ -8,32 +7,39 @@ export const metadata = {
 }
 
 export default async function Home({ searchParams }) {
-  await db.connect()
-
-  const currentCategory = await Category.findOne({
+  const currentCategory = await categoryRepo.getOne({
     parent: undefined,
-  }).lean()
-  const childCategories = await Category.find({
-    parent: currentCategory?._id,
-  }).lean()
+  })
+  const childCategories = await categoryRepo.getAll(
+    {},
+    {
+      parent: currentCategory?._id,
+    }
+  )
 
-  let sliders = await Slider.find({ category_id: currentCategory?._id })
-    .lean()
-    .exec()
-  // sliders = JSON.parse(JSON.stringify(sliders))
+  const sliders = await sliderRepo.getAll({}, { category_id: currentCategory?._id })
+
+  const bannerOneType = await bannerRepo.getAll(
+    {},
+    {
+      category_id: currentCategory?._id,
+      type: 'one',
+    }
+  )
+  const bannerTwoType = await bannerRepo.getAll(
+    {},
+    {
+      category_id: currentCategory?._id,
+      type: 'two',
+    }
+  )
+
+  console.log('currentCategory', currentCategory)
+  console.log('childCategories', childCategories)
   console.log('sliders', sliders)
-  console.log('Array.isArray(sliders)', Array.isArray(sliders))
+  console.log('bannerOneType', bannerOneType)
+  console.log('bannerTwoType', bannerTwoType)
 
-  const bannerOneType = await Banner.find({
-    category_id: currentCategory?._id,
-    type: 'one',
-  })
-  const bannerTwoType = await Banner.find({
-    category_id: currentCategory?._id,
-    type: 'two',
-  })
-
-  await db.disconnect()
   return (
     <main className="xl:mt-28 container">
       <MainSlider data={sliders} />

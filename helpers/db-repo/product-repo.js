@@ -1,10 +1,9 @@
-import { db } from '../'
+import { db } from '..'
 import Category from 'models/Category'
 import Product from 'models/Product'
 
 const getAll = async ({ page, page_size }, filter = {}, sort = {}) => {
   await db.connect()
-  console.log('filter', filter)
   const products = await Product.find(filter)
     .select(
       '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'

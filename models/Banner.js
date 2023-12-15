@@ -35,6 +35,7 @@ const BannerSchema = new mongoose.Schema(
   { timestamps: true }
 )
 BannerSchema.plugin(basePlugin)
+
 const Banner = mongoose.models.banner || mongoose.model('banner', BannerSchema)
 
 export default Banner

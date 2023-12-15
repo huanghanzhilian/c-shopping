@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt'
 
 import User from 'models/User'
-import { auth, db } from '../'
+import { auth, db } from '..'
 
 const getAll = async ({ page, page_size }) => {
   await db.connect()
@@ -48,11 +48,6 @@ const create = async params => {
   }
   const hashPassword = await bcrypt.hash(password, 12)
   const newUser = new User({ name, email, password: hashPassword })
-  // console.log('newUser', newUser)
-  // console.log('newUser toObject', newUser.toObject())
-  // console.log('newUser toJSON', newUser.toJSON())
-
-  throw '用户不存在'
   await newUser.save()
   await db.disconnect()
   const token = auth.createAccessToken({ id: newUser._id })
@@ -120,10 +115,22 @@ const getById = async id => {
   }
 }
 
+const getOne = async filter => {
+  try {
+    await db.connect()
+    const user = await User.findOne(filter).lean().exec()
+    await db.disconnect()
+    return user
+  } catch {
+    throw '无此数据'
+  }
+}
+
 export const usersRepo = {
   create,
   getAll,
   getById,
+  getOne,
   update,
   delete: _delete,
   resetPassword,

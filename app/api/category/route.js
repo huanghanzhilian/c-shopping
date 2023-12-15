@@ -9,7 +9,7 @@ const getCategory = apiHandler(async req => {
     const allCategories = await categoryRepo.getAll()
 
     function findChildren(category) {
-      const children = allCategories.filter(c => c.parent && c.parent.equals(category._id))
+      const children = allCategories.filter(c => c.parent && c.parent === category._id)
       if (children.length > 0) {
         category.children = children.map(child => {
           return findChildren(child)

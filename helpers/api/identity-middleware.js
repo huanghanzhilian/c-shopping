@@ -1,15 +1,10 @@
-import joi from 'joi'
-
-import User from 'models/User'
-import { db } from 'helpers'
+import { usersRepo } from '../db-repo'
 
 async function identityMiddleware(req, identity = 'user', isJwt = false) {
   if (identity === 'user' && isJwt === false) return
 
   const userId = req.headers.get('userId')
-  await db.connect()
-  const user = await User.findOne({ _id: userId })
-  await db.disconnect()
+  const user = await usersRepo.getOne({ _id: userId })
   req.headers.set('userRole', user.role)
   req.headers.set('userRoot', user.root)
 

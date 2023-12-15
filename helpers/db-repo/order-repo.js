@@ -1,4 +1,4 @@
-import { db } from '../'
+import { db } from '..'
 import Order from '@/models/Order'
 
 const getAll = async (userId, role) => {

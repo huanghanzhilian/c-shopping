@@ -1,12 +1,24 @@
-import { db } from '../'
+import { db } from '..'
 import Category from 'models/Category'
 import Product from 'models/Product'
 
-const getAll = async () => {
+const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Category.find()
+  const result = await Category.find(filter).lean().exec()
   await db.disconnect()
   return result
+}
+
+const getOne = async filter => {
+  try {
+    await db.connect()
+    const result = await Category.findOne(filter).lean().exec()
+    await db.disconnect()
+    return result
+  } catch (error) {
+    console.log(error)
+    throw '无此数据'
+  }
 }
 
 const create = async params => {
@@ -39,6 +51,7 @@ const update = async (id, params) => {
 
 export const categoryRepo = {
   getAll,
+  getOne,
   create,
   update,
   delete: _delete,

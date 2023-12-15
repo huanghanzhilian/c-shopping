@@ -30,7 +30,6 @@ async function connect() {
 async function disconnect() {
   if (connection.isConnected) {
     if (process.env.NODE_ENV === 'production') {
-      console.log('not disconnected')
       // await mongoose.disconnect()
       // connection.isConnected = false
       // console.log('had disconnected')

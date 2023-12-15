@@ -30,6 +30,7 @@ const CategorySchema = new mongoose.Schema(
   { timestamps: true }
 )
 CategorySchema.plugin(basePlugin)
+
 const Category = mongoose.models.category || mongoose.model('category', CategorySchema)
 
 export default Category
