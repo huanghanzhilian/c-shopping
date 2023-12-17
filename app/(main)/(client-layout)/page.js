@@ -1,6 +1,6 @@
 // import { Metadata } from 'next'
 import { bannerRepo, categoryRepo, sliderRepo } from '@/helpers'
-import { Categories, Slider as MainSlider } from '@/components'
+import { BannerOne, Categories, Slider as MainSlider } from '@/components'
 
 export const metadata = {
   title: '首页',
@@ -36,10 +36,10 @@ export default async function Home({ searchParams }) {
     }
   )
 
-  console.log('childCategories', childCategories)
+  // console.log('childCategories', childCategories)
 
   return (
-    <main className="xl:mt-28 container">
+    <main className="xl:mt-28 container space-y-4">
       <MainSlider data={sliders} />
       <Categories
         childCategories={{ categories: childCategories, title: '分类' }}
@@ -47,6 +47,7 @@ export default async function Home({ searchParams }) {
         name={currentCategory.name}
         homePage
       />
+      <BannerOne data={bannerOneType} />
     </main>
   )
 }

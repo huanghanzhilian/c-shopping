@@ -114,3 +114,7 @@ export { default as ReveiwCard } from './review/ReveiwCard'
 //* SLIDER COMPONENTS
 export { default as Slider } from './sliders/Slider'
 // export { default as DiscountSlider } from './sliders/DiscountSlider'
+
+//* BANNER COMPONENTS
+export { default as BannerOne } from './banners/BannerOne'
+// export { default as BannerTwo } from './banners/BannerTwo'
