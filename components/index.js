@@ -14,6 +14,8 @@ export { default as Pagination } from './Pagination'
 export { default as DetailsList } from './DetailsList'
 export { default as SelectCategories } from './SelectCategories'
 export { default as Categories } from './Categories'
+export { default as Footer } from './Footer'
+export { default as Services } from './Services'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
@@ -117,4 +119,4 @@ export { default as Slider } from './sliders/Slider'
 
 //* BANNER COMPONENTS
 export { default as BannerOne } from './banners/BannerOne'
-// export { default as BannerTwo } from './banners/BannerTwo'
+export { default as BannerTwo } from './banners/BannerTwo'
