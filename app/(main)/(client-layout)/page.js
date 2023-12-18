@@ -1,6 +1,12 @@
 // import { Metadata } from 'next'
 import { bannerRepo, categoryRepo, sliderRepo } from '@/helpers'
-import { BannerOne, BannerTwo, Categories, Slider as MainSlider } from '@/components'
+import {
+  BannerOne,
+  BannerTwo,
+  Categories,
+  DiscountSlider,
+  Slider as MainSlider,
+} from '@/components'
 
 export const metadata = {
   title: '首页',
@@ -36,11 +42,12 @@ export default async function Home({ searchParams }) {
     }
   )
 
-  // console.log('childCategories', childCategories)
+  console.log('currentCategory', currentCategory)
 
   return (
     <main className="xl:mt-28 container space-y-24">
       <MainSlider data={sliders} />
+      <DiscountSlider currentCategory={currentCategory} />
       <Categories
         childCategories={{ categories: childCategories, title: '分类' }}
         color={currentCategory.colors?.start}
