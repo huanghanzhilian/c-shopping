@@ -35,7 +35,18 @@ const BannerSchema = new mongoose.Schema(
   { timestamps: true }
 )
 BannerSchema.plugin(basePlugin)
-
+BannerSchema.post(/^find/, function (docs) {
+  if (this.op === 'find') {
+    docs.forEach(doc => {
+      doc._id = doc._id.toString()
+      doc.category_id = doc.category_id.toString()
+    })
+  }
+  if (this.op === 'findOne' && docs) {
+    docs._id = docs._id.toString()
+    docs.category_id = docs.category_id.toString()
+  }
+})
 const Banner = mongoose.models.banner || mongoose.model('banner', BannerSchema)
 
 export default Banner

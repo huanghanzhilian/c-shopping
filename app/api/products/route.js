@@ -16,6 +16,7 @@ const getAllProduct = apiHandler(async req => {
   //? Filters
   await db.connect()
   const currentCategory = await Category.findOne({ slug: category })
+  console.log('currentCategory', currentCategory)
   await db.disconnect()
 
   const categoryFilter = currentCategory

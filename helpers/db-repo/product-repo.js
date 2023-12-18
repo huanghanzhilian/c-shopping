@@ -3,6 +3,7 @@ import Category from 'models/Category'
 import Product from 'models/Product'
 
 const getAll = async ({ page, page_size }, filter = {}, sort = {}) => {
+  console.log('filter', filter)
   await db.connect()
   const products = await Product.find(filter)
     .select(
