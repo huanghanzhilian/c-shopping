@@ -104,12 +104,12 @@ export { default as SliderForm } from './forms/SliderForm'
 // export { default as Orders } from './order/Orders'
 
 //* PRODUCT COMPONENTS
-
 export { default as AddColors } from './product/AddColors'
 export { default as AddSizes } from './product/AddSizes'
 export { default as ImageList } from './product/ImageList'
 export { default as ProductPrice } from './product/ProductPrice'
 export { default as DiscountProduct } from './product/DiscountProduct'
+export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
@@ -118,6 +118,7 @@ export { default as ReveiwCard } from './review/ReveiwCard'
 //* SLIDER COMPONENTS
 export { default as Slider } from './sliders/Slider'
 export { default as DiscountSlider } from './sliders/DiscountSlider'
+export { default as BestSellsSlider } from './sliders/BestSellsSlider'
 
 //* BANNER COMPONENTS
 export { default as BannerOne } from './banners/BannerOne'

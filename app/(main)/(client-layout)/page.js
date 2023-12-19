@@ -3,9 +3,11 @@ import { bannerRepo, categoryRepo, sliderRepo } from '@/helpers'
 import {
   BannerOne,
   BannerTwo,
+  BestSellsSlider,
   Categories,
   DiscountSlider,
   Slider as MainSlider,
+  MostFavouraiteProducts,
 } from '@/components'
 
 export const metadata = {
@@ -42,8 +44,6 @@ export default async function Home({ searchParams }) {
     }
   )
 
-  console.log('currentCategory', currentCategory)
-
   return (
     <main className="xl:mt-28 container space-y-24">
       <MainSlider data={sliders} />
@@ -55,7 +55,9 @@ export default async function Home({ searchParams }) {
         homePage
       />
       <BannerOne data={bannerOneType} />
+      <BestSellsSlider categorySlug={currentCategory.slug} />
       <BannerTwo data={bannerTwoType} />
+      <MostFavouraiteProducts categorySlug={currentCategory.slug} />
     </main>
   )
 }
