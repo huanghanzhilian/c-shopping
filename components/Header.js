@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Logo, Icons, Search, Signup, Cart, Navbar } from 'components'
+import { Icons, Search, Signup, Cart, Navbar, Sidebar } from 'components'
 export default function Header() {
   return (
     <>
@@ -8,10 +8,9 @@ export default function Header() {
           <div className="inline-flex items-center justify-between w-full border-b lg:border-b-0 lg:max-w-min lg:mr-8">
             <Icons.Question className="icon lg:hidden" />
             <Link passHref href="/">
-              {/* <Logo className="w-24 h-14" /> */}
               <div className="w-24 h-14 bg-red-200"></div>
             </Link>
-            <div className="icon lg:hidden">三</div>
+            <Sidebar />
           </div>
           <div className="inline-flex items-center justify-between w-full py-2 border-b gap-x-10 lg:border-b-0">
             <Search className="flex flex-grow gap-x-7" />
