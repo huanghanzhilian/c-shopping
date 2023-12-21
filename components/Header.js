@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Logo, Icons, Search, Signup, Cart } from 'components'
+import { Logo, Icons, Search, Signup, Cart, Navbar } from 'components'
 export default function Header() {
   return (
     <>
@@ -21,6 +21,9 @@ export default function Header() {
               <Cart />
             </div>
           </div>
+        </div>
+        <div className="container py-2 flex justify-between mx-auto relative">
+          <Navbar />
         </div>
       </header>
     </>

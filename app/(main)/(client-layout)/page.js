@@ -45,19 +45,21 @@ export default async function Home({ searchParams }) {
   )
 
   return (
-    <main className="xl:mt-28 container space-y-24">
-      <MainSlider data={sliders} />
-      <DiscountSlider currentCategory={currentCategory} />
-      <Categories
-        childCategories={{ categories: childCategories, title: '分类' }}
-        color={currentCategory.colors?.start}
-        name={currentCategory.name}
-        homePage
-      />
-      <BannerOne data={bannerOneType} />
-      <BestSellsSlider categorySlug={currentCategory.slug} />
-      <BannerTwo data={bannerTwoType} />
-      <MostFavouraiteProducts categorySlug={currentCategory.slug} />
+    <main className="min-h-screen xl:mt-28 container space-y-24">
+      <div className="py-4 mx-auto space-y-24 xl:mt-28">
+        <MainSlider data={sliders} />
+        <DiscountSlider currentCategory={currentCategory} />
+        <Categories
+          childCategories={{ categories: childCategories, title: '分类' }}
+          color={currentCategory.colors?.start}
+          name={currentCategory.name}
+          homePage
+        />
+        <BannerOne data={bannerOneType} />
+        <BestSellsSlider categorySlug={currentCategory.slug} />
+        <BannerTwo data={bannerTwoType} />
+        <MostFavouraiteProducts categorySlug={currentCategory.slug} />
+      </div>
     </main>
   )
 }
