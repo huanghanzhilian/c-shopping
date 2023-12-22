@@ -112,6 +112,9 @@ export { default as ImageList } from './product/ImageList'
 export { default as ProductPrice } from './product/ProductPrice'
 export { default as DiscountProduct } from './product/DiscountProduct'
 export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
+export { default as ProductCard } from './product/ProductCard'
+export { default as SpecialSell } from './product/SpecialSell'
+export { default as Depot } from './product/Depot'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
