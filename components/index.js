@@ -56,6 +56,11 @@ export { default as OrderSkeleton } from './skeleton/OrderSkeleton'
 export { default as ProductSkeleton } from './skeleton/ProductSkeleton'
 export { default as SubCategoriesSkeleton } from './skeleton/SubCategoriesSkeleton'
 export { default as TableSkeleton } from './skeleton/TableSkeleton'
+export { default as SubCategories } from './product/SubCategories'
+export { default as ProductsAside } from './product/ProductsAside'
+
+//* FILTER COMPONENTS
+export { default as FilterOperation } from './filter/FilterOperation'
 
 //* CART COMPONENTS
 export { default as Cart } from './cart/Cart'

@@ -69,14 +69,14 @@ const ProductsHome = () => {
   return (
     <>
       <main className="lg:px-3 container xl:mt-32">
-        {/* <SubCategories childCategories={childCategories} isLoading={isLoadingCategories} /> */}
+        <SubCategories childCategories={childCategories} isLoading={isLoadingCategories} />
 
         <div className="px-1 lg:flex lg:gap-x-0 xl:gap-x-3">
-          {/* <ProductsAside
-            mainMaxPrice={data?.mainMaxPrice}
-            mainMinPrice={data?.mainMinPrice}
+          <ProductsAside
+            mainMaxPrice={data?.data?.mainMaxPrice}
+            mainMinPrice={data?.data?.mainMinPrice}
             handleChangeRoute={handleChangeRoute}
-          /> */}
+          />
           <div id="_products" className="w-full p-4 mt-3 ">
             {/* Filters & Sort */}
             <div className="divide-y-2 ">
