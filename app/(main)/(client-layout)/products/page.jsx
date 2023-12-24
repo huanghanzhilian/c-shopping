@@ -89,7 +89,7 @@ const ProductsHome = () => {
                   />
                 )} */}
 
-                {/* <Sort handleChangeRoute={handleChangeRoute} /> */}
+                <Sort handleChangeRoute={handleChangeRoute} />
               </div>
 
               <div className="flex justify-between py-2">
