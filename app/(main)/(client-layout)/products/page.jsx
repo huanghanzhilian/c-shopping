@@ -81,13 +81,13 @@ const ProductsHome = () => {
             {/* Filters & Sort */}
             <div className="divide-y-2 ">
               <div className="flex py-2 gap-x-3">
-                {/* {!isDesktop && (
+                {!isDesktop && (
                   <Filter
                     mainMaxPrice={data?.mainMaxPrice}
                     mainMinPrice={data?.mainMinPrice}
                     handleChangeRoute={handleChangeRoute}
                   />
-                )} */}
+                )}
 
                 <Sort handleChangeRoute={handleChangeRoute} />
               </div>

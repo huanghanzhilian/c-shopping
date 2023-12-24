@@ -62,6 +62,7 @@ export { default as ProductsAside } from './product/ProductsAside'
 
 //* FILTER COMPONENTS
 export { default as FilterOperation } from './filter/FilterOperation'
+export { default as Filter } from './filter/Filter'
 
 //* CART COMPONENTS
 export { default as Cart } from './cart/Cart'
