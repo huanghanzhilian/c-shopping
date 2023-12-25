@@ -13,7 +13,6 @@ import {
   RedirectToLogin,
   Button,
   EmptyCart,
-  Toman,
 } from 'components'
 import { Menu, Transition } from '@headlessui/react'
 
@@ -93,7 +92,6 @@ const CartPage = () => {
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}
       />
-      <Header />
       <main className="py-2 mx-auto mb-20 space-y-3 xl:mt-36 lg:py-0 lg:mb-0 lg:max-w-7xl b lg:px-5 lg:mt-6 lg:gap-x-3 lg:flex lg:flex-wrap lg:space-y-0">
         <div className="lg:py-4 lg:border lg:border-gray-200 lg:rounded-md lg:flex-1 h-fit">
           {/* title */}
@@ -134,7 +132,7 @@ const CartPage = () => {
               <span className="text-sm farsi-digits">
                 {formatNumber(totalPrice - totalDiscount)}
               </span>
-              <Toman className="mr-1 w-7 h-7" />
+              <span className="mr-1 w-7 h-7">¥</span>
             </div>
           </div>
         </section>
