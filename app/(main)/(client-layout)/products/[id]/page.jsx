@@ -1,10 +1,4 @@
-import { useRouter } from 'next/navigation'
-
 import { Product } from 'models'
-
-// import { useAppDispatch } from 'hooks'
-
-import { setTempColor, setTempSize, addToLastSeen } from 'store'
 
 import {
   FreeShipping,
@@ -20,6 +14,7 @@ import {
   AddToCart,
   Info,
   Breadcrumb,
+  InitialStore,
 } from 'components'
 import { db } from '@/helpers'
 
@@ -62,6 +57,7 @@ const SingleProduct = async ({ params }) => {
 
   return (
     <main className="xl:mt-28 container mx-auto py-4 space-y-4">
+      <InitialStore product={product} />
       <Breadcrumb categoryLevels={product.category_levels} />
 
       <div className="h-fit lg:h-fit lg:grid lg:grid-cols-9 lg:px-4 lg:gap-x-2 lg:gap-y-4 lg:mb-10 xl:gap-x-7">

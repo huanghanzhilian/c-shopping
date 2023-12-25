@@ -135,6 +135,7 @@ export { default as OutOfStock } from './product/OutOfStock'
 export { default as Info } from './product/Info'
 export { default as Description } from './product/Description'
 export { default as Specification } from './product/Specification'
+export { default as InitialStore } from './product/InitialStore'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
