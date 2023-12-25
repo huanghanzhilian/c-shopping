@@ -70,6 +70,9 @@ export { default as Cart } from './cart/Cart'
 export { default as AddToCart } from './cart/AddToCart'
 export { default as AddToCartOperation } from './cart/AddToCartOperation'
 export { default as CartButtons } from './cart/CartButtons'
+export { default as CartItem } from './cart/CartItem'
+export { default as CartInfo } from './cart/CartInfo'
+export { default as DiscountCartItem } from './cart/DiscountCartItem'
 
 //* COMMON COMPONENTS
 export { default as Icons } from './common/Icons'
