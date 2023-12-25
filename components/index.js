@@ -19,6 +19,7 @@ export { default as Services } from './Services'
 export { default as Navbar } from './Navbar'
 export { default as Sidebar } from './Sidebar'
 export { default as Sort } from './Sort'
+export { default as FreeShipping } from './FreeShipping'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Lyouts/ClientLayout'
@@ -122,6 +123,12 @@ export { default as MostFavouraiteProducts } from './product/MostFavouraiteProdu
 export { default as ProductCard } from './product/ProductCard'
 export { default as SpecialSell } from './product/SpecialSell'
 export { default as Depot } from './product/Depot'
+export { default as Breadcrumb } from './product/Breadcrumb'
+export { default as ImageGallery } from './product/ImageGallery'
+export { default as SelectColor } from './product/SelectColor'
+export { default as SelectSize } from './product/SelectSize'
+export { default as OutOfStock } from './product/OutOfStock'
+export { default as Info } from './product/Info'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
