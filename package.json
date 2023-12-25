@@ -18,6 +18,7 @@
     "joi": "^17.11.0",
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
+    "moment-jalaali": "^0.10.0",
     "mongoose": "^6.3.5",
     "next": "14.0.3",
     "react": "^18",

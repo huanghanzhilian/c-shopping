@@ -39,19 +39,23 @@ const SingleProduct = async ({ params }) => {
 
   const productCategoryID = product.category.pop()
 
-  const products = await Product.find({
-    category: { $in: productCategoryID },
-    inStock: { $gte: 1 },
-    _id: { $ne: product._id },
-  })
-    .select(
-      '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
+  const products = JSON.parse(
+    JSON.stringify(
+      await Product.find({
+        category: { $in: productCategoryID },
+        inStock: { $gte: 1 },
+        _id: { $ne: product._id },
+      })
+        .select(
+          '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
+        )
+        .limit(11)
+        .lean()
     )
-    .limit(11)
-    .lean()
+  )
 
   const smilarProducts = {
-    title: 'کالاهای مشابه',
+    title: '类似商品',
     products,
   }
   console.log('product', product)
@@ -86,6 +90,35 @@ const SingleProduct = async ({ params }) => {
           <Info infos={product?.info} />
 
           <FreeShipping />
+        </div>
+        <div className="lg:col-span-2">
+          {product.inStock > 0 && <AddToCart product={product} />}
+        </div>
+      </div>
+
+      <Services />
+
+      {product.description.length > 0 && <Description description={product.description} />}
+
+      <SmilarProductsSlider smilarProducts={smilarProducts} />
+
+      <div className="section-divide-y" />
+
+      <div className="flex">
+        <div className="flex-1">
+          <Specification specification={product.specification} />
+
+          <div className="section-divide-y" />
+
+          <Reviews
+            numReviews={product.numReviews}
+            prdouctID={product._id}
+            productTitle={product.title}
+          />
+        </div>
+
+        <div className="hidden w-full px-3 lg:block lg:max-w-xs xl:max-w-sm">
+          {product.inStock > 0 && <AddToCart product={product} second />}
         </div>
       </div>
     </main>

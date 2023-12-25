@@ -67,6 +67,9 @@ export { default as Filter } from './filter/Filter'
 
 //* CART COMPONENTS
 export { default as Cart } from './cart/Cart'
+export { default as AddToCart } from './cart/AddToCart'
+export { default as AddToCartOperation } from './cart/AddToCartOperation'
+export { default as CartButtons } from './cart/CartButtons'
 
 //* COMMON COMPONENTS
 export { default as Icons } from './common/Icons'
@@ -103,6 +106,7 @@ export { default as BigLoading } from './loading/BigLoading'
 export { default as RedirectToLogin } from './modals/RedirectToLogin'
 export { default as ConfirmDeleteModal } from './modals/ConfirmDeleteModal'
 export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
+export { default as ReviewModal } from './modals/ReviewModal'
 
 //* FORMS
 export { default as CategoryForm } from './forms/CategoryForm'
@@ -129,15 +133,20 @@ export { default as SelectColor } from './product/SelectColor'
 export { default as SelectSize } from './product/SelectSize'
 export { default as OutOfStock } from './product/OutOfStock'
 export { default as Info } from './product/Info'
+export { default as Description } from './product/Description'
+export { default as Specification } from './product/Specification'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'
 export { default as ReveiwCard } from './review/ReveiwCard'
+export { default as Reviews } from './review/Reviews'
+export { default as ReviewProductCard } from './review/ReviewProductCard'
 
 //* SLIDER COMPONENTS
 export { default as Slider } from './sliders/Slider'
 export { default as DiscountSlider } from './sliders/DiscountSlider'
 export { default as BestSellsSlider } from './sliders/BestSellsSlider'
+export { default as SmilarProductsSlider } from './sliders/SmilarProductsSlider'
 
 //* BANNER COMPONENTS
 export { default as BannerOne } from './banners/BannerOne'

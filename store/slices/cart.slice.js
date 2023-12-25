@@ -12,9 +12,18 @@ const getCartItems = () => {
 
 const setCartItems = cartItems => localStorage.setItem('cartItems', JSON.stringify(cartItems))
 
+const initialState = {
+  cartItems: getCartItems(),
+  totalItems: getTotal(getCartItems(), 'quantity'),
+  totalPrice: getTotal(getCartItems(), 'price'),
+  totalDiscount: getTotal(getCartItems(), 'discount'),
+  tempSize: null,
+  tempColor: null,
+}
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: {},
+  initialState,
   reducers: {
     addToCart: (state, action) => {
       const { color, size, productID } = action.payload
