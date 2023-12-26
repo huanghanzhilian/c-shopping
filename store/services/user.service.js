@@ -43,6 +43,16 @@ export const userApiSlice = apiSlice.injectEndpoints({
             ]
           : ['User'],
     }),
+
+    editUser: builder.mutation({
+      query: ({ body }) => ({
+        url: '/api/user',
+        method: 'PATCH',
+        body,
+      }),
+      invalidatesTags: (result, err, arg) => [{ type: 'User', id: arg.body._id }],
+    }),
+
     deleteUser: builder.mutation({
       query: ({ id }) => ({
         url: `/api/user/${id}`,
@@ -59,4 +69,5 @@ export const {
   useCreateUserMutation,
   useGetUsersQuery,
   useDeleteUserMutation,
+  useEditUserMutation,
 } = userApiSlice

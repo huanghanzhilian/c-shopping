@@ -36,7 +36,8 @@ const uploadInfo = apiHandler(
   {
     isJwt: true,
     schema: joi.object({
-      name: joi.string().required(),
+      name: joi.string(),
+      address: joi.object(),
     }),
   }
 )
