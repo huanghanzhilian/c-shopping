@@ -41,7 +41,7 @@ const UserSchema = new mongoose.Schema({
         },
       },
       province: {
-        id: {
+        code: {
           type: String,
         },
         name: {

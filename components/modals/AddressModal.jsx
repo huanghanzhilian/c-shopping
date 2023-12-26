@@ -53,20 +53,22 @@ const AddressModal = props => {
   //? Re-Renders
   //* Change cities beside on province
   useEffect(() => {
+    setValue('area', {})
+    getValues('city')?.code ? setAreas(regions.getAreasByCity(getValues('city')?.code)) : ''
+    watch('city')
+  }, [getValues('city')?.code])
+
+  useEffect(() => {
     setValue('city', {})
     setCities(regions.getCitysByProvince(getValues('province')?.code))
     watch('province')
   }, [getValues('province')?.code])
 
   useEffect(() => {
-    setValue('area', {})
-
-    setAreas(regions.getAreasByCity(getValues('city')?.code))
-    watch('city')
-  }, [getValues('city')?.code])
-
-  useEffect(() => {
-    if (userInfo?.address) setValue('city', userInfo.address.city)
+    if (userInfo?.address) {
+      setValue('city', userInfo.address.city)
+      setValue('area', userInfo.address.area)
+    }
   }, [])
 
   //? Handlers
@@ -84,8 +86,8 @@ const AddressModal = props => {
         <HandleResponse
           isError={isError}
           isSuccess={isSuccess}
-          error={error}
-          message={data?.msg}
+          error={error?.data?.message}
+          message={data?.message}
           onSuccess={onClose}
         />
       )}
@@ -102,7 +104,7 @@ const AddressModal = props => {
               className="flex flex-col justify-between flex-1 pl-4 overflow-y-auto"
               onSubmit={handleSubmit(submitHander)}
             >
-              <div className="max-w-xl space-y-12 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-5 md:items-baseline ">
+              <div className="space-y-12 md:grid md:grid-cols-3 md:gap-x-12 md:gap-y-5 md:items-baseline ">
                 <div className="space-y-2">
                   <Combobox
                     control={control}

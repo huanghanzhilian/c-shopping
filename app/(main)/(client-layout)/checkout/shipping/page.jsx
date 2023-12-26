@@ -45,6 +45,7 @@ const ShippingPage = () => {
     if (
       !userInfo?.address?.city &&
       !userInfo?.address?.province &&
+      !userInfo?.address?.area &&
       !userInfo?.address?.street &&
       !userInfo?.address?.postalCode
     )
@@ -101,7 +102,7 @@ const ShippingPage = () => {
           isError={isError}
           isSuccess={isSuccess}
           error={error}
-          message={data?.msg}
+          message={data?.data?.message}
           onSuccess={() => {
             dispatch(clearCart())
             router.push('/profile')
