@@ -113,6 +113,8 @@ export { default as ConfirmDeleteModal } from './modals/ConfirmDeleteModal'
 export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
 export { default as ReviewModal } from './modals/ReviewModal'
 export { default as AddressModal } from './modals/AddressModal'
+export { default as UserMobileModal } from './modals/UserMobileModal'
+export { default as UserNameModal } from './modals/UserNameModal'
 
 //* FORMS
 export { default as CategoryForm } from './forms/CategoryForm'

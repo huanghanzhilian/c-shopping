@@ -15,6 +15,7 @@ const getUertInfo = apiHandler(
         role: user.role,
         root: user.root,
         address: user.address,
+        mobile: user.mobile,
       },
     })
   },

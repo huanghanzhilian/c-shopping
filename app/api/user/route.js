@@ -38,6 +38,7 @@ const uploadInfo = apiHandler(
     schema: joi.object({
       name: joi.string(),
       address: joi.object(),
+      mobile: joi.string(),
     }),
   }
 )
