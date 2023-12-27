@@ -29,10 +29,13 @@ const createOrder = apiHandler(
   {
     isJwt: true,
     schema: joi.object({
-      address: joi.string().required(),
-      mobile: joi.string().required(),
+      address: joi.object().required(),
+      mobile: joi.string(),
       cart: joi.array().required(),
-      total: joi.number().required(),
+      totalItems: joi.number().required(),
+      totalPrice: joi.number().required(),
+      totalDiscount: joi.number().required(),
+      paymentMethod: joi.string().required(),
     }),
   }
 )

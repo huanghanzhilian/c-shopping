@@ -8,7 +8,6 @@ const getUertInfo = apiHandler(
   async req => {
     const userId = req.headers.get('userId')
     const user = await usersRepo.getById(userId)
-    console.log('user', user)
     return setJson({
       data: {
         name: user.name,

@@ -60,6 +60,7 @@ const ShippingPage = () => {
         body: {
           address: {
             city: userInfo.address.city.name,
+            area: userInfo.address.area.name,
             postalCode: userInfo.address.postalCode,
             provinces: userInfo.address.province.name,
             street: userInfo.address.street,
@@ -79,9 +80,9 @@ const ShippingPage = () => {
     const BasicChangeAddress = ({ addressModalProps }) => {
       const { openAddressModal } = addressModalProps || {}
       return (
-        <button type="button" onClick={openAddressModal} className="flex items-center mr-auto">
+        <button type="button" onClick={openAddressModal} className="flex items-center ml-auto">
           <span className="text-base text-sky-500">改变| 编辑</span>
-          <Icons.ArrowLeft className="icon text-sky-500" />
+          <Icons.ArrowRight2 className="icon text-sky-500" />
         </button>
       )
     }
@@ -101,8 +102,8 @@ const ShippingPage = () => {
         <HandleResponse
           isError={isError}
           isSuccess={isSuccess}
-          error={error}
-          message={data?.data?.message}
+          error={error?.data?.message}
+          message={data?.message}
           onSuccess={() => {
             dispatch(clearCart())
             router.push('/profile')
@@ -201,12 +202,12 @@ const ShippingPage = () => {
                   type="radio"
                   name="cash"
                   id="cash"
-                  value="在线付款"
-                  checked={paymentMethod === '在线付款'}
+                  value="在线支付"
+                  checked={paymentMethod === '在线支付'}
                   onChange={e => setPaymentMethod(e.target.value)}
                 />
                 <label className="text-sm" htmlFor="cash">
-                  在线付款
+                  在线支付
                 </label>
               </div>
               <div className="flex items-center gap-x-2 ">
@@ -215,7 +216,6 @@ const ShippingPage = () => {
                   name="zarinPal"
                   id="zarinPal"
                   value="银行卡"
-                  disabled={true}
                   checked={paymentMethod === '银行卡'}
                   onChange={e => setPaymentMethod(e.target.value)}
                 />

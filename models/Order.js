@@ -7,12 +7,43 @@ const OrderSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: 'user',
     },
-    address: String,
+    address: Object,
     mobile: String,
-    cart: Array,
-    total: Number,
-    peymentId: String,
-    method: String,
+    cart: [
+      {
+        itemID: { type: String },
+        productID: { type: mongoose.Types.ObjectId },
+        name: { type: String },
+        price: { type: Number },
+        discount: { type: Number },
+        inStock: { type: Number },
+        sold: { type: Number },
+        color: {
+          type: {
+            id: { type: String, required: true },
+            name: { type: String, required: true },
+            hashCode: { type: String, required: true },
+          },
+          required: false,
+        },
+        size: {
+          type: {
+            id: { type: String, required: true },
+            size: { type: String, required: true },
+          },
+          required: false,
+        },
+        img: {
+          public_id: { type: String },
+          url: { type: String },
+        },
+        quantity: { type: Number },
+      },
+    ],
+    totalItems: Number,
+    totalPrice: Number,
+    totalDiscount: Number,
+    paymentMethod: String,
     delivered: {
       type: Boolean,
       default: false,

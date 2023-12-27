@@ -72,8 +72,7 @@ const CartPage = () => {
   if (cartItems.length === 0)
     return (
       <>
-        <Header />
-        <section className="py-2 mx-auto mb-20 space-y-3 xl:mt-36 lg:mb-0 lg:max-w-7xl lg:px-5 lg:mt-6 lg:space-y-0 lg:py-4 lg:border lg:border-gray-200 lg:rounded-md">
+        <section className="py-2 mx-auto mb-20 space-y-3 xl:mt-36 lg:mb-0 container lg:px-5 lg:mt-6 lg:space-y-0 lg:py-4 lg:border lg:border-gray-200 lg:rounded-md">
           <div className="section-divide-y" />
 
           <div className="py-20">
@@ -92,7 +91,7 @@ const CartPage = () => {
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}
       />
-      <main className="py-2 mx-auto mb-20 space-y-3 xl:mt-36 lg:py-0 lg:mb-0 lg:max-w-7xl b lg:px-5 lg:mt-6 lg:gap-x-3 lg:flex lg:flex-wrap lg:space-y-0">
+      <main className="container py-2 mx-auto mb-20 space-y-3 xl:mt-36 lg:py-0 lg:mb-0 b lg:px-5 lg:mt-6 lg:gap-x-3 lg:flex lg:flex-wrap lg:space-y-0">
         <div className="lg:py-4 lg:border lg:border-gray-200 lg:rounded-md lg:flex-1 h-fit">
           {/* title */}
           <section className="flex justify-between px-4">
