@@ -10,7 +10,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
       providesTags: (result, error, arg) =>
         result
           ? [
-              ...result.orders.map(({ _id }) => ({
+              ...result.data.orders.map(({ _id }) => ({
                 type: 'Order',
                 id: _id,
               })),

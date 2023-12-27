@@ -13,7 +13,7 @@ export default function ProfileLayout({ children }) {
     return (
       <>
         <Header />
-        <div className="lg:flex lg:gap-x-4 container  xl:mt-16">
+        <div className="lg:flex lg:gap-x-4 lg:px-3 lg:container xl:mt-28">
           <div className="hidden lg:block">
             <ProfileAside />
           </div>

@@ -1,13 +1,21 @@
 import joi from 'joi'
 
 import { setJson, apiHandler } from '@/helpers/api'
-import { orderRepo } from '@/helpers'
+import { getQuery, orderRepo } from '@/helpers'
 
 const getOrders = apiHandler(
   async req => {
+    const query = getQuery(req)
+    const page = query.page ? +query.page : 1
+    const page_size = query.page_size ? +query.page_size : 10
     const userId = req.headers.get('userId')
     const role = req.headers.get('userRole')
-    const result = await orderRepo.getAll(userId, role)
+    const result = await orderRepo.getAll({
+      userId,
+      role,
+      page,
+      page_size,
+    })
     return setJson({
       data: result,
     })

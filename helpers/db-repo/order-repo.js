@@ -1,17 +1,36 @@
 import { db } from '..'
 import Order from '@/models/Order'
 
-const getAll = async (userId, role) => {
+const getAll = async ({ userId, role, page, page_size }) => {
   await db.connect()
   let orders
-  console.log('role', role)
+  let ordersLength
   if (role !== 'admin') {
-    orders = await Order.find({ user: userId }).populate('user', '-password')
+    orders = await Order.find({ user: userId })
+      .populate('user', '-password')
+      .skip((page - 1) * page_size)
+      .limit(page_size)
+    ordersLength = await Order.countDocuments({ user: userId })
   } else {
-    orders = await Order.find().populate('user', '-password')
+    orders = await Order.find()
+      .populate('user', '-password')
+      .skip((page - 1) * page_size)
+      .limit(page_size)
+    ordersLength = await Order.countDocuments()
   }
   await db.disconnect()
-  return orders
+  return {
+    orders,
+    ordersLength,
+    pagination: {
+      currentPage: page,
+      nextPage: page + 1,
+      previousPage: page - 1,
+      hasNextPage: page_size * page < ordersLength,
+      hasPreviousPage: page > 1,
+      lastPage: Math.ceil(ordersLength / page_size),
+    },
+  }
 }
 
 const getById = async id => {

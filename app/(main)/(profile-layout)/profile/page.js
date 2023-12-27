@@ -1,5 +1,6 @@
 'use client'
 
+import { Orders } from '@/components'
 import { useSelector } from 'react-redux'
 
 export default function ProfilePage() {
@@ -7,7 +8,7 @@ export default function ProfilePage() {
 
   return (
     <>
-      <div className="px-4">hello</div>
+      <Orders />
     </>
   )
 }

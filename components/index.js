@@ -22,9 +22,9 @@ export { default as Sort } from './Sort'
 export { default as FreeShipping } from './FreeShipping'
 
 //* LAYOUT COMPONENTS
-export { default as ClientLayout } from './Lyouts/ClientLayout'
-export { default as ProfileLayout } from './Lyouts/ProfileLayout'
-export { default as DashboardLayout } from './Lyouts/DashboardLayout'
+export { default as ClientLayout } from './Layouts/ClientLayout'
+export { default as ProfileLayout } from './Layouts/ProfileLayout'
+export { default as DashboardLayout } from './Layouts/DashboardLayout'
 
 //* SVGs
 export { default as Logo } from './svgs/logo.svg'
@@ -121,7 +121,7 @@ export { default as BannerForm } from './forms/BannerForm'
 export { default as SliderForm } from './forms/SliderForm'
 
 //* ORDERS COMPONENTS
-// export { default as Orders } from './order/Orders'
+export { default as Orders } from './order/Orders'
 
 //* PRODUCT COMPONENTS
 export { default as AddColors } from './product/AddColors'
