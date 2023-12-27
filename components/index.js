@@ -122,6 +122,7 @@ export { default as SliderForm } from './forms/SliderForm'
 
 //* ORDERS COMPONENTS
 export { default as Orders } from './order/Orders'
+export { default as OrderCard } from './order/OrderCard'
 
 //* PRODUCT COMPONENTS
 export { default as AddColors } from './product/AddColors'
