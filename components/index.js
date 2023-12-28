@@ -20,6 +20,7 @@ export { default as Navbar } from './Navbar'
 export { default as Sidebar } from './Sidebar'
 export { default as Sort } from './Sort'
 export { default as FreeShipping } from './FreeShipping'
+export { default as AddressBar } from './AddressBar'
 
 //* LAYOUT COMPONENTS
 export { default as ClientLayout } from './Layouts/ClientLayout'
@@ -73,6 +74,8 @@ export { default as CartButtons } from './cart/CartButtons'
 export { default as CartItem } from './cart/CartItem'
 export { default as CartInfo } from './cart/CartInfo'
 export { default as DiscountCartItem } from './cart/DiscountCartItem'
+export { default as CartDropdown } from './cart/CartDropdown'
+export { default as CartBadge } from './cart/CartBadge'
 
 //* COMMON COMPONENTS
 export { default as Icons } from './common/Icons'

@@ -58,7 +58,7 @@ const CartItem = props => {
           ) : (
             <div className="flex items-center gap-x-2">
               <span className="text-sm text-gray-700 farsi-digits">{formatNumber(item.price)}</span>
-              <span className="w-6 h-6">¥</span>
+              <span className="">¥</span>
             </div>
           )}
         </div>

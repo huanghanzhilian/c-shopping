@@ -6,6 +6,7 @@ const DiscountCartItem = props => {
 
   //? Assets
   const discountPercent = discount / 100
+  console.log('discountPercent', discountPercent)
 
   //? Render(s)
   return (
@@ -15,7 +16,7 @@ const DiscountCartItem = props => {
           {formatNumber(+(price * discountPercent).toFixed())}
         </span>
 
-        <span className="w-6 h-6">¥</span>
+        <span className="text-red-500">¥</span>
 
         <span className="text-red-500">折扣</span>
       </div>
@@ -23,7 +24,7 @@ const DiscountCartItem = props => {
         <span className="text-sm text-gray-700 farsi-digits">
           {formatNumber(price - (discount * price) / 100)}
         </span>
-        <span className="w-6 h-6">¥</span>
+        <span className="">¥</span>
       </div>
     </div>
   )
