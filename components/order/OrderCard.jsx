@@ -87,7 +87,7 @@ const OrderCard = props => {
             <span className="text-black farsi-digits">
               {formatNumber(order.totalPrice - order.totalDiscount)}
             </span>
-            <span className="w-6 h-6">¥</span>
+            <span className="">¥</span>
           </div>
         </div>
         <div className="flex flex-wrap py-5 gap-x-5 gap-y-3 lg:border-t lg:border-gray-200 lg:px-3">
