@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 import { Icons } from 'components'
 
@@ -8,13 +8,13 @@ export default function BoxLink(props) {
   const { children, path, name } = props
 
   //? Assets
-  const router = useRouter()
+  const asPath = usePathname()
 
   //? Render(s)
   return (
     <div
       className={`transition-colors hover:bg-gray-200 px-3 ${
-        router.pathname === path ? 'border-r-4 border-red-600' : 'border-r-4 border-white'
+        asPath === path ? 'border-r-4 border-red-600' : 'border-r-4 border-white'
       }`}
     >
       <Link
