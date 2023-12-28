@@ -59,6 +59,7 @@ const update = async (id, params) => {
   if (!result) throw '数据不存在'
   await Review.findByIdAndUpdate({ _id: id }, { ...params })
   await db.disconnect()
+  return result
 }
 
 export const reviewRepo = {

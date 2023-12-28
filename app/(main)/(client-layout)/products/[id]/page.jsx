@@ -53,7 +53,7 @@ const SingleProduct = async ({ params }) => {
     title: '类似商品',
     products,
   }
-  console.log('product', product)
+  // console.log('product', product)
 
   return (
     <main className="xl:mt-28 container mx-auto py-4 space-y-4">

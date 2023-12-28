@@ -30,6 +30,14 @@ const ReviewModal = props => {
     control,
   } = useForm({
     resolver: yupResolver(reviewSchema),
+    defaultValues: {
+      comment: '',
+      title: '',
+      positivePoints: [],
+      negativePoints: [],
+      rating: 1,
+      product: '',
+    },
   })
 
   const {
@@ -70,8 +78,7 @@ const ReviewModal = props => {
 
   const submitHander = data =>
     createReview({
-      id: prdouctID,
-      body: { ...data, rating },
+      body: { ...data, rating, product: prdouctID },
     })
 
   //? Render(s)
@@ -82,8 +89,8 @@ const ReviewModal = props => {
         <HandleResponse
           isError={isError}
           isSuccess={isSuccess}
-          error={error}
-          message={data?.msg}
+          error={error?.data?.message}
+          message={data?.message}
           onSuccess={() => {
             onClose()
             reset()

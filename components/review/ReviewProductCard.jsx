@@ -19,7 +19,7 @@ const ReviewProductCard = props => {
         <div className="w-full border-b border-gray-100">
           <p className="mb-1">{item.title}</p>
           <span className="text-xs farsi-digits">
-            {moment(item.updatedAt).format('jYYYY/jM/jD')}
+            {moment(item.updatedAt).format('YYYY-MM-DD')}
           </span>
           <span className="inline-block w-1 h-1 mx-3 bg-gray-400 rounded-full" />
           <span className="text-xs">{item.user?.name}</span>

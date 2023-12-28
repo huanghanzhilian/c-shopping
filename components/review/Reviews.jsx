@@ -60,7 +60,7 @@ const Reviews = props => {
             >
               <Icons.Comment className="icon" />
               <span className="text-sm text-black ">写下您对该产品的看法</span>
-              <Icons.ArrowLeft className="mr-auto icon" />
+              <Icons.ArrowRight2 className="mr-auto icon" />
             </button>
             <p className="mt-6 text-xs text-gray-500">
               确认意见后，通过访问俱乐部任务页面获取分数。
@@ -73,7 +73,7 @@ const Reviews = props => {
             refetch={refetch}
             isFetching={isFetching}
             isSuccess={isSuccess}
-            dataLength={data ? data.reviewsLength : 0}
+            dataLength={data ? data?.data?.reviewsLength : 0}
             emptyComponent={<EmptyComment />}
             loadingComponent={<ReveiwSkeleton />}
           >

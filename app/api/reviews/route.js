@@ -14,8 +14,6 @@ const getAll = apiHandler(
 
     let result
 
-    console.log('userRoot', userRoot)
-
     if (userRoot === 'true') {
       result = await reviewRepo.getAll({
         page,
@@ -58,6 +56,8 @@ const create = apiHandler(
       title: joi.string().required(),
       rating: joi.number().required(),
       comment: joi.string().required(),
+      negativePoints: joi.array(),
+      positivePoints: joi.array(),
     }),
   }
 )
