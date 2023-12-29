@@ -1,6 +1,6 @@
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
-export default function useChangeRoute(options = { shallow: true }) {
+export default function useChangeRoute() {
   const { replace } = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -15,7 +15,7 @@ export default function useChangeRoute(options = { shallow: true }) {
       if (value) queryParams.set(key, value)
     })
 
-    replace(`${pathname}?${queryParams.toString()}`, undefined, { ...options })
+    replace(`${pathname}?${queryParams.toString()}`, { scroll: false })
   }
 
   return changeRoute

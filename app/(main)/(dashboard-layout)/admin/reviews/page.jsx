@@ -19,9 +19,7 @@ const ReviewsPage = () => {
   const query = useUrlQuery()
   const page = query.page ? +query.page : 1
 
-  const changeRoute = useChangeRoute({
-    shallow: true,
-  })
+  const changeRoute = useChangeRoute()
 
   //? Get Review Data
   const { data, isError, error, isFetching, refetch, isSuccess } = useGetReviewsQuery({

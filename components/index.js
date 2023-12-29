@@ -59,8 +59,6 @@ export { default as OrderSkeleton } from './skeleton/OrderSkeleton'
 export { default as ProductSkeleton } from './skeleton/ProductSkeleton'
 export { default as SubCategoriesSkeleton } from './skeleton/SubCategoriesSkeleton'
 export { default as TableSkeleton } from './skeleton/TableSkeleton'
-export { default as SubCategories } from './product/SubCategories'
-export { default as ProductsAside } from './product/ProductsAside'
 
 //* FILTER COMPONENTS
 export { default as FilterOperation } from './filter/FilterOperation'
@@ -94,6 +92,7 @@ export { default as TextArea } from './common/TextArea'
 export { default as UploadImage } from './common/UploadImage'
 export { default as WithAddressModal } from './common/WithAddressModal'
 export { default as Combobox } from './common/Combobox'
+export { default as ImageList } from './product/ImageList'
 export * from './common/IconBtns'
 export * from './common/Buttons'
 export * from './common/Checkbox'
@@ -109,8 +108,9 @@ export { default as EmptyCustomList } from './emptyList/EmptyCustomList'
 //* LOADING
 export { default as Loading } from './loading/Loading'
 export { default as BigLoading } from './loading/BigLoading'
+export { default as PageLoading } from './loading/PageLoading'
 
-//* MODAL COMPONENTS
+//* MODAL COMPONENTS -1
 export { default as RedirectToLogin } from './modals/RedirectToLogin'
 export { default as ConfirmDeleteModal } from './modals/ConfirmDeleteModal'
 export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
@@ -119,7 +119,7 @@ export { default as AddressModal } from './modals/AddressModal'
 export { default as UserMobileModal } from './modals/UserMobileModal'
 export { default as UserNameModal } from './modals/UserNameModal'
 
-//* FORMS
+//* FORMS -1
 export { default as CategoryForm } from './forms/CategoryForm'
 export { default as ProductsForm } from './forms/ProductsForm'
 export { default as BannerForm } from './forms/BannerForm'
@@ -128,11 +128,11 @@ export { default as SliderForm } from './forms/SliderForm'
 //* ORDERS COMPONENTS
 export { default as Orders } from './order/Orders'
 export { default as OrderCard } from './order/OrderCard'
+export { default as OrdersTable } from './order/OrdersTable'
 
 //* PRODUCT COMPONENTS
 export { default as AddColors } from './product/AddColors'
 export { default as AddSizes } from './product/AddSizes'
-export { default as ImageList } from './product/ImageList'
 export { default as ProductPrice } from './product/ProductPrice'
 export { default as DiscountProduct } from './product/DiscountProduct'
 export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
@@ -148,6 +148,8 @@ export { default as Info } from './product/Info'
 export { default as Description } from './product/Description'
 export { default as Specification } from './product/Specification'
 export { default as InitialStore } from './product/InitialStore'
+export { default as SubCategories } from './product/SubCategories'
+export { default as ProductsAside } from './product/ProductsAside'
 
 //* REVIEW COMPONENTS
 export { default as ReviewsTable } from './review/ReviewsTable'

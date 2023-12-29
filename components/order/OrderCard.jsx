@@ -48,7 +48,9 @@ const OrderCard = props => {
           </div>
           {/* <Icons.ArrowLeft className='icon w-7 h-7' /> */}
           {order.delivered && (
-            <span className="farsi-digits">{moment(order.updatedAt).format('jYYYY/jM/jD')}</span>
+            <span className="farsi-digits">
+              {moment(order.updatedAt).format('YYYY-MM-DD HH:mm:ss')}
+            </span>
           )}
           {singleOrder && (
             <div className="relative h-fit px-1.5 group self-end">

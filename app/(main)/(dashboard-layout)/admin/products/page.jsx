@@ -34,9 +34,7 @@ const Products = () => {
   const page = query.page ? +query.page : 1
   const category = query.category ?? ''
 
-  const changeRoute = useChangeRoute({
-    shallow: true,
-  })
+  const changeRoute = useChangeRoute()
 
   const initialSelectedCategories = {
     levelOne: {},
@@ -116,7 +114,7 @@ const Products = () => {
     setSearch('')
     setSelectedCategories(initialSelectedCategories)
     refetch()
-    push('/admin/products', undefined, { shallow: true })
+    push('/admin/products')
   }
 
   const findCategory = id => categories?.find(cat => cat._id === id)
@@ -197,7 +195,7 @@ const Products = () => {
       )}
 
       <main>
-        <PageContainer title="产品">
+        <PageContainer title="商品管理">
           <section className="p-3 space-y-7" id="_adminProducts">
             <form className="max-w-4xl mx-auto space-y-5" onSubmit={handleSubmit}>
               <SelectCategories

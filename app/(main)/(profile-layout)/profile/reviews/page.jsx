@@ -22,9 +22,7 @@ import { useUrlQuery } from '@/hooks'
 const Reviews = () => {
   //? Assets
   const query = useUrlQuery()
-  const changeRoute = useChangeRoute({
-    shallow: true,
-  })
+  const changeRoute = useChangeRoute()
 
   //? Modals
   const [isShowConfirmDeleteModal, confirmDeleteModalHandlers] = useDisclosure()

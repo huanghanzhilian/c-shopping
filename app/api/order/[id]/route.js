@@ -1,17 +1,18 @@
-import joi from 'joi'
-
 import { setJson, apiHandler } from '@/helpers/api'
 import { orderRepo } from '@/helpers'
 
-const deliveredOrder = apiHandler(
+const getOrder = apiHandler(async (req, { params }) => {
+  const { id } = params
+  const result = await orderRepo.getById(id)
+  return setJson({
+    data: result,
+  })
+})
+
+const updateOrder = apiHandler(
   async (req, { params }) => {
     const { id } = params
-    const body = {
-      paid: true,
-      dateOfPayment: new Date().toISOString(),
-      method: '在线付款',
-      deliverd: true,
-    }
+    const body = await req.json()
     await orderRepo.update(id, body)
     return setJson({
       message: '已经通过确认',
@@ -23,4 +24,5 @@ const deliveredOrder = apiHandler(
   }
 )
 
-export const PATCH = deliveredOrder
+export const PATCH = updateOrder
+export const GET = getOrder

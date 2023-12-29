@@ -17,9 +17,7 @@ import { useUrlQuery } from '@/hooks'
 const Orders = () => {
   //? Assets
   const query = useUrlQuery()
-  const changeRoute = useChangeRoute({
-    shallow: true,
-  })
+  const changeRoute = useChangeRoute()
 
   //? Get Orders Data
   const { data, isSuccess, isFetching, error, isError, refetch } = useGetOrdersQuery({

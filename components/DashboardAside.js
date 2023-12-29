@@ -5,12 +5,12 @@ import { Icons, BoxLink, Logout, Logo } from 'components'
 export default function ProfileAside() {
   const profilePaths = [
     {
-      name: '新增商品',
+      name: '商品新增',
       Icon: Icons.Plus,
       path: '/admin/products/create',
     },
     {
-      name: '管理商品',
+      name: '商品管理',
       Icon: Icons.Save,
       path: '/admin/products',
     },
@@ -40,12 +40,12 @@ export default function ProfileAside() {
       path: '/admin/reviews',
     },
     {
-      name: '滑块',
+      name: '滑块管理',
       Icon: Icons.Slider,
       path: '/admin/sliders',
     },
     {
-      name: '横幅',
+      name: '横幅管理',
       Icon: Icons.Image,
       path: '/admin/banners',
     },

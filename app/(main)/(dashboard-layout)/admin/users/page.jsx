@@ -22,9 +22,7 @@ export default function UsersPage() {
   const searchParams = useSearchParams()
   const page = searchParams.get('page')
 
-  const changeRoute = useChangeRoute({
-    shallow: true,
-  })
+  const changeRoute = useChangeRoute()
 
   //? Modals
   const [isShowConfirmDeleteModal, confirmDeleteModalHandlers] = useDisclosure()

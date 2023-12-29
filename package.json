@@ -22,6 +22,7 @@
     "moment-jalaali": "^0.10.0",
     "mongoose": "^6.3.5",
     "next": "14.0.3",
+    "nprogress": "^0.2.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.31.3",

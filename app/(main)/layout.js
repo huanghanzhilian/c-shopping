@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import StoreProvider from 'app/StoreProvider'
 
 // ? Conponents
-import { Alert } from 'components'
+import { PageLoading, Alert } from '@/components'
 
 export default function Layout({ children }) {
   //? Fix Hydration failed
@@ -23,6 +23,7 @@ export default function Layout({ children }) {
     <StoreProvider>
       {children}
       <Alert />
+      <PageLoading />
     </StoreProvider>
   )
 }

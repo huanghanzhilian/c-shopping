@@ -37,7 +37,7 @@ const CreateProductPage = () => {
       )}
 
       <main>
-        <PageContainer title="新增产品">
+        <PageContainer title="商品新增">
           <ProductsForm mode="create" isLoadingCreate={isLoading} createHandler={createHandler} />
         </PageContainer>
       </main>
