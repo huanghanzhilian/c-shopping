@@ -110,7 +110,7 @@ export { default as Loading } from './loading/Loading'
 export { default as BigLoading } from './loading/BigLoading'
 export { default as PageLoading } from './loading/PageLoading'
 
-//* MODAL COMPONENTS -1
+//* MODAL COMPONENTS
 export { default as RedirectToLogin } from './modals/RedirectToLogin'
 export { default as ConfirmDeleteModal } from './modals/ConfirmDeleteModal'
 export { default as ConfirmUpdateModal } from './modals/ConfirmUpdateModal'
@@ -118,6 +118,7 @@ export { default as ReviewModal } from './modals/ReviewModal'
 export { default as AddressModal } from './modals/AddressModal'
 export { default as UserMobileModal } from './modals/UserMobileModal'
 export { default as UserNameModal } from './modals/UserNameModal'
+export { default as SearchModal } from './modals/SearchModal'
 
 //* FORMS -1
 export { default as CategoryForm } from './forms/CategoryForm'
