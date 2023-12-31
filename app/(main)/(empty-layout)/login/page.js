@@ -1,15 +1,9 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
 import Link from 'next/link'
 
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-
-import { logInSchema } from 'utils'
-
-import { TextField, LoginBtn, HandleResponse } from '@/components'
+import { HandleResponse, LoginForm } from '@/components'
 
 import { useLoginMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
@@ -24,26 +18,6 @@ export default function LoginPage() {
 
   //? Login User
   const [login, { data, isSuccess, isError, isLoading, error }] = useLoginMutation()
-
-  //? Form Hook
-  const {
-    handleSubmit,
-    formState: { errors: formErrors },
-    reset,
-    setFocus,
-    control,
-  } = useForm({
-    resolver: yupResolver(logInSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  })
-
-  //? Focus On Mount
-  useEffect(() => {
-    setFocus('email')
-  }, [])
 
   //? Handlers
   const submitHander = async ({ email, password }) => {
@@ -64,7 +38,6 @@ export default function LoginPage() {
           message={data?.message}
           onSuccess={() => {
             dispatch(userLogin(data.data.token))
-            reset()
             replace(redirectTo || '/')
           }}
         />
@@ -79,23 +52,7 @@ export default function LoginPage() {
               <font>登录</font>
             </font>
           </h1>
-          <form className="space-y-4" onSubmit={handleSubmit(submitHander)} autoComplete="off">
-            <TextField
-              errors={formErrors.email}
-              placeholder="请输入您的账户邮箱"
-              name="email"
-              control={control}
-            />
-
-            <TextField
-              errors={formErrors.password}
-              type="password"
-              placeholder="请输入您的账户密码"
-              name="password"
-              control={control}
-            />
-            <LoginBtn isLoading={isLoading}>登录</LoginBtn>
-          </form>
+          <LoginForm isLoading={isLoading} onSubmit={submitHander} />
           <div className="text-xs">
             <p className="inline mr-2 text-gray-800 text-xs">我还没有账户</p>
             <Link href="/register" className="text-blue-400 text-xs">

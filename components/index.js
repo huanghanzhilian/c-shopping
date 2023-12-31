@@ -120,11 +120,12 @@ export { default as UserMobileModal } from './modals/UserMobileModal'
 export { default as UserNameModal } from './modals/UserNameModal'
 export { default as SearchModal } from './modals/SearchModal'
 
-//* FORMS -1
+//* FORMS
 export { default as CategoryForm } from './forms/CategoryForm'
 export { default as ProductsForm } from './forms/ProductsForm'
 export { default as BannerForm } from './forms/BannerForm'
 export { default as SliderForm } from './forms/SliderForm'
+export { default as LoginForm } from './forms/LoginForm'
 
 //* ORDERS COMPONENTS
 export { default as Orders } from './order/Orders'

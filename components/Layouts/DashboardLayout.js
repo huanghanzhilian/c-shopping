@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }) {
 
   const { userInfo, isVerify } = useUserInfo()
 
-  if (!isVerify || userInfo?.role === 'user') router.push('/login')
+  if (!isVerify || userInfo?.role === 'user') router.push('/admin/authentication/login')
 
   if (userInfo?.role === 'admin' || userInfo?.root)
     return (
