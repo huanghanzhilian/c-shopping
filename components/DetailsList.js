@@ -1,3 +1,4 @@
+'use client'
 import { useRef } from 'react'
 
 import { Control, UseFormRegister, useFieldArray } from 'react-hook-form'

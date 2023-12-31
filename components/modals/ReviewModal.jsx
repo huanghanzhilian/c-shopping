@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useRef } from 'react'
 
 import { nanoid } from '@reduxjs/toolkit'

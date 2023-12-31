@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 import { Button, ControlledCheckbox, TextField, UploadImage } from 'components'

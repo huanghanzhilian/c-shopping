@@ -1,3 +1,5 @@
+'use client'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import { TextField, Button, UploadImage } from 'components'
 import Image from 'next/image'

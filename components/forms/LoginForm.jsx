@@ -1,3 +1,5 @@
+'use client'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import { LoginBtn, TextField } from '@/components'
 import { useEffect } from 'react'

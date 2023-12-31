@@ -1,3 +1,5 @@
+'use client'
+
 import { Fragment, useEffect, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { HiCheck, HiChevronDown } from 'react-icons/hi'

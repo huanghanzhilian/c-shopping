@@ -1,3 +1,5 @@
+'use client'
+
 import { Fragment, useState } from 'react'
 
 import { useEditReviewMutation } from '@/store/services'
