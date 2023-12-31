@@ -11,7 +11,7 @@ import {
 } from '@/components'
 
 export const metadata = {
-  title: '首页',
+  title: 'xxx 精选',
 }
 
 export const revalidate = 20

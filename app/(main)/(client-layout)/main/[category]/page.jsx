@@ -12,7 +12,7 @@ import {
   Slider as MainSlider,
 } from 'components'
 
-const MainCategory = async ({ params: { category } }) => {
+export const getData = async category => {
   await db.connect()
 
   const currentCategory = await Category.findOne({
@@ -37,6 +37,18 @@ const MainCategory = async ({ params: { category } }) => {
   }).lean()
 
   await db.disconnect()
+  return {
+    currentCategory,
+    sliders,
+    bannerOneType,
+    bannerTwoType,
+    childCategories,
+  }
+}
+
+const MainCategory = async ({ params: { category } }) => {
+  const { currentCategory, sliders, bannerOneType, bannerTwoType, childCategories } =
+    await getData(category)
 
   //? Render(s)
   return (
@@ -78,3 +90,12 @@ export async function generateStaticParams() {
 }
 
 export default MainCategory
+
+export async function generateMetadata({ params: { category } }) {
+  const { currentCategory, sliders, bannerOneType, bannerTwoType, childCategories } =
+    await getData(category)
+
+  return {
+    title: `xxx精选 | ${currentCategory.name}`,
+  }
+}
