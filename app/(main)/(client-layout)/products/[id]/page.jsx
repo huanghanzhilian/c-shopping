@@ -18,42 +18,41 @@ import {
 } from 'components'
 import { db } from '@/helpers'
 
-const SingleProduct = async ({ params }) => {
+export const getData = async params => {
   await db.connect()
-  const product = JSON.parse(
-    JSON.stringify(
-      await Product.findById({ _id: params?.id })
-        .populate('category_levels.level_one')
-        .populate('category_levels.level_two')
-        .populate('category_levels.Level_three')
-        .lean()
-    )
-  )
+  const product = await Product.findById({ _id: params?.id })
+    .populate('category_levels.level_one')
+    .populate('category_levels.level_two')
+    .populate('category_levels.Level_three')
+    .lean()
 
   if (!product) return { notFound: true }
 
   const productCategoryID = product.category.pop()
 
-  const products = JSON.parse(
-    JSON.stringify(
-      await Product.find({
-        category: { $in: productCategoryID },
-        inStock: { $gte: 1 },
-        _id: { $ne: product._id },
-      })
-        .select(
-          '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
-        )
-        .limit(11)
-        .lean()
+  const smilarProducts = await Product.find({
+    category: { $in: productCategoryID },
+    inStock: { $gte: 1 },
+    _id: { $ne: product._id },
+  })
+    .select(
+      '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
     )
-  )
+    .limit(11)
+    .lean()
 
-  const smilarProducts = {
-    title: '类似商品',
-    products,
+  await db.disconnect()
+  return {
+    product: JSON.parse(JSON.stringify(product)),
+    smilarProducts: {
+      title: '类似商品',
+      products: JSON.parse(JSON.stringify(smilarProducts)),
+    },
   }
-  // console.log('product', product)
+}
+
+const SingleProduct = async ({ params }) => {
+  const { product, smilarProducts } = await getData(params)
 
   return (
     <main className="xl:mt-28 container mx-auto py-4 space-y-4">
@@ -122,3 +121,12 @@ const SingleProduct = async ({ params }) => {
 }
 
 export default SingleProduct
+
+export async function generateMetadata({ params }) {
+  const { product, smilarProducts } = await getData(params)
+
+  return {
+    title: `购买 ${product.title}`,
+    description: `${product.title}`,
+  }
+}
