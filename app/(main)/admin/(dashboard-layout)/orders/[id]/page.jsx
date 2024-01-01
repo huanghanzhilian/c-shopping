@@ -4,9 +4,10 @@ import { useGetSingleOrderQuery } from '@/store/services'
 
 import { BigLoading, DashboardLayout, OrderCard, PageContainer } from 'components'
 
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const SingleOrder = ({ params }) => {
+  useTitle('订单详情')
   //? Assets
   const query = useUrlQuery()
 

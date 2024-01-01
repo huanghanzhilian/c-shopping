@@ -14,9 +14,10 @@ import {
   Pagination,
 } from '@/components'
 import { useGetUsersQuery, useDeleteUserMutation } from '@/store/services'
-import { useDisclosure, useChangeRoute } from '@/hooks'
+import { useDisclosure, useChangeRoute, useTitle } from '@/hooks'
 
 export default function UsersPage() {
+  useTitle('用户管理')
   //? Assets
   const { replace } = useRouter()
   const searchParams = useSearchParams()

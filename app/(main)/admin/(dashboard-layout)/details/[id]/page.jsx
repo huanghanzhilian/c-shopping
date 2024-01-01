@@ -26,7 +26,7 @@ import { Tab } from '@headlessui/react'
 import { useAppDispatch, useDisclosure } from 'hooks'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const tabListNames = [
   { id: 0, name: '选择类型' },
@@ -193,6 +193,8 @@ const DetailsContentPage = ({ params: { id } }) => {
 
   const onErrorDelete = () => confirmDeleteModalHandlers.close()
 
+  useTitle(`品类规格及特点 - ${categoryName ? categoryName : ''}`)
+
   //? Render(s)
   return (
     <>
@@ -254,7 +256,7 @@ const DetailsContentPage = ({ params: { id } }) => {
             <BigLoading />
           </div>
         ) : (
-          <PageContainer title={` 品类规格及特点 - ${categoryName ? categoryName : ''}`}>
+          <PageContainer title={`品类规格及特点 - ${categoryName ? categoryName : ''}`}>
             <form
               onSubmit={
                 mode === 'create' ? handleSubmit(createHandler) : handleSubmit(updateHandler)

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { EmptyCustomList, PageContainer, TableSkeleton } from 'components'
 
 import { useGetCategoriesQuery, useGetSlidersQuery } from '@/store/services'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const SlidersPage = () => {
   const query = useUrlQuery()
@@ -33,6 +33,8 @@ const SlidersPage = () => {
 
   //? Render(s)
   const title = category_name ? `类别滑块 - ${category_name}` : '滑块'
+
+  useTitle(title)
 
   const renderContent = () => {
     if (isLoading_get_categories || isLoadingGetSliders) {

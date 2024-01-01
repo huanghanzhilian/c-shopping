@@ -6,7 +6,7 @@ import { HandleResponse, PageContainer, SliderForm } from 'components'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useCreateSliderMutation } from '@/store/services'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const CreateSliderPage = () => {
   //? Assets
@@ -28,6 +28,8 @@ const CreateSliderPage = () => {
   }
 
   const onSuccess = () => back()
+
+  useTitle('新增类别滑块' + ' ' + categoryName)
 
   return (
     <>

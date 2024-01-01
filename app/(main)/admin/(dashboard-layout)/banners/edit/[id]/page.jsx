@@ -21,7 +21,7 @@ import {
 } from '@/store/services'
 
 import { SubmitHandler } from 'react-hook-form'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const EditBannerPage = ({ params: { id: bannerId } }) => {
   //? Assets
@@ -111,6 +111,8 @@ const EditBannerPage = ({ params: { id: bannerId } }) => {
   }
 
   const onErrorDelete = () => confirmDeleteModalHandlers.close()
+
+  useTitle('编辑banner' + ' ' + bannerName)
 
   return (
     <>

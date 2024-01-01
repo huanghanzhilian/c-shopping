@@ -1,11 +1,12 @@
 'use client'
 
 import { BigLoading, CategoryForm, HandleResponse, PageContainer } from '@/components'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 import { useCreateCategoryMutation, useGetCategoriesQuery } from '@/store/services'
 import { useRouter } from 'next/navigation'
 
 export default function CategoriesCreatePage() {
+  useTitle('创建分类')
   //? Assets
   const { push } = useRouter()
   const query = useUrlQuery()

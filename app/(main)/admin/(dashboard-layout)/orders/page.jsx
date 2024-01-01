@@ -13,9 +13,10 @@ import {
 
 import { useChangeRoute } from 'hooks'
 
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const OrdersHome = () => {
+  useTitle('订单管理')
   //? Assets
   const query = useUrlQuery()
   const page = query.page ? +query.page : 1

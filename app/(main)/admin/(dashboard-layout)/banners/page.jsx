@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { EmptyCustomList, PageContainer, TableSkeleton } from 'components'
 
 import { useGetBannersQuery, useGetCategoriesQuery } from '@/store/services'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const BannersPage = () => {
   const query = useUrlQuery()
@@ -34,7 +34,7 @@ const BannersPage = () => {
 
   //? Render(s)
   const title = category_name ? `分类banner - ${category_name}` : 'banner'
-
+  useTitle(title)
   const renderContent = () => {
     if (isLoading_get_banners || isLodingGetCategories) {
       return (

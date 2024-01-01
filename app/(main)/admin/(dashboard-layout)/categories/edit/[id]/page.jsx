@@ -7,12 +7,13 @@ import {
   ConfirmUpdateModal,
   BigLoading,
 } from '@/components'
-import { useDisclosure, useUrlQuery } from '@/hooks'
+import { useDisclosure, useTitle, useUrlQuery } from '@/hooks'
 import { useGetCategoriesQuery, useUpdateCategoryMutation } from '@/store/services'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export default function CategoriesEditPage({ params: { id } }) {
+  useTitle('编辑分类')
   //? Assets
   const { push } = useRouter()
   const query = useUrlQuery()

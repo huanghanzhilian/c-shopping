@@ -12,9 +12,10 @@ import {
 } from 'components'
 
 import { useChangeRoute } from 'hooks'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const ReviewsPage = () => {
+  useTitle('评论管理')
   //? Assets
   const query = useUrlQuery()
   const page = query.page ? +query.page : 1
@@ -29,7 +30,7 @@ const ReviewsPage = () => {
   //? Render
   return (
     <main id="_adminReviews">
-      <PageContainer title="评论">
+      <PageContainer title="评论管理">
         <ShowWrapper
           error={error}
           isError={isError}

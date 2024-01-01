@@ -9,8 +9,10 @@ import { useLoginMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { userLogin, showAlert } from '@/store'
+import { useTitle } from '@/hooks'
 
 export default function LoginPage() {
+  useTitle('管理员登录')
   //? Assets
   const dispatch = useDispatch()
   const { push } = useRouter()

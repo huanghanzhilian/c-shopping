@@ -1,6 +1,10 @@
+'use client'
+
+import { useTitle } from '@/hooks'
 import Image from 'next/image'
 
 const AdminPage = () => {
+  useTitle('xxx | 管理中心')
   return (
     <section className="py-20">
       <Image src="/icons/chart.png" alt="图表" width={208} height={208} className="mx-auto mb-8" />

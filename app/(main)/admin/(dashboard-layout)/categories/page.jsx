@@ -1,11 +1,12 @@
 'use client'
 
 import { BigLoading, PageContainer } from '@/components'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 import { useGetCategoriesQuery } from '@/store/services'
 import Link from 'next/link'
 
 export default function CategoriesPage() {
+  useTitle('分类管理')
   const query = useUrlQuery()
   const parentId = query.parent_id
   const parentLvl = query.parent_lvl

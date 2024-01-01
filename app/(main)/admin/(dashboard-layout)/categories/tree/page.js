@@ -3,8 +3,10 @@
 import { BigLoading, PageContainer } from 'components'
 
 import { useGetCategoriesQuery } from '@/store/services'
+import { useTitle } from '@/hooks'
 
 export default function CategoriesTreePage() {
+  useTitle('分类图表')
   //? Get Categories Data
   const { categoriesList, isLoading } = useGetCategoriesQuery(undefined, {
     selectFromResult: ({ data, isLoading }) => ({

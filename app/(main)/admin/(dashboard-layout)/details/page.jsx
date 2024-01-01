@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { BigLoading, PageContainer } from 'components'
 
 import { useGetCategoriesQuery } from '@/store/services'
+import { useTitle } from '@/hooks'
 
 const DetailsPage = () => {
+  useTitle('分类规格')
   //? Get Categories
   const { categories, isLoading } = useGetCategoriesQuery(undefined, {
     selectFromResult: ({ data, isLoading }) => ({

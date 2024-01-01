@@ -25,9 +25,10 @@ import {
 } from 'components'
 
 import { useDisclosure, useChangeRoute } from 'hooks'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const Products = () => {
+  useTitle('商品管理')
   //? Assets
   const { push } = useRouter()
   const query = useUrlQuery()

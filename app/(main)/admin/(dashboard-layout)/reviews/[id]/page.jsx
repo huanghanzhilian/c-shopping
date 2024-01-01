@@ -1,10 +1,12 @@
 'use client'
 
+import { useTitle } from '@/hooks'
 import { useGetSingleReviewQuery } from '@/store/services'
 
 import { BigLoading, PageContainer, ReveiwCard } from 'components'
 
 const SingleCommentPage = ({ params: { id } }) => {
+  useTitle('评论详情')
   //? Get Single Review Data
   const { data, isLoading } = useGetSingleReviewQuery({
     id,

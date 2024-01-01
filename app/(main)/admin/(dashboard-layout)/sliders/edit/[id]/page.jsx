@@ -21,7 +21,7 @@ import {
   useGetSingleSliderQuery,
   useUpdateSliderMutation,
 } from '@/store/services'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const EditSliderPage = ({ params: { id: sliderId } }) => {
   //? Assets
@@ -113,6 +113,8 @@ const EditSliderPage = ({ params: { id: sliderId } }) => {
   }
 
   const onErrorDelete = () => confirmDeleteModalHandlers.close()
+
+  useTitle('编辑滑块' + ' ' + sliderName)
 
   return (
     <>

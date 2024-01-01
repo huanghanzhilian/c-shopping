@@ -7,9 +7,10 @@ import { BannerForm, HandleResponse, PageContainer } from 'components'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useCreateBannerMutation } from '@/store/services'
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const CreateBannerPage = () => {
+  useTitle('新增banner')
   //? Assets
   const { back } = useRouter()
   const query = useUrlQuery()

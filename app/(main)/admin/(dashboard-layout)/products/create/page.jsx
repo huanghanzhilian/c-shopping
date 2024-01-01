@@ -5,8 +5,10 @@ import { useRouter } from 'next/navigation'
 import { HandleResponse, PageContainer, ProductsForm } from 'components'
 
 import { useCreateProductMutation } from '@/store/services'
+import { useTitle } from '@/hooks'
 
 const CreateProductPage = () => {
+  useTitle('商品新增')
   //? Assets
   const { push } = useRouter()
 

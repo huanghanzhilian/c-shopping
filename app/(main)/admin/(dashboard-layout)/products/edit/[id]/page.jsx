@@ -16,8 +16,10 @@ import { useDisclosure } from 'hooks'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useGetSingleProductQuery, useUpdateProductMutation } from '@/store/services'
+import { useTitle } from '@/hooks'
 
 const EditProductPage = ({ params: { id } }) => {
+  useTitle('编辑商品')
   //? Assets
   const { back } = useRouter()
 
@@ -98,7 +100,7 @@ const EditProductPage = ({ params: { id } }) => {
       )}
 
       <main>
-        <PageContainer title="编辑产品">
+        <PageContainer title="编辑商品">
           {isLoadingGetSelectedProduct ? (
             <div className="px-3 py-20">
               <BigLoading />
