@@ -7,8 +7,10 @@ import { useAppSelector } from 'hooks'
 import { truncate } from 'utils'
 
 import { EmptyCart, PageContainer, ResponsiveImage } from 'components'
+import { useTitle } from '@/hooks'
 
 const UserHistory = () => {
+  useTitle('最近访问')
   //? Store
   const { lastSeen } = useAppSelector(state => state.user)
 

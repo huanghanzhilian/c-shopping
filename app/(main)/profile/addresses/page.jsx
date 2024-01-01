@@ -1,10 +1,12 @@
 'use client'
 
+import { useTitle } from '@/hooks'
 import { Address, Icons, PageContainer, Skeleton, WithAddressModal } from 'components'
 
 import { useUserInfo } from 'hooks'
 
 const BasicAddresses = ({ addressModalProps }) => {
+  useTitle('地址管理')
   const { isAddress, address, isLoading, openAddressModal } = addressModalProps || {}
 
   //? Get User Data

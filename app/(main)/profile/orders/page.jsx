@@ -12,9 +12,10 @@ import {
 
 import { useGetOrdersQuery } from '@/store/services'
 
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const Orders = () => {
+  useTitle('订单管理')
   //? Assets
   const query = useUrlQuery()
   const changeRoute = useChangeRoute()

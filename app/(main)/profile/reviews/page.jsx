@@ -17,9 +17,10 @@ import {
 
 import { useDisclosure, useChangeRoute } from 'hooks'
 
-import { useUrlQuery } from '@/hooks'
+import { useTitle, useUrlQuery } from '@/hooks'
 
 const Reviews = () => {
+  useTitle('我的评价')
   //? Assets
   const query = useUrlQuery()
   const changeRoute = useChangeRoute()

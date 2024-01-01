@@ -1,10 +1,12 @@
 'use client'
 
+import { useTitle } from '@/hooks'
 import { Icons, UserMobileModal, UserNameModal, PageContainer, Skeleton } from 'components'
 
 import { useUserInfo, useDisclosure } from 'hooks'
 
 const PersonalInfo = () => {
+  useTitle('账户信息')
   //? Assets
   const [isShowNameModal, nameModalHandlers] = useDisclosure()
   const [isShowPhoneModal, phoneModalHandlers] = useDisclosure()

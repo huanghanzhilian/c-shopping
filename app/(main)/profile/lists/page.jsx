@@ -1,8 +1,10 @@
-import Head from 'next/head'
+'use client'
 
 import { FavoritesListEmpty, PageContainer, ProfileLayout } from 'components'
+import { useTitle } from '@/hooks'
 
 const Lists = () => {
+  useTitle('我的收藏')
   //? Render(s)
   return (
     <main>
