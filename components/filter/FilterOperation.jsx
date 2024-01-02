@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-import { CustomCheckbox, Toman } from 'components'
+import { CustomCheckbox } from 'components'
 
 import { useAppDispatch, useAppSelector, useDebounce } from 'hooks'
 

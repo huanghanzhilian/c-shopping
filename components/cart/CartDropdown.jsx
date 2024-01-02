@@ -6,15 +6,7 @@ import { formatNumber } from 'utils'
 import { useUserInfo, useDisclosure, useAppSelector } from 'hooks'
 
 import { Menu, Transition } from '@headlessui/react'
-import {
-  ArrowLink,
-  CartItem,
-  RedirectToLogin,
-  Button,
-  CartBadge,
-  Toman,
-  EmptyCart,
-} from 'components'
+import { ArrowLink, CartItem, RedirectToLogin, Button, CartBadge, EmptyCart } from 'components'
 
 export default function CartDropdown() {
   //? Assets

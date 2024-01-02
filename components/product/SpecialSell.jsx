@@ -4,7 +4,7 @@ const SpecialSell = props => {
 
   //? Render(s)
   if (discount > 0 && inStock !== 0) {
-    return <div className="w-16 h-7 bg-red-200"></div>
+    return <div className="w-16 h-7 text-red-500">特价销售</div>
   } else {
     return <div className="h-7" />
   }

@@ -9,7 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 import { registerSchema } from 'utils'
 
-import { TextField, LoginBtn, HandleResponse, RedirectToLogin } from '@/components'
+import { TextField, LoginBtn, HandleResponse, RedirectToLogin, Logo } from '@/components'
 
 import { useCreateUserMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
@@ -88,7 +88,7 @@ export default function RegisterPage() {
       <main className="grid items-center min-h-screen">
         <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            <div className="h-24 mx-auto w-44 bg-red-200"></div>
+            <Logo className="mx-auto w-48 h-24" />
           </Link>
           <h1>
             <font className="">

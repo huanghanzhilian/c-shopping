@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Icons, Services } from 'components'
+import { Icons, Services, LogoChinese } from 'components'
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Logo & scroll to top */}
         <div className="flex justify-between">
           <div>
-            <div className="w-32 h-10 mb-6 bg-red-200"></div>
+            <LogoChinese className="w-32 h-10 mb-6" />
             <div className="flex flex-col gap-y-2 lg:flex-row lg:gap-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
@@ -70,7 +70,7 @@ export default function Footer() {
 
       <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 gap-x-3">
         <Image
-          src="https://www.cheerspublishing.com/uploads/article/b3bcb286-cb5d-40a0-b767-62f12fef70fa.jpeg"
+          src="/developer.jpeg"
           className="overflow-hidden border-4 border-red-600 rounded-full"
           alt="继小鹏"
           width={64}

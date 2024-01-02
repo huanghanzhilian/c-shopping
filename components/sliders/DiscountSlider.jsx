@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-import { AmazingTypo, DiscountProduct, ProductPrice, ResponsiveImage, Skeleton } from 'components'
+import { DiscountProduct, ProductPrice, ResponsiveImage, Skeleton } from 'components'
 import { useGetProductsQuery } from '@/store/services'
 
 const DiscountSlider = props => {

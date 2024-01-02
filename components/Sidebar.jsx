@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 
 import { Disclosure } from '@headlessui/react'
-import { Icons, SidebarSkeleton } from 'components'
+import { Icons, SidebarSkeleton, LogoH } from 'components'
 
 import { useDisclosure } from 'hooks'
 
@@ -51,7 +51,7 @@ export default function Sidebar() {
         />
 
         <div className="overflow-y-auto absolute py-4 top-0 right-0 z-20 w-3/4 h-screen max-w-sm space-y-4 bg-white">
-          <div className="h-10 ml-3 w-28 bg-red-200"></div>
+          <LogoH className="h-10 ml-3 w-28" />
           <h5 className="p-3 border-t-2  border-gray-200">商品分类</h5>
           {isLoading ? (
             <SidebarSkeleton />

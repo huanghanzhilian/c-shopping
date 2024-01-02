@@ -1,6 +1,6 @@
 import { formatNumber } from 'utils'
 
-import { DiscountProduct, Toman } from 'components'
+import { DiscountProduct } from 'components'
 
 const ProductPrice = props => {
   //? Props
