@@ -51,14 +51,14 @@ export default async function Home({ searchParams }) {
         <DiscountSlider currentCategory={currentCategory} />
         <Categories
           childCategories={{ categories: childCategories, title: '分类' }}
-          color={currentCategory.colors?.start}
-          name={currentCategory.name}
+          color={currentCategory?.colors?.start}
+          name={currentCategory?.name}
           homePage
         />
         <BannerOne data={bannerOneType} />
-        <BestSellsSlider categorySlug={currentCategory.slug} />
+        <BestSellsSlider categorySlug={currentCategory?.slug} />
         <BannerTwo data={bannerTwoType} />
-        <MostFavouraiteProducts categorySlug={currentCategory.slug} />
+        <MostFavouraiteProducts categorySlug={currentCategory?.slug} />
       </div>
     </main>
   )

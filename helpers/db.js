@@ -1,30 +1,18 @@
-import mongoose from 'mongoose'
-
-mongoose.Promise = global.Promise
-const connection = {}
+import mongoose, { connection } from 'mongoose'
 
 async function connect() {
-  if (connection.isConnected) {
-    console.log('already connected')
-    return
-  }
-  if (mongoose.connections.length > 0) {
-    connection.isConnected = mongoose.connections[0].readyState
-    if (connection.isConnected === 1) {
-      console.log('use previous connection')
-      return
-    }
-    // await mongoose.disconnect()
-  }
-
-  try {
-    await mongoose.set('strictQuery', false)
-    const db = await mongoose.connect(process.env.MONGODB_URL)
-    console.log('new connection')
-    connection.isConnected = db.connections[0].readyState
-  } catch (error) {
-    console.log(error)
-    process.exit(1)
+  if (!connection.readyState) {
+    await mongoose
+      .connect(process.env.MONGODB_URL, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+      })
+      .then(c => {
+        console.log('Mongo Connected: ')
+      })
+      .catch(error => {
+        console.log('error: ', error)
+      })
   }
 }
 

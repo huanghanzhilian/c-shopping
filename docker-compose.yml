@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+    depends_on:
+      - db
+  db:
+    image: 'mongo:4.4.13'
+    ports:
+      - "27017:27017"

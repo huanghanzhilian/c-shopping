@@ -19,7 +19,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
         <Icons.Location2 className="icon" />
         <span>请选择您所在的城市</span>
 
-        <Icons.ArrowLeft className="mr-auto icon" />
+        <Icons.ArrowRight2 className="mr-auto icon" />
       </button>
     )
   } else if (isAddress) {
