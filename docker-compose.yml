@@ -14,6 +14,8 @@ services:
         target: /data/configdb
     ports:
       - "27017:27017"
+    networks:
+      - stagingnetwork
 
   web:
     container_name: web
@@ -28,12 +30,20 @@ services:
     environment:
       PORT: 3000
     depends_on:
-      db:
-        condition: service_completed_successfully
-        restart: true
-        required: true
+      - db
+    networks:
+      - stagingnetwork
+
 volumes:
   MONGO_DATA:
     name: MONGO_DATA
   MONGO_CONFIG:
     name: MONGO_CONFIG
+
+networks:
+  stagingnetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+          gateway: 172.28.0.1

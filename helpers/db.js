@@ -9,6 +9,7 @@ async function connect() {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         socketTimeoutMS: 1000 * 60 * 110,
+        connectTimeoutMS: 1000 * 60 * 110,
       })
       console.log('Mongo Connected: ')
       console.log('Mongo Connected: process.env.MONGODB_URL', process.env.MONGODB_URL)
