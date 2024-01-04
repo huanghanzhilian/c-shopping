@@ -7,7 +7,7 @@ export default function useVerify() {
 
   if (!token) return false
 
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+  jwt.verify(token, process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err) status = false
     if (decoded) status = true
   })

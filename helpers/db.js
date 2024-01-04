@@ -1,18 +1,20 @@
 import mongoose, { connection } from 'mongoose'
 
 async function connect() {
+  console.log('process.env.MONGODB_URL', process.env.MONGODB_URL)
   if (!connection.readyState) {
-    await mongoose
-      .connect(process.env.MONGODB_URL, {
-        useUnifiedTopology: true,
+    mongoose.set('strictQuery', false)
+    try {
+      await mongoose.connect(process.env.MONGODB_URL, {
         useNewUrlParser: true,
+        useUnifiedTopology: true,
+        socketTimeoutMS: 1000 * 60 * 110,
       })
-      .then(c => {
-        console.log('Mongo Connected: ')
-      })
-      .catch(error => {
-        console.log('error: ', error)
-      })
+      console.log('Mongo Connected: ')
+      console.log('Mongo Connected: process.env.MONGODB_URL', process.env.MONGODB_URL)
+    } catch (error) {
+      console.error('Failed to connect to MongoDB:', error.message)
+    }
   }
 }
 

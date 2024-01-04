@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # 创建工作目录
-RUN rm -rf /app
+#RUN rm -rf /app
 RUN mkdir /app
 WORKDIR /app
 
@@ -10,8 +10,15 @@ WORKDIR /app
 ENV MONGODB_URL "mongodb://db:27017/choiceshop"
 
 # 安装项目依赖
-COPY . /app
+COPY package.json /app
 RUN npm install --registry https://registry.npm.taobao.org
+
+COPY . /app
+#RUN rm -rf node_modules
+#RUN rm -rf package-lock.json
+#RUN npm cache clean --force
+#RUN npm install
+#RUN ping db
 RUN npm run build
 
 # 对外暴露端口

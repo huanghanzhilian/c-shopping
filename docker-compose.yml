@@ -1,19 +1,39 @@
 version: "3"
+
 services:
-  api:
+  db:
+    container_name: db
+    image: 'mongo:4.4.13'
+    restart: always
+    volumes:
+      - type: volume
+        source: MONGO_DATA
+        target: /data/db
+      - type: volume
+        source: MONGO_CONFIG
+        target: /data/configdb
+    ports:
+      - "27017:27017"
+
+  web:
+    container_name: web
     build:
       context: .
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - .:/app
+      - ./:/app
     ports:
       - "3000:3000"
     environment:
       PORT: 3000
     depends_on:
-      - db
-  db:
-    image: 'mongo:4.4.13'
-    ports:
-      - "27017:27017"
+      db:
+        condition: service_completed_successfully
+        restart: true
+        required: true
+volumes:
+  MONGO_DATA:
+    name: MONGO_DATA
+  MONGO_CONFIG:
+    name: MONGO_CONFIG
