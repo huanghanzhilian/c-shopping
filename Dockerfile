@@ -20,4 +20,4 @@ EXPOSE 3000
 
 # 启动 Image 时执行命令
 # CMD npm run start
-CMD npm run dev
+# CMD npm run dev
