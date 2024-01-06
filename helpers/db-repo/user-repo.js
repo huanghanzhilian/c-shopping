@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 
-import User from 'models/User'
+import User from '@/models/User'
 import { auth, db } from '..'
 
 const getAll = async ({ page, page_size }) => {
