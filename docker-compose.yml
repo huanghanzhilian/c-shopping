@@ -11,6 +11,8 @@ services:
     command: sh -c "echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start"
     volumes:
       - ./:/app
+      - /app/node_modules
+      - /app/.next
     ports:
       - "3000:3000"
     environment:
