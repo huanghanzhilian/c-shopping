@@ -236,8 +236,8 @@ const Products = () => {
               dataLength={data?.data ? data?.data?.productsLength : 0}
               loadingComponent={<TableSkeleton count={10} />}
             >
-              <div className="mx-3 overflow-x-auto mt-7 lg:mx-5 xl:mx-10">
-                <table className="w-full whitespace-nowrap">
+              <div className="overflow-x mt-7">
+                <table className="w-full overflow-scroll table-auto">
                   <thead className="h-9 bg-emerald-50">
                     <tr className="text-emerald-500">
                       <th className="border-gray-100 border-x-2">ID</th>

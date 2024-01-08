@@ -19,5 +19,4 @@ COPY . /app
 EXPOSE 3000
 
 # 启动 Image 时执行命令
-# CMD npm run start
-# CMD npm run dev
+CMD echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start

@@ -33,7 +33,7 @@ const updateCategory = apiHandler(
       name: joi.string().required(),
       slug: joi.string().required(),
       image: joi.string().required(),
-      colors: joi.object().required(),
+      colors: joi.object(),
       level: joi.number().required(),
       parent: joi.string(),
     }),

@@ -5,6 +5,7 @@ import { BigLoading, PageContainer } from 'components'
 
 import { useGetCategoriesQuery } from '@/store/services'
 import { useTitle } from '@/hooks'
+import moment from 'moment-jalaali'
 
 const DetailsPage = () => {
   useTitle('分类规格')
@@ -46,8 +47,12 @@ const DetailsPage = () => {
                       key={category._id}
                     >
                       <td className="w-1/4 px-2 py-4">{category.name}</td>
-                      <td className="w-1/4 px-2 py-4">{category.createdAt}</td>
-                      <td className="w-1/4 px-2 py-4">{category.updatedAt}</td>
+                      <td className="w-1/4 px-2 py-4">
+                        {moment(category.createdAt).format('YYYY-MM-DD HH:mm:ss')}
+                      </td>
+                      <td className="w-1/4 px-2 py-4">
+                        {moment(category.updatedAt).format('YYYY-MM-DD HH:mm:ss')}
+                      </td>
                       <td className="px-2 py-4">
                         <Link
                           href={`/admin/details/${category._id}?category_name=${category.name}`}
