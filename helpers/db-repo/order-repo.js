@@ -1,5 +1,5 @@
+import { Product, Order } from '@/models'
 import { db } from '..'
-import Order from '@/models/Order'
 
 const getAll = async ({ userId, role, page, page_size }) => {
   await db.connect()
@@ -47,8 +47,19 @@ const create = async (id, params) => {
     user: id,
     ...params,
   })
+  params.cart.forEach(item => sold(item.productID, item.quantity, item.inStock, item.sold))
   await newOrder.save()
   await db.disconnect()
+}
+
+const sold = async (_id, quantity, oldStock, oldSold) => {
+  await Product.findByIdAndUpdate(
+    { _id },
+    {
+      inStock: oldStock - quantity,
+      sold: quantity + oldSold,
+    }
+  )
 }
 
 const _delete = async id => {

@@ -38,7 +38,7 @@ const ImageList = props => {
               type="button"
               className="absolute z-10 -top-1 -right-1"
               onClick={() => remove(idx)}
-              title="حذف"
+              title="删除"
             >
               <Icons.Delete className="p-1 text-red-500 bg-red-100 icon w-7 h-7 rounded-2xl" />
             </button>

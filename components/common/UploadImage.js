@@ -53,7 +53,7 @@ const UploadImage = props => {
       region: process.env.NEXT_PUBLIC_ALI_REGION,
     })
 
-    const filePath = `/shop/upload/image/${folder || '/others'}/`
+    const filePath = `${process.env.NEXT_PUBLIC_ALI_FILES_PATH}${folder || '/others'}/`
     const fileName = `${nanoid()}.${getFilenameExt(file.name)}`
 
     ossClient
