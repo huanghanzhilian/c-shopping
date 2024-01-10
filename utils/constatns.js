@@ -19,5 +19,7 @@ export const sorts = [
 
 export const ratingStatus = ['', '太糟糕了', '令人不快的', '典型的', '可以', '太棒了']
 
-export const siteDescription =
-  '从 xxx 以最优惠的价格购买您需要的一切！ 最新款手机、笔记本电脑、衣服、化妆品、书籍、家电、汽车等，轻松换货 | ✓免费送货 ✓当场付款 ✓退货保证 - 点击购买！'
+export const siteTitle = '精选好物'
+export const enSiteTitle = 'ChoiceShop'
+
+export const siteDescription = `从${siteTitle}以最优惠的价格购买您需要的一切！ 最新款手机、笔记本电脑、衣服、化妆品、书籍、家电、汽车等，轻松换货 | ✓免费送货 ✓当场付款 ✓退货保证 - 点击购买！`

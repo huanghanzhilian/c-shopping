@@ -5,6 +5,7 @@ import { AddToCartOperation, Depot, Icons, ResponsiveImage } from 'components'
 import { formatNumber } from 'utils'
 
 import { useAppSelector } from 'hooks'
+import { siteTitle } from '@/utils'
 
 const AddToCart = props => {
   //? Props
@@ -30,8 +31,8 @@ const AddToCart = props => {
         <div className="items-center justify-between hidden space-y-2 lg:py-3 lg:flex">
           <span className="text-base text-black">卖方 :</span>
           <div className="flex gap-x-2">
-            <Image src="/icons/mini-logo.png" width={24} height={24} alt="xxx" />
-            <span>xxx</span>
+            <Image src="/icons/mini-logo.png" width={24} height={24} alt={siteTitle} />
+            <span>{siteTitle}</span>
           </div>
         </div>
         {second && (

@@ -1,9 +1,10 @@
 import '/styles/main.css'
 import '/styles/browser-styles.css'
+import { siteDescription } from '@/utils'
 
 export const metadata = {
   title: 'ChoiceShop',
-  description: 'ChoiceShop',
+  description: `${siteDescription}`,
   icons: {
     icon: '/favicon.ico',
   },

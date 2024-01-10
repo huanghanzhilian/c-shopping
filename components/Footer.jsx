@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Icons, Services, LogoChinese } from 'components'
+import { siteTitle } from '@/utils'
 
 export default function Footer() {
   return (
@@ -58,9 +59,10 @@ export default function Footer() {
         {/* info */}
         <div className="space-y-6 lg:flex lg:justify-between">
           <div className="space-y-3 lg:max-w-2xl">
-            <h5 className="font-semibold text-black">xx在线商店，在线评论、选择和购买</h5>
+            <h5 className="font-semibold text-black">{siteTitle}在线商店，在线评论、选择和购买</h5>
             <p className="text-justify text-gray-700">
-              安全的网购需要店铺能够在短时间内为顾客提供多样、优质、价格合理的商品，并有退货保障；xx。在线商店多年来一直在努力开发的功能，并通过这种方式拥有了固定客户
+              安全的网购需要店铺能够在短时间内为顾客提供多样、优质、价格合理的商品，并有退货保障；
+              {siteTitle}。在线商店多年来一直在努力开发的功能，并通过这种方式拥有了固定客户
             </p>
           </div>
 

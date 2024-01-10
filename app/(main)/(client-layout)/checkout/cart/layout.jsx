@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'xxx 购物车',
+  title: `购物车-${siteTitle}`,
 }
 
 export default function Layout({ children }) {

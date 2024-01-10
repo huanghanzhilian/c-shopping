@@ -1,5 +1,7 @@
+import { siteTitle } from '@/utils'
+
 export const metadata = {
-  title: 'xxx 付款',
+  title: `付款-${siteTitle}`,
 }
 
 export default function Layout({ children }) {

@@ -11,6 +11,9 @@ import {
   MostFavouraiteProducts,
   Slider as MainSlider,
 } from 'components'
+import { siteTitle } from '@/utils'
+
+export const revalidate = 20
 
 export const getData = async category => {
   await db.connect()
@@ -96,6 +99,6 @@ export async function generateMetadata({ params: { category } }) {
     await getData(category)
 
   return {
-    title: `xxx精选 | ${currentCategory.name}`,
+    title: `${currentCategory.name} | ${siteTitle}`,
   }
 }

@@ -9,9 +9,10 @@ import {
   Slider as MainSlider,
   MostFavouraiteProducts,
 } from '@/components'
+import { enSiteTitle, siteTitle } from '@/utils'
 
 export const metadata = {
-  title: 'xxx 精选',
+  title: `${siteTitle} | ${enSiteTitle}`,
 }
 
 export const revalidate = 20
