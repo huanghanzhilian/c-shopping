@@ -13,19 +13,12 @@ function isPublicPath(req) {
 function apiHandler(handler, { identity, schema, isJwt } = {}) {
   return async (req, ...args) => {
     try {
-      // monkey patch req.json() because it can only be called once
-      const json = await req.json()
-      req.json = () => json
-    } catch {}
-
-    try {
       if (!isPublicPath(req)) {
         // global middleware
         await jwtMiddleware(req, isJwt)
         await identityMiddleware(req, identity, isJwt)
         await validateMiddleware(req, schema)
       }
-
       // route handler
       const responseBody = await handler(req, ...args)
       return NextResponse.json(responseBody || {})

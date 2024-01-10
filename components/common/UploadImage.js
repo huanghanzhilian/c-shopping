@@ -1,7 +1,10 @@
 'use client'
 
+import OSS from 'ali-oss'
+import { useLazyGetUploadTokenQuery } from '@/store/services'
 import { nanoid } from '@reduxjs/toolkit'
 import { useState } from 'react'
+import { getFilenameExt } from '@/utils'
 
 const UploadImage = props => {
   //? Props
@@ -11,6 +14,8 @@ const UploadImage = props => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [message, setMessage] = useState(null)
+
+  const [getUploadToken] = useLazyGetUploadTokenQuery()
 
   const handleFileChange = event => {
     setFile(event.target.files?.[0] || null)
@@ -37,16 +42,33 @@ const UploadImage = props => {
       return
     }
 
-    try {
-      handleAddUploadedImageUrl(
-        'https://www.cheerspublishing.com/uploads/article/87a5f067-288f-4443-ab8d-dcb28987aa96.png'
-      )
-      setMessage('上传成功')
-    } catch (error) {
-      setError('未上载图像')
-    } finally {
-      setLoading(false)
-    }
+    const credentials = await getUploadToken().unwrap()
+
+    const { AccessKeyId, AccessKeySecret, SecurityToken } = credentials.data
+    const ossClient = new OSS({
+      accessKeyId: AccessKeyId,
+      accessKeySecret: AccessKeySecret,
+      stsToken: SecurityToken,
+      bucket: process.env.NEXT_PUBLIC_ALI_BUCKET_NAME,
+      region: process.env.NEXT_PUBLIC_ALI_REGION,
+    })
+
+    const filePath = `/shop/upload/image/${folder || '/others'}/`
+    const fileName = `${nanoid()}.${getFilenameExt(file.name)}`
+
+    ossClient
+      .put(`${filePath}${fileName}`, file)
+      .then(result => {
+        handleAddUploadedImageUrl(result.url)
+        setMessage('上传成功')
+      })
+      .catch(err => {
+        console.log(`Common upload failed`, err)
+        setError(err.message || '未上载图像')
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (

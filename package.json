@@ -14,6 +14,7 @@
     "@headlessui/react": "^1.7.17",
     "@hookform/resolvers": "^2.9.0",
     "@reduxjs/toolkit": "^1.8.2",
+    "ali-oss": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "china-citys": "^0.0.1",
     "joi": "^17.11.0",
