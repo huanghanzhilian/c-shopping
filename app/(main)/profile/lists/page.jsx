@@ -8,7 +8,7 @@ const Lists = () => {
   //? Render(s)
   return (
     <main>
-      <PageContainer title="清单">
+      <PageContainer title="我的收藏">
         <section className="py-20">
           <FavoritesListEmpty className="mx-auto h-52 w-52" />
           <p className="text-center">您的收藏夹列表为空</p>

@@ -15,7 +15,7 @@ export default function DashboardLayout({ children }) {
     return (
       <div className="lg:flex lg:gap-x-4 lg:px-3 lg:container lg:max-w-8xl">
         <div className="hidden lg:block">
-          <DashboardAside user={userInfo} />
+          <DashboardAside />
         </div>
         <div className="flex-1 lg:py-8 lg:border lg:border-gray-200 lg:rounded-md lg:mt-6 h-fit">
           {children}

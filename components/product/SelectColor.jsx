@@ -31,7 +31,7 @@ const SelectColor = props => {
             }`}
           >
             <span
-              className="inline-block w-5 h-5 ml-3 shadow rounded-xl"
+              className="inline-block w-5 h-5 mr-3 shadow rounded-xl"
               style={{ background: item.hashCode }}
             >
               {tempColor?.id === item.id && (

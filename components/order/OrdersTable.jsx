@@ -30,10 +30,10 @@ const OrdersTable = props => {
                 <td className="py-3 px-1.5">
                   {order.delivered ? (
                     <span className="inline-block p-1 text-green-600 rounded-md bg-green-50">
-                      发货
+                      完成
                     </span>
                   ) : (
-                    <span className="p-1 rounded-md text-amber-600 bg-amber-50">加工</span>
+                    <span className="p-1 rounded-md text-amber-600 bg-amber-50">未确认</span>
                   )}
                 </td>
                 <td className="py-3 px-1.5">{order.user.email}</td>

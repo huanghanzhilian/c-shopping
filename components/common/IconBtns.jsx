@@ -24,7 +24,7 @@ export const BackIconBtn = props => {
     <IconButton
       title="返回"
       icon={
-        <Icons.ArrowRight className="text-gray-500 rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95 bg-gray-50" />
+        <Icons.ArrowLeft className="text-gray-500 rounded-2xl w-8 h-8 p-1 lg:w-9 lg:h-9 lg:p-1.5 active:scale-95 bg-gray-50" />
       }
       onClick={() => back()}
       {...props}

@@ -44,7 +44,7 @@ const OrderCard = props => {
             ) : (
               <Icons.Clock2 className="p-0.5 w-6 h-6 bg-amber-500 text-white rounded-full" />
             )}
-            <span className="text-sm text-black">{order.delivered ? '发表' : '加工'}</span>
+            <span className="text-sm text-black">{order.delivered ? '完成' : '未确认'}</span>
           </div>
           {/* <Icons.ArrowLeft className='icon w-7 h-7' /> */}
           {order.delivered && (

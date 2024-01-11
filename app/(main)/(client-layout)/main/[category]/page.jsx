@@ -62,7 +62,7 @@ const MainCategory = async ({ params: { category } }) => {
         <DiscountSlider currentCategory={currentCategory} />
 
         <Categories
-          childCategories={{ categories: childCategories, title: '分类' }}
+          childCategories={{ categories: childCategories, title: '所有分类' }}
           color={currentCategory.colors?.start}
           name={currentCategory.name}
         />

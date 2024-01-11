@@ -11,7 +11,6 @@ const Categories = props => {
     return (
       <section className="px-3">
         <h4 className="mb-3 text-xl text-center">
-          {childCategories.title}{' '}
           <span
             className="text-xl"
             style={{
@@ -20,6 +19,8 @@ const Categories = props => {
           >
             {name}
           </span>
+          {' - '}
+          {childCategories.title}
         </h4>
         <div className="flex flex-wrap justify-center gap-4 mx-auto space-x-4 w-fit">
           {childCategories.categories.map((item, index) => (

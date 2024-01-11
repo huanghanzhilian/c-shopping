@@ -63,7 +63,7 @@ const UserNameModal = props => {
               />
 
               <div className="py-3 border-t-2 border-gray-200 lg:pb-0 ">
-                <SubmitModalBtn isLoading={isLoading}>登记信息</SubmitModalBtn>
+                <SubmitModalBtn isLoading={isLoading}>确认</SubmitModalBtn>
               </div>
             </form>
           </Modal.Body>

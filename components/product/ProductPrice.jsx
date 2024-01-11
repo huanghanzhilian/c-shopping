@@ -8,7 +8,7 @@ const ProductPrice = props => {
 
   //? Render(s)
   return (
-    <div className={`${singleProduct && 'flex flex-col-reverse'}`}>
+    <div className={`${(singleProduct && 'flex flex-col-reverse') || ''}`}>
       <div className="flex items-center">
         <span className="text-sm text-gray-700 farsi-digits">
           {formatNumber(price - (discount * price) / 100)}

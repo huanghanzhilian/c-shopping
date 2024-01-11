@@ -49,8 +49,11 @@ export default function Footer() {
           <div className="flex-1 max-w-lg">
             <form className="flex gap-x-3">
               <input placeholder="你的邮件" className="input" type="email" />
-              <button type="submit" className="px-2 text-white bg-gray-200 rounded-md ">
-                记录
+              <button
+                type="submit"
+                className="px-2 text-white bg-gray-200 rounded-md whitespace-nowrap"
+              >
+                提交你的邮箱
               </button>
             </form>
           </div>

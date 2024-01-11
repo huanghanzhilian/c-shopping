@@ -52,17 +52,18 @@ const BestSellsSlider = props => {
                 </Skeleton.Items>
               ))
           : products?.map((item, index) => (
-              <div key={item._id} className="p-1 w-60 md:w-72 xl:w-80">
+              <div key={item._id} className="px-1 py-4 w-60 md:w-72 xl:w-80">
                 <Link href={`/products/${item._id}`}>
                   <article className="flex gap-x-4">
                     <ResponsiveImage
                       dimensions="w-24 h-24"
                       src={item.images[0].url}
                       alt={item.title}
+                      className="shrink-0"
                     />
                     <div className="flex items-center border-b gap-x-3">
                       <span className="text-2xl farsi-digits text-sky-500 ">{index + 1}</span>
-                      <span>{truncate(item.title, 8)}</span>
+                      <span>{truncate(item.title, 40)}</span>
                     </div>
                   </article>
                 </Link>

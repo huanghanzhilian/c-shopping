@@ -27,7 +27,7 @@ const SmilarProductsSlider = props => {
         freeMode={true}
       >
         {smilarProducts.products.map(item => (
-          <SwiperSlide key={item._id} className="sm:border-l">
+          <SwiperSlide key={item._id} className="sm:border-r">
             <ProductCard product={item} slide />
           </SwiperSlide>
         ))}

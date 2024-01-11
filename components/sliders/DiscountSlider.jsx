@@ -49,7 +49,7 @@ const DiscountSlider = props => {
                   <SwiperSlide
                     key={index}
                     className={`w-fit  bg-white mx-0.5 py-6 ${
-                      index === 0 ? 'rounded-r-lg' : index === 9 ? 'rounded-l-lg' : ''
+                      index === 0 ? 'rounded-l-lg' : index === 9 ? 'rounded-r-lg' : ''
                     } `}
                   >
                     <Skeleton.Items>
@@ -78,7 +78,7 @@ const DiscountSlider = props => {
                 <SwiperSlide
                   key={product._id}
                   className={`w-fit  bg-white mx-0.5 py-6 ${
-                    index === 0 ? 'rounded-r-lg' : index === 9 ? 'rounded-l-lg' : ''
+                    index === 0 ? 'rounded-l-lg' : index === 9 ? 'rounded-r-lg' : ''
                   } `}
                 >
                   <Link href={`/products/${product._id}`}>

@@ -99,9 +99,9 @@ const AddressModal = props => {
           onClose={onClose}
           className="flex flex-col h-full px-5 py-3 bg-white md:rounded-lg gap-y-5 "
         >
-          <Modal.Header onClose={onClose}>注册和编辑地址</Modal.Header>
+          <Modal.Header onClose={onClose}>地址管理</Modal.Header>
           <Modal.Body>
-            <p>请输入您的位置信息</p>
+            <p>请输入您的收货地址</p>
             <form
               className="flex flex-col justify-between flex-1 pl-4 overflow-y-auto"
               onSubmit={handleSubmit(submitHander)}
@@ -155,8 +155,10 @@ const AddressModal = props => {
                 />
               </div>
 
-              <div className="py-3 border-t-2 border-gray-200 lg:pb-0 ">
-                <SubmitModalBtn isLoading={isLoading}>登记信息</SubmitModalBtn>
+              <div className="py-3 border-t-2 border-gray-200 lg:pb-0 flex">
+                <SubmitModalBtn isLoading={isLoading} className="ml-auto">
+                  确定
+                </SubmitModalBtn>
               </div>
             </form>
           </Modal.Body>

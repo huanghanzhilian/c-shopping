@@ -1,5 +1,7 @@
 import '/styles/main.css'
 import '/styles/browser-styles.css'
+import '/styles/swiper.css'
+
 import { siteDescription } from '@/utils'
 
 export const metadata = {

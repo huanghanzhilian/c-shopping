@@ -45,7 +45,7 @@ export default function ProfileAside() {
       path: '/admin/sliders',
     },
     {
-      name: '横幅管理',
+      name: 'banner管理',
       Icon: Icons.Image,
       path: '/admin/banners',
     },

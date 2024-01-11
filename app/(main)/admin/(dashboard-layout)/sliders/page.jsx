@@ -32,7 +32,7 @@ const SlidersPage = () => {
   )
 
   //? Render(s)
-  const title = category_name ? `类别滑块 - ${category_name}` : '滑块'
+  const title = category_name ? `分类滑块管理 - ${category_name}` : '滑块管理'
 
   useTitle(title)
 
@@ -59,7 +59,7 @@ const SlidersPage = () => {
               href={`/admin/sliders?category_id=${category._id}&category_name=${category.name}`}
               className="bg-rose-50 text-rose-500 rounded-sm py-1 px-1.5 mx-1.5 inline-block"
             >
-              滑块
+              子集
             </Link>
           </td>
         </tr>
@@ -110,7 +110,7 @@ const SlidersPage = () => {
               <thead className="h-9 bg-emerald-50">
                 <tr className="text-emerald-500">
                   <th className="px-2 border-gray-100 border-x-2">
-                    {category_name ? '标题' : '滑块类别名称'}
+                    {category_name ? '标题' : '分类名称'}
                   </th>
                   <th className="border-gray-100 border-x-2">操作</th>
                 </tr>
