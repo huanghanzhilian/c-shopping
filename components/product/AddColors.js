@@ -72,7 +72,7 @@ const AddColors = props => {
               <input className="text-field__input w-28" {...register(`colors.${index}.name`)} />
               <input
                 type="color"
-                className="w-8 h-8 mr-3 shadow-lg "
+                className="w-8 h-8 ml-3 shadow-lg "
                 {...register(`colors.${index}.hashCode`)}
               />
             </div>

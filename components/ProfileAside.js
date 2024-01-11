@@ -44,7 +44,7 @@ function ProfileAside() {
   return (
     <aside className="sticky mt-6 lg:border lg:border-gray-200 lg:rounded-md lg:pt-4 lg:top-6 xl:top-[136px]">
       <div className="flex items-center justify-between px-5 py-2 ">
-        <Person className="w-12 h-12" />
+        <Person className="w-12 h-12 mr-3" />
         <div className="flex flex-col ml-auto mr-3 gap-y-1">
           {isLoading ? (
             <>

@@ -91,7 +91,7 @@ export default function Sidebar() {
                               <Disclosure key={category._id}>
                                 {({ open }) => (
                                   <>
-                                    <Disclosure.Button className="flex items-center justify-between px-4 py-2 w-full !mt-0 pr-7">
+                                    <Disclosure.Button className="flex items-center justify-between px-4 py-2 w-full !mt-0 pl-7">
                                       <span
                                         className={`font-medium text-md ${
                                           open ? 'text-red-400' : 'text-gray-600'
@@ -118,14 +118,14 @@ export default function Sidebar() {
                                         onClick={handleClose}
                                       >
                                         此类别所有分类
-                                        <Icons.ArrowLeft className="text-gray-500 icon" />
+                                        <Icons.ArrowRight2 className="text-gray-500 icon" />
                                       </Link>
                                       {category.children &&
                                         category.children.map(category => (
                                           <Link
                                             key={category._id}
                                             href={`/products?category=${category.slug}`}
-                                            className="pr-9 py-2.5 my-2 font-normal tracking-wide block"
+                                            className="pl-9 py-2.5 my-2 font-normal tracking-wide block"
                                             onClick={handleClose}
                                           >
                                             {category.name}

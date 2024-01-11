@@ -108,7 +108,7 @@ const ReveiwCard = props => {
           />
 
           <span
-            className={`farsi-digits w-5 h-5 text-center pt-0.5 inline-block rounded-md text-white  mr-10 lg:mr-20 ${
+            className={`farsi-digits w-5 h-5 text-center pt-0.5 inline-block rounded-md text-white  ml-10 lg:ml-20 ${
               item.rating <= 2 ? 'bg-red-500' : item.rating === 3 ? 'bg-amber-500' : 'bg-green-500'
             }`}
           >

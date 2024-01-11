@@ -122,18 +122,18 @@ const CartPage = () => {
 
         {/* to Shipping */}
         <section className="fixed bottom-0 left-0 right-0 z-10 flex items-center justify-between px-3 py-3 bg-white border-t border-gray-300 shadow-3xl lg:hidden">
-          <Button className="w-1/2" onClick={handleRoute}>
-            继续
-          </Button>
           <div>
             <span className="font-light">总计购物车</span>
             <div className="flex items-center">
               <span className="text-sm farsi-digits">
                 {formatNumber(totalPrice - totalDiscount)}
               </span>
-              <span className="mr-1 w-7 h-7">¥</span>
+              <span className="ml-1">¥</span>
             </div>
           </div>
+          <Button className="w-1/2" onClick={handleRoute}>
+            继续
+          </Button>
         </section>
       </main>
     </>

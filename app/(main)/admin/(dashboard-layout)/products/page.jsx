@@ -216,7 +216,7 @@ const Products = () => {
                 <input
                   type="text"
                   placeholder="产品名称..."
-                  className="flex-grow p-1 text-right input"
+                  className="flex-grow p-2 text-left input"
                   value={search}
                   onChange={handleSearchChange}
                 />

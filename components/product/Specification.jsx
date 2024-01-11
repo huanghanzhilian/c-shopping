@@ -13,9 +13,9 @@ const Specification = props => {
 
   //? Render(s)
   return (
-    <section className="px-4 ">
+    <section className="px-4">
       <div className="lg:max-w-3xl xl:max-w-5xl lg:flex lg:gap-x-20">
-        <h4 className="mb-3 h-fit w-min lg:border-b-2 lg:border-red-500">规格</h4>
+        <h4 className="mb-3 h-fit w-fit lg:border-b-2 lg:border-red-500">规格</h4>
         <ul className="space-y-4 lg:mt-10">
           {renderSpecification.map((item, i) => {
             if (!item.value) return
@@ -33,17 +33,17 @@ const Specification = props => {
               )
           })}
         </ul>
+        {specification.length > 7 && (
+          <button
+            type="button"
+            className="flex items-center py-2 text-sm text-sky-400 self-end flex-nowrap"
+            onClick={showSpecHandlers.toggle}
+          >
+            {isShowSpec ? '关闭' : '查看更多'}
+            <Icons.ArrowRight2 className="icon text-sky-400 " />
+          </button>
+        )}
       </div>
-      {specification.length > 7 && (
-        <button
-          type="button"
-          className="flex items-center py-2 text-sm text-sky-400"
-          onClick={showSpecHandlers.toggle}
-        >
-          {isShowSpec ? '关闭' : '查看更多'}
-          <Icons.ArrowLeft className="icon text-sky-400" />
-        </button>
-      )}
     </section>
   )
 }

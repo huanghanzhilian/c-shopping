@@ -82,8 +82,8 @@ const OrderCard = props => {
         </div>
         <div className="flex flex-wrap justify-between lg:px-3">
           <div>
-            <span>订单号：</span>
-            <span className="mr-2 text-sm text-black">{order._id}</span>
+            <span>订单号:</span>
+            <span className="ml-2 text-sm text-black">{order._id}</span>
           </div>
           <div className="flex items-center gap-x-1">
             <span className="text-black farsi-digits">

@@ -15,7 +15,7 @@ const Description = props => {
   return (
     <section>
       <div className="px-3 lg:max-w-3xl xl:max-w-5xl">
-        <h4 className="mb-3 lg:border-b-2 lg:border-red-500 w-min">介绍</h4>
+        <h4 className="mb-3 lg:border-b-2 lg:border-red-500 w-fit">介绍</h4>
         <p className="text-xs leading-6 tracking-wider text-gray-600 lg:text-sm lg:leading-8">
           {isShowDesc ? description : truncate(description, 300)}
         </p>
@@ -26,7 +26,7 @@ const Description = props => {
             onClick={showDescHandlers.toggle}
           >
             {isShowDesc ? '关闭' : '查看更多'}
-            <Icons.ArrowLeft className="icon text-sky-400" />
+            <Icons.ArrowRight2 className="icon text-sky-400" />
           </button>
         )}
       </div>

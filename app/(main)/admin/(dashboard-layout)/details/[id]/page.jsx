@@ -292,7 +292,7 @@ const DetailsContentPage = ({ params: { id } }) => {
                           type="radio"
                           id="none"
                           value="none"
-                          className="ml-1"
+                          className="mr-1"
                           {...register('optionsType')}
                         />
                         <label htmlFor="none">默认</label>
@@ -302,7 +302,7 @@ const DetailsContentPage = ({ params: { id } }) => {
                           type="radio"
                           id="colors"
                           value="colors"
-                          className="ml-1"
+                          className="mr-1"
                           {...register('optionsType')}
                         />
                         <label htmlFor="colors">根据颜色</label>
@@ -312,7 +312,7 @@ const DetailsContentPage = ({ params: { id } }) => {
                           type="radio"
                           id="sizes"
                           value="sizes"
-                          className="ml-1"
+                          className="mr-1"
                           {...register('optionsType')}
                         />
                         <label htmlFor="sizes">根据尺寸</label>

@@ -72,7 +72,7 @@ export default function CartDropdown() {
                       <span className="text-sm farsi-digits">
                         {formatNumber(totalPrice - totalDiscount)}
                       </span>
-                      <span className="mr-1">¥</span>
+                      <span className="ml-1">¥</span>
                     </div>
                   </div>
 

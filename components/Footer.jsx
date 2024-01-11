@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="space-y-8 lg:flex lg:items-start lg:justify-between">
           {/* socials */}
           <div className="flex items-center justify-between">
-            <p className="lg:ml-20">更多联系方式！</p>
+            <p className="lg:mr-20">更多联系方式！</p>
             <div className="flex gap-x-5">
               <Icons.Twitter className="w-8 h-8 text-gray-400" />
               <Icons.Linkedin className="w-8 h-8 text-gray-400" />

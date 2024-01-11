@@ -51,7 +51,7 @@ const Reviews = props => {
           <h4 className="mb-3 lg:border-b-2 lg:border-red-500">意见</h4>
           <span className="text-xs text-sky-500 farsi-digits">{numReviews} 观点看法</span>
         </div>
-        <div className="lg:mr-36">
+        <div className="lg:ml-16">
           <div className="mb-8">
             <button
               type="button"
@@ -60,7 +60,7 @@ const Reviews = props => {
             >
               <Icons.Comment className="icon" />
               <span className="text-sm text-black ">写下您对该产品的看法</span>
-              <Icons.ArrowRight2 className="mr-auto icon" />
+              <Icons.ArrowRight2 className="ml-auto icon" />
             </button>
             <p className="mt-6 text-xs text-gray-500">
               确认意见后，通过访问俱乐部任务页面获取分数。

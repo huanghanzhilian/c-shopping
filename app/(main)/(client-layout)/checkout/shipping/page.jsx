@@ -81,7 +81,7 @@ const ShippingPage = () => {
       const { openAddressModal } = addressModalProps || {}
       return (
         <button type="button" onClick={openAddressModal} className="flex items-center ml-auto">
-          <span className="text-base text-sky-500">改变| 编辑</span>
+          <span className="text-base text-sky-500">改变 | 编辑</span>
           <Icons.ArrowRight2 className="icon text-sky-500" />
         </button>
       )
@@ -113,10 +113,7 @@ const ShippingPage = () => {
 
       <main className="py-2 mx-auto space-y-3 xl:mt-28 container">
         {/* header */}
-        <header className="lg:border lg:border-gray-200 lg:rounded-lg">
-          <Link href="/">
-            <div className="w-24 h-12 mx-auto bg-red-200"></div>
-          </Link>
+        <header className="lg:border lg:border-gray-200 lg:rounded-lg py-2">
           <div className="flex items-center justify-evenly">
             <Link href="/checkout/cart" className="flex flex-col items-center gap-y-2">
               <Icons.Cart className="text-red-300 icon" />
@@ -151,12 +148,12 @@ const ShippingPage = () => {
             {/* products */}
             <section className="px-2 py-4 mx-3 border border-gray-200 rounded-lg lg:mx-0 lg:mt-3 ">
               <div className="flex mb-5">
-                <Image src="/icons/car.png" className="ml-4" width={40} height={40} alt="提交" />
+                <Image src="/icons/car.png" className="mr-4" width={40} height={40} alt="icon" />
                 <div>
                   <span className="text-base text-black">正常发货</span>
                   <span className="block">有现货</span>
                 </div>
-                <span className="inline-block px-2 py-1 mr-3 bg-gray-100 rounded-lg farsi-digits h-fit">
+                <span className="inline-block px-2 py-1 ml-3 bg-gray-100 rounded-lg farsi-digits h-fit">
                   {formatNumber(totalItems)} 商品
                 </span>
               </div>
@@ -166,7 +163,7 @@ const ShippingPage = () => {
                     <ResponsiveImage dimensions="w-28 h-28" src={item.img.url} alt={item.name} />
 
                     {item.color && (
-                      <div className="flex items-center gap-x-2 mr-3 mt-1.5">
+                      <div className="flex items-center gap-x-2 ml-3 mt-1.5">
                         <span
                           className="inline-block w-4 h-4 shadow rounded-xl"
                           style={{ background: item.color.hashCode }}

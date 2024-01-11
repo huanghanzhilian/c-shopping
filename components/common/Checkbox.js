@@ -1,5 +1,5 @@
-import React, { ForwardRefRenderFunction, ForwardedRef, Ref, forwardRef } from 'react'
-import { Control, useController } from 'react-hook-form'
+import React, { forwardRef } from 'react'
+import { useController } from 'react-hook-form'
 
 const BaseCheckbox = (props, ref) => {
   const { label, name, checked, onChange } = props
