@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Icons, Services, LogoChinese } from 'components'
+import { Icons, Services, LogoChinese, ResponsiveImage } from 'components'
 import { siteTitle } from '@/utils'
 
 export default function Footer() {
@@ -74,16 +74,15 @@ export default function Footer() {
       </div>
 
       <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 gap-x-3">
-        <Image
-          src="/developer.jpeg"
+        <ResponsiveImage
+          dimensions="h-16 w-16"
           className="overflow-hidden border-4 border-red-600 rounded-full"
-          alt="继小鹏"
-          width={64}
-          height={64}
+          src="/developer.jpg"
+          alt={`黄继鹏（继小鹏）`}
         />
         <p className="text-white">
           <a href="/" target="_blank" className="text-sky-400">
-            继小鹏
+            黄继鹏（继小鹏）
           </a>
           开发{' '}
         </p>

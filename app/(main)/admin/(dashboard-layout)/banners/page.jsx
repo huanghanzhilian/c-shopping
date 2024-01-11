@@ -111,7 +111,7 @@ const BannersPage = () => {
                   <th className="px-2 border-gray-100 border-x-2">
                     {category_name ? 'banner标题' : '分类名称'}
                   </th>
-                  <th className="border-gray-100 border-x-2">更多</th>
+                  <th className="border-gray-100 border-x-2">操作</th>
                 </tr>
               </thead>
               <tbody className="text-gray-600">{renderContent()}</tbody>
