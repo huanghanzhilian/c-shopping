@@ -113,10 +113,10 @@ const ProductsHome = () => {
           </div>
         </div>
 
-        {data && data.productsLength > 10 && (
+        {data && data?.data?.productsLength > 10 && (
           <div className="py-4 mx-auto lg:max-w-5xl">
             <Pagination
-              pagination={data?.pagination}
+              pagination={data?.data?.pagination}
               changeRoute={handleChangeRoute}
               section="_products"
               client

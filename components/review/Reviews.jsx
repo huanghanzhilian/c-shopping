@@ -48,8 +48,8 @@ const Reviews = props => {
       />
       <section className="px-3 py-3 space-y-4 lg:max-w-3xl xl:max-w-5xl" id="_productReviews">
         <div className="flex items-center justify-between">
-          <h4 className="mb-3 lg:border-b-2 lg:border-red-500">意见</h4>
-          <span className="text-xs text-sky-500 farsi-digits">{numReviews} 观点看法</span>
+          <h4 className="mb-3 lg:border-b-2 lg:border-red-500">商品评价</h4>
+          <span className="text-xs text-sky-500 farsi-digits">{numReviews} 条评价</span>
         </div>
         <div className="lg:ml-16">
           <div className="mb-8">
@@ -59,12 +59,10 @@ const Reviews = props => {
               className="flex items-center w-full gap-x-5"
             >
               <Icons.Comment className="icon" />
-              <span className="text-sm text-black ">写下您对该产品的看法</span>
+              <span className="text-sm text-black ">写下您对该商品的评价</span>
               <Icons.ArrowRight2 className="ml-auto icon" />
             </button>
-            <p className="mt-6 text-xs text-gray-500">
-              确认意见后，通过访问俱乐部任务页面获取分数。
-            </p>
+            <p className="mt-6 text-xs text-gray-500">提交确认后，通过将赠送积分。</p>
           </div>
 
           <ShowWrapper

@@ -6,8 +6,7 @@ import { sorts } from 'utils'
 
 import { Icons, Modal } from 'components'
 
-import { useDisclosure } from 'hooks'
-import { useUrlQuery } from '@/hooks'
+import { useUrlQuery, useDisclosure } from '@/hooks'
 
 const Sort = ({ handleChangeRoute }) => {
   //? Assets
@@ -45,7 +44,7 @@ const Sort = ({ handleChangeRoute }) => {
           <span>{sort?.name}</span>
         </button>
 
-        <Modal isShow={isSort} onClose={sortHandlers.close} effect="buttom-to-fit">
+        <Modal isShow={isSort} onClose={sortHandlers.close} effect="bottom-to-top">
           <Modal.Content
             onClose={sortHandlers.close}
             className="flex flex-col h-full px-5 py-3 bg-white md:rounded-lg gap-y-5 "

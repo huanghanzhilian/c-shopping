@@ -15,7 +15,7 @@ const ConfirmUpdateModal = props => {
             </p>
             <div className="flex justify-center gap-x-20">
               <Button onClick={onConfirm} isLoading={isLoading}>
-                确定更新
+                确定
               </Button>
 
               <Button className="!bg-green-500" onClick={onCancel}>

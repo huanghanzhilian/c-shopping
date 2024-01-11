@@ -12,8 +12,24 @@ const getAll = async ({ page, page_size }, filter = {}, sort = {}) => {
     .limit(page_size)
     .sort(sort)
   const productsLength = await Product.countDocuments(filter)
+
+  const mainMaxPrice = Math.max(
+    ...(await Product.find({
+      ...filter.categoryFilter,
+      inStock: { $gte: 1 },
+    }).distinct('price'))
+  )
+  const mainMinPrice = Math.min(
+    ...(await Product.find({
+      ...filter.categoryFilter,
+      inStock: { $gte: 1 },
+    }).distinct('price'))
+  )
+
   await db.disconnect()
   return {
+    mainMaxPrice,
+    mainMinPrice,
     products,
     productsLength,
     pagination: {

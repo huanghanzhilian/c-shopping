@@ -17,16 +17,16 @@ const Modal = props => {
   const effectClasses =
     effect === 'bottom-to-top'
       ? `
-  ${isShow ? 'bottom-0 lg:top-20' : '-bottom-full lg:top-60'} w-full h-full lg:h-fit lg:max-w-3xl 
-   fixed transition-all duration-700 left-0 right-0 mx-auto`
+  ${isShow ? 'bottom-0 lg:mt-20' : '-bottom-full lg:mt-60'} w-full h-full lg:h-auto lg:max-w-3xl 
+    transition-all duration-700 mx-auto relative`
       : effect === 'ease-out'
         ? `
   ${isShow ? 'top-40 transform scale-100' : 'top-40 transform scale-50 '} max-w-3xl 
-   fixed transition-all duration-700 left-0 right-0 mx-auto`
+   fixed transition-all duration-700 left-0 right-0 mx-auto relative`
         : effect === 'buttom-to-fit'
           ? `
   ${isShow ? 'bottom-0' : '-bottom-full'} w-full h-fit lg:max-w-3xl 
-   fixed transition-all duration-700 left-0 right-0 mx-auto`
+   fixed transition-all duration-700 left-0 right-0 mx-auto relative`
           : ''
 
   //? Render(s)
@@ -34,9 +34,12 @@ const Modal = props => {
     <div
       className={`${
         isShow ? 'opacity-100 visible' : 'opacity-0 invisible '
-      } transition-all duration-500 fixed inset-0 z-50`}
+      } transition-all duration-500 fixed inset-0 left-0 right-0 bottom-0 top-0 z-50 overflow-y-auto`}
     >
-      <div className="w-screen h-screen bg-gray-400/20" onClick={onClose} />
+      <div
+        className="w-screen h-screen bg-gray-400/20 fixed inset-0 left-0 right-0 bottom-0 top-0"
+        onClick={onClose}
+      />
       <div className={effectClasses}>
         {React.Children.map(children, child => {
           if (React.isValidElement(child)) {

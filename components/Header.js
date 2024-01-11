@@ -11,9 +11,9 @@ export default function Header() {
             </Link>
             <Sidebar />
           </div>
-          <div className="inline-flex items-center justify-between w-full py-2 border-b gap-x-10 lg:border-b-0">
+          <div className="inline-flex items-center justify-between w-full py-2 border-b lg:border-b-0">
             <Search className="flex flex-grow gap-x-7" />
-            <div className="inline-flex items-center gap-x-4 pr-4">
+            <div className="inline-flex items-center gap-x-4 pr-4 pl-4">
               <Signup />
               <span className="hidden lg:block bg-gray-300 w-0.5 h-8" />
               <Cart />

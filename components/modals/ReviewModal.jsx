@@ -111,7 +111,7 @@ const ReviewModal = props => {
           onClose={onClose}
           className="flex flex-col h-full lg:h-[770px] pl-2 pr-4 py-3 bg-white md:rounded-lg gap-y-3"
         >
-          <Modal.Header onClose={onClose}>您对以下问题的看法{productTitle}</Modal.Header>
+          <Modal.Header onClose={onClose}>留下你对 {productTitle} 商品的评价</Modal.Header>
           <Modal.Body>
             <form
               className="flex flex-col justify-between flex-1 pl-4 overflow-y-auto gap-y-5"
