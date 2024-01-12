@@ -8,7 +8,16 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body,
       }),
-      invalidatesTags: ['User'],
+      invalidatesTags: [
+        'User',
+        'Review',
+        'Details',
+        'Order',
+        'Product',
+        'Category',
+        'Slider',
+        'Banner',
+      ],
     }),
 
     getUserInfo: builder.query({
@@ -25,7 +34,16 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body,
       }),
-      invalidatesTags: ['User'],
+      invalidatesTags: [
+        'User',
+        'Review',
+        'Details',
+        'Order',
+        'Product',
+        'Category',
+        'Slider',
+        'Banner',
+      ],
     }),
     getUsers: builder.query({
       query: ({ page }) => ({

@@ -5,31 +5,21 @@ import { getQuery, reviewRepo } from '@/helpers'
 
 const getAll = apiHandler(
   async req => {
-    const userRoot = req.headers.get('userRoot')
     const userId = req.headers.get('userId')
     const query = getQuery(req)
 
     const page = query.page ? +query.page : 1
     const page_size = query.page_size ? +query.page_size : 10
 
-    let result
-
-    if (userRoot === 'true') {
-      result = await reviewRepo.getAll({
+    const result = await reviewRepo.getAll(
+      {
         page,
         page_size,
-      })
-    } else {
-      result = await reviewRepo.getAll(
-        {
-          page,
-          page_size,
-        },
-        {
-          user: userId,
-        }
-      )
-    }
+      },
+      {
+        user: userId,
+      }
+    )
 
     return setJson({
       data: result,

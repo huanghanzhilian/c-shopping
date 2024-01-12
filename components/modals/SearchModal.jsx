@@ -65,7 +65,7 @@ const SearchModal = props => {
         <Modal.Body>
           <div className="flex flex-row my-3 rounded-md bg-zinc-200/80">
             <div className="p-2">
-              <Icons.Search className="icon " />
+              <Icons.Search className="icon  text-gray-500" />
             </div>
             <input
               type="text"
@@ -75,7 +75,7 @@ const SearchModal = props => {
               onChange={handleChange}
             />
             <button type="button" className="p-2" onClick={handleRemoveSearch}>
-              <Icons.Close className="icon" />
+              <Icons.Close className="icon text-gray-500" />
             </button>
           </div>
           <div className="overflow-y-auto lg:max-h-[500px]">

@@ -4,7 +4,7 @@ export default function ProductSkeleton() {
   return (
     <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       <Skeleton count={10}>
-        <Skeleton.Items className="pt-2 pb-3 border-b border-gray-100 sm:h-[540px] xl:h-[470px] sm:px-3 flex items-center gap-4 sm:flex-col">
+        <Skeleton.Items className="pt-2 pb-3 border-b border-gray-100 sm:h-[540px] xl:h-[470px] sm:px-3 flex items-center gap-4 sm:flex-col sm:space-x-4">
           <Skeleton.Item
             height="h-[216px]"
             width="w-[26vw] sm:w-56"

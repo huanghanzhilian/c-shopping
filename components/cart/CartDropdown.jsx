@@ -55,7 +55,7 @@ export default function CartDropdown() {
               <>
                 {/* Header */}
                 <div className="flex items-center justify-between px-3 py-4">
-                  <span className="">{totalItems} 个商品</span>
+                  <span className="">{totalItems} 件商品</span>
                   <ArrowLink path="/checkout/cart">查看购物车</ArrowLink>
                 </div>
                 {/* Itmes */}

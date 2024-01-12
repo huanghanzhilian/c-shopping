@@ -1,24 +1,15 @@
 import { Product, Order } from '@/models'
 import { db } from '..'
 
-const getAll = async ({ userId, role, page, page_size }) => {
+const getAll = async ({ page, page_size }, filter) => {
   await db.connect()
-  let orders
-  let ordersLength
-  if (role !== 'admin') {
-    orders = await Order.find({ user: userId })
-      .populate('user', '-password')
-      .skip((page - 1) * page_size)
-      .limit(page_size)
-    ordersLength = await Order.countDocuments({ user: userId })
-  } else {
-    orders = await Order.find()
-      .populate('user', '-password')
-      .skip((page - 1) * page_size)
-      .limit(page_size)
-    ordersLength = await Order.countDocuments()
-  }
+  const orders = await Order.find(filter)
+    .populate('user', '-password')
+    .skip((page - 1) * page_size)
+    .limit(page_size)
+  const ordersLength = await Order.countDocuments(filter)
   await db.disconnect()
+
   return {
     orders,
     ordersLength,

@@ -2,9 +2,9 @@ import apiSlice from './api'
 
 export const orderApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
-    getOrders: builder.query({
+    getOrdersList: builder.query({
       query: ({ page = 1, pageSize = 10 }) => ({
-        url: `/api/order?page=${page}&page_size=${pageSize}`,
+        url: `/api/order/list?page=${page}&page_size=${pageSize}`,
         method: 'GET',
       }),
       providesTags: (result, error, arg) =>
@@ -17,6 +17,13 @@ export const orderApiSlice = apiSlice.injectEndpoints({
               'Order',
             ]
           : ['Order'],
+    }),
+
+    getOrders: builder.query({
+      query: ({ page = 1, pageSize = 10 }) => ({
+        url: `/api/order?page=${page}&page_size=${pageSize}`,
+        method: 'GET',
+      }),
     }),
 
     getSingleOrder: builder.query({
@@ -52,4 +59,5 @@ export const {
   useGetSingleOrderQuery,
   useUpdateOrderMutation,
   useCreateOrderMutation,
+  useGetOrdersListQuery,
 } = orderApiSlice

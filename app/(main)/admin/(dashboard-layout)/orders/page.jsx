@@ -1,6 +1,6 @@
 'use client'
 
-import { useGetOrdersQuery } from '@/store/services'
+import { useGetOrdersListQuery } from '@/store/services'
 
 import {
   Pagination,
@@ -24,7 +24,7 @@ const OrdersHome = () => {
   const changeRoute = useChangeRoute()
 
   //? Get Orders Query
-  const { data, isSuccess, isFetching, error, isError, refetch } = useGetOrdersQuery({
+  const { data, isSuccess, isFetching, error, isError, refetch } = useGetOrdersListQuery({
     page,
     pageSize: 5,
   })

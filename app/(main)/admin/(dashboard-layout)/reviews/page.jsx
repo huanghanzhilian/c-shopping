@@ -1,6 +1,6 @@
 'use client'
 
-import { useGetReviewsQuery } from '@/store/services'
+import { useGetReviewsListQuery } from '@/store/services'
 
 import {
   Pagination,
@@ -23,7 +23,7 @@ const ReviewsPage = () => {
   const changeRoute = useChangeRoute()
 
   //? Get Review Data
-  const { data, isError, error, isFetching, refetch, isSuccess } = useGetReviewsQuery({
+  const { data, isError, error, isFetching, refetch, isSuccess } = useGetReviewsListQuery({
     page,
   })
 
