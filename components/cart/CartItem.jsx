@@ -10,7 +10,7 @@ const CartItem = props => {
 
   //? Render(s)
   return (
-    <article className="flex px-4 py-5 gap-x-4 ">
+    <article className="flex px-4 py-5 space-x-4 ">
       {/* image & cartButtons */}
       <div className="space-y-4">
         <ResponsiveImage dimensions="w-28 h-28" src={item.img.url} alt={item.name} />

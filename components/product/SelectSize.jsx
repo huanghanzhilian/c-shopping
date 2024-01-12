@@ -21,7 +21,7 @@ const SelectSize = props => {
         <span className="text-sm text-gray-700">尺寸: {tempSize?.size}</span>
         <span className="text-sm">{formatNumber(sizes.length)} 尺寸</span>
       </div>
-      <div className="flex flex-wrap gap-3 px-5 my-3">
+      <div className="flex flex-wrap gap-y-3 space-x-3 px-5 my-3">
         {sizes.map(item => (
           <button
             type="button"

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex justify-between">
           <div>
             <LogoChina className="w-32 h-10 mb-6" />
-            <div className="flex flex-col gap-y-2 lg:flex-row lg:gap-x-5">
+            <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
               <span>支持电话86-1899909999</span>
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* socials */}
           <div className="flex items-center justify-between">
             <p className="lg:mr-20">更多联系方式！</p>
-            <div className="flex gap-x-5">
+            <div className="flex space-x-5">
               <Icons.Twitter className="w-8 h-8 text-gray-400" />
               <Icons.Linkedin className="w-8 h-8 text-gray-400" />
               <Icons.Instagram className="w-8 h-8 text-gray-400" />
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Newslatter */}
           <div className="flex-1 max-w-lg">
-            <form className="flex gap-x-3">
+            <form className="flex space-x-3">
               <input placeholder="你的邮件" className="input" type="email" />
               <button
                 type="submit"
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 gap-x-3">
+      <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 space-x-3">
         <ResponsiveImage
           dimensions="h-16 w-16"
           className="overflow-hidden border-4 border-red-600 rounded-full"

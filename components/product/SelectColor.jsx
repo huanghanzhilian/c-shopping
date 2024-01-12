@@ -20,7 +20,7 @@ const SelectColor = props => {
         <span className="text-sm text-gray-700">颜色: {tempColor?.name}</span>
         <span className="text-sm">{colors.length} 颜色</span>
       </div>
-      <div className="flex flex-wrap gap-3 px-5 my-3">
+      <div className="flex flex-wrap gap-y-3 space-x-3 px-5 my-3">
         {colors.map(item => (
           <button
             type="button"

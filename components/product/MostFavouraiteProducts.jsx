@@ -24,7 +24,7 @@ const MostFavouraiteProducts = props => {
 
   return (
     <section className="px-3">
-      <div className="flex items-center mb-3 gap-x-2">
+      <div className="flex items-center mb-3 space-x-2">
         <Icons.Heart className="icon text-amber-400" />
         <h4 className="text-xl">最受欢迎的商品</h4>
       </div>

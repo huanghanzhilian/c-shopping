@@ -8,7 +8,6 @@ export default function Search() {
   //? Render(s)
   return (
     <>
-      <SearchModal isShow={isShowSearchModal} onClose={searchModalHanlders.close} />
       <div
         onClick={searchModalHanlders.open}
         className="flex flex-row flex-grow max-w-3xl rounded-md bg-zinc-200/80"
@@ -20,6 +19,7 @@ export default function Search() {
           <Icons.Search className="icon text-gray-400" />
         </button>
       </div>
+      <SearchModal isShow={isShowSearchModal} onClose={searchModalHanlders.close} />
     </>
   )
 }

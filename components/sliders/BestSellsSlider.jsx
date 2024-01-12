@@ -26,7 +26,7 @@ const BestSellsSlider = props => {
   //? Render(s)
   return (
     <section className="px-3">
-      <div className="flex items-center mb-3 gap-x-2">
+      <div className="flex items-center mb-3 space-x-2">
         <Icons.Check className="w-7 h-7 text-amber-400" />
         <h4 className="text-xl">最畅销商品</h4>
       </div>
@@ -36,7 +36,7 @@ const BestSellsSlider = props => {
           ? Array(12)
               .fill('_')
               .map((_, index) => (
-                <Skeleton.Items key={index} className="flex gap-x-4 p-1">
+                <Skeleton.Items key={index} className="flex space-x-4 p-1">
                   <Skeleton.Item
                     height="h-24"
                     width="w-24"
@@ -54,14 +54,14 @@ const BestSellsSlider = props => {
           : products?.map((item, index) => (
               <div key={item._id} className="px-1 py-4 w-60 md:w-72 xl:w-80">
                 <Link href={`/products/${item._id}`}>
-                  <article className="flex gap-x-4">
+                  <article className="flex space-x-4">
                     <ResponsiveImage
                       dimensions="w-24 h-24"
                       src={item.images[0].url}
                       alt={item.title}
                       className="shrink-0"
                     />
-                    <div className="flex items-center border-b gap-x-3">
+                    <div className="flex items-center border-b space-x-3">
                       <span className="text-2xl text-sky-500 ">{index + 1}</span>
                       <span>{truncate(item.title, 40)}</span>
                     </div>
