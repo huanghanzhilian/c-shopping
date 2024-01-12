@@ -18,7 +18,7 @@ const SelectColor = props => {
     <section className="">
       <div className="flex justify-between p-4">
         <span className="text-sm text-gray-700">颜色: {tempColor?.name}</span>
-        <span className="text-sm farsi-digits">{colors.length} 颜色</span>
+        <span className="text-sm">{colors.length} 颜色</span>
       </div>
       <div className="flex flex-wrap gap-3 px-5 my-3">
         {colors.map(item => (

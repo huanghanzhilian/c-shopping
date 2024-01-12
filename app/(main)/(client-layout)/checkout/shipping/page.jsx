@@ -153,8 +153,8 @@ const ShippingPage = () => {
                   <span className="text-base text-black">正常发货</span>
                   <span className="block">有现货</span>
                 </div>
-                <span className="inline-block px-2 py-1 ml-3 bg-gray-100 rounded-lg farsi-digits h-fit">
-                  {formatNumber(totalItems)} 商品
+                <span className="inline-block px-2 py-1 ml-3 bg-gray-100 rounded-lg h-fit">
+                  {formatNumber(totalItems)} 件商品
                 </span>
               </div>
               <div className="flex flex-wrap justify-start gap-x-8 gap-y-5">

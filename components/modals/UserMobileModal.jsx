@@ -50,7 +50,7 @@ const UserMobileModal = props => {
           onClose={onClose}
           className="flex flex-col h-full px-5 py-3 bg-white md:rounded-lg gap-y-5 "
         >
-          <Modal.Header onClose={onClose}>手机号码注册及编辑</Modal.Header>
+          <Modal.Header onClose={onClose}>手机号码记录及编辑</Modal.Header>
           <Modal.Body>
             <p className="text-sm">请输入您的手机号码</p>
             <form

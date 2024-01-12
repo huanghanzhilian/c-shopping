@@ -97,7 +97,7 @@ const CartPage = () => {
           <section className="flex justify-between px-4">
             <div>
               <h3 className="mb-2 text-sm font-bold">您的购物车</h3>
-              <span className="farsi-digits">{formatNumber(totalItems)} 商品</span>
+              <span className="">{formatNumber(totalItems)} 件商品</span>
             </div>
             <DeleteAllDropDown />
           </section>
@@ -125,9 +125,7 @@ const CartPage = () => {
           <div>
             <span className="font-light">总计购物车</span>
             <div className="flex items-center">
-              <span className="text-sm farsi-digits">
-                {formatNumber(totalPrice - totalDiscount)}
-              </span>
+              <span className="text-sm">{formatNumber(totalPrice - totalDiscount)}</span>
               <span className="ml-1">¥</span>
             </div>
           </div>

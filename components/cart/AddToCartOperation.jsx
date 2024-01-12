@@ -35,7 +35,7 @@ const AddToCartOperation = props => {
       return dispatch(
         showAlert({
           status: 'error',
-          title: '此产品缺货',
+          title: '此商品缺货',
         })
       )
 

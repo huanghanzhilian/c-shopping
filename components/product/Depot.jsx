@@ -5,7 +5,7 @@ import { formatNumber } from 'utils'
 const Depot = ({ inStock }) => {
   //? Render(s)
   if (inStock < 10 && inStock !== 0) {
-    return <span className="text-red-500 farsi-digits">库存仅剩{formatNumber(inStock)}</span>
+    return <span className="text-red-500">库存仅剩{formatNumber(inStock)}</span>
   } else if (inStock > 10) {
     return (
       <div className="flex text-teal-400 gap-x-1">

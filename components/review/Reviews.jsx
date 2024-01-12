@@ -49,9 +49,9 @@ const Reviews = props => {
       <section className="px-3 py-3 space-y-4 lg:max-w-3xl xl:max-w-5xl" id="_productReviews">
         <div className="flex items-center justify-between">
           <h4 className="mb-3 lg:border-b-2 lg:border-red-500">商品评价</h4>
-          <span className="text-xs text-sky-500 farsi-digits">{numReviews} 条评价</span>
+          <span className="text-xs text-sky-500">{numReviews} 条评价</span>
         </div>
-        <div className="lg:ml-16">
+        <div className="lg:ml-10">
           <div className="mb-8">
             <button
               type="button"

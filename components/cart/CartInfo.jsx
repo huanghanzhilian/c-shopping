@@ -16,9 +16,9 @@ const CartInfo = props => {
     <div className="px-4 py-2 mt-10 space-y-5 lg:mt-0 lg:h-fit lg:py-4">
       {/* total cart price */}
       <div className="pb-2 border-b border-gray-200 flex justify-between">
-        <span className="text-sm farsi-digits">商品价格({formatNumber(totalItems)})</span>
+        <span className="text-sm">商品价格({formatNumber(totalItems)}件商品)</span>
         <div className="flex-center">
-          <span className="farsi-digits">{formatNumber(totalPrice)}</span>
+          <span className="">{formatNumber(totalPrice)}</span>
           <span className="ml-1">¥</span>
         </div>
       </div>
@@ -27,7 +27,7 @@ const CartInfo = props => {
       <div className="flex justify-between">
         <span>总计购物车</span>
         <div className="flex-center">
-          <span className="text-sm farsi-digits">{formatNumber(totalPrice - totalDiscount)}</span>
+          <span className="text-sm">{formatNumber(totalPrice - totalDiscount)}</span>
           <span className="ml-1">¥</span>
         </div>
       </div>
@@ -40,10 +40,10 @@ const CartInfo = props => {
       <div className="flex justify-between">
         <span className="text-red-500">您从购买中省去的金额</span>
         <div className="flex-center gap-x-1">
-          <span className="text-red-500 text-sm farsi-digits">
-            (% {((totalDiscount / totalPrice) * 100).toFixed(1)})
+          <span className="text-red-500 text-sm">
+            ({((totalDiscount / totalPrice) * 100).toFixed(1)}%)
           </span>
-          <span className="text-red-500 farsi-digits">{formatNumber(totalDiscount)}</span>
+          <span className="text-red-500">{formatNumber(totalDiscount)}</span>
           <span className="ml-1 text-red-500">¥</span>
         </div>
       </div>

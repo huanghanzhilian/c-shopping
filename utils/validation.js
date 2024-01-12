@@ -44,8 +44,8 @@ export const sliderSchema = Yup.object().shape({
 })
 
 export const reviewSchema = Yup.object().shape({
-  title: Yup.string().required('评论标题不能为空').min(4, '评论标题不得少于4个字符'),
-  comment: Yup.string().required('评论文字不能为空').min(4, '评论文字不应少于 4 个字符'),
+  title: Yup.string().required('评价标题不能为空').min(4, '评价标题不得少于4个字符'),
+  comment: Yup.string().required('评价文字不能为空').min(4, '评价文字不应少于 4 个字符'),
 })
 
 export const addressSchema = Yup.object().shape({
@@ -63,7 +63,7 @@ export const addressSchema = Yup.object().shape({
 })
 
 export const nameSchema = Yup.object().shape({
-  name: Yup.string().required('必须登记姓名').min(3, '名字和姓氏必须超过 3 个字符'),
+  name: Yup.string().required('必须登记姓名').min(3, '名字必须超过 3 个字符'),
 })
 
 export const mobileSchema = Yup.object().shape({

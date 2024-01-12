@@ -55,7 +55,7 @@ const Sort = ({ handleChangeRoute }) => {
                 {sorts.map((item, i) => (
                   <div key={i} className="flex items-center">
                     <button
-                      className="block w-full py-3 text-right text-gray-700"
+                      className="block w-full py-3 text-left text-gray-700"
                       type="button"
                       name="sort"
                       onClick={() => handleSortChange(item)}

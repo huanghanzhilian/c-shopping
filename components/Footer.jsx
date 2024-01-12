@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Icons, Services, LogoChinese, ResponsiveImage } from 'components'
+import { Icons, Services, LogoChina, ResponsiveImage } from 'components'
 import { siteTitle } from '@/utils'
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Logo & scroll to top */}
         <div className="flex justify-between">
           <div>
-            <LogoChinese className="w-32 h-10 mb-6" />
+            <LogoChina className="w-32 h-10 mb-6" />
             <div className="flex flex-col gap-y-2 lg:flex-row lg:gap-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
@@ -62,7 +62,7 @@ export default function Footer() {
         {/* info */}
         <div className="space-y-6 lg:flex lg:justify-between">
           <div className="space-y-3 lg:max-w-2xl">
-            <h5 className="font-semibold text-black">{siteTitle}在线商店，在线评论、选择和购买</h5>
+            <h5 className="font-semibold text-black">{siteTitle}在线商店，在线评价、选择和购买</h5>
             <p className="text-justify text-gray-700">
               安全的网购需要店铺能够在短时间内为顾客提供多样、优质、价格合理的商品，并有退货保障；
               {siteTitle}。在线商店多年来一直在努力开发的功能，并通过这种方式拥有了固定客户

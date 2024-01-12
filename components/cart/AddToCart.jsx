@@ -59,7 +59,7 @@ const AddToCart = props => {
             {tempSize && (
               <div className="flex items-center gap-x-2 py-3">
                 <Icons.Rule className="icon" />
-                <span className="farsi-digits">{tempSize.size}</span>
+                <span className="">{tempSize.size}</span>
               </div>
             )}
           </>
@@ -77,7 +77,7 @@ const AddToCart = props => {
         <div className="lg:flex lg:items-center lg:gap-x-1 lg:py-3">
           <Icons.Check className="icon" />
           <span> 销售 :</span>
-          <span className="farsi-digits">{formatNumber(product.sold)}</span>
+          <span className="">{formatNumber(product.sold)}</span>
         </div>
 
         <AddToCartOperation product={product} />

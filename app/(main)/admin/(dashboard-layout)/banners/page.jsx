@@ -1,12 +1,9 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-
-import { EmptyCustomList, PageContainer, TableSkeleton } from 'components'
-
 import { useGetBannersQuery, useGetCategoriesQuery } from '@/store/services'
 import { useTitle, useUrlQuery } from '@/hooks'
+import { ResponsiveImage, EmptyCustomList, PageContainer, TableSkeleton } from '@/components'
 
 const BannersPage = () => {
   const query = useUrlQuery()
@@ -71,7 +68,16 @@ const BannersPage = () => {
           className="text-xs text-center transition-colors border-b border-gray-100 md:text-sm hover:bg-gray-50/50"
           key={banner._id}
         >
-          <td className="w-3/4 px-2 py-4">{banner.title}</td>
+          <td className="px-2 py-4">
+            <ResponsiveImage
+              dimensions={`h-7 ${banner.type === 'one' ? 'w-16' : 'w-10'}`}
+              className="mx-auto"
+              src={banner.image?.url}
+              alt=""
+            />
+          </td>
+          <td className="px-2 py-4">{banner.title}</td>
+          <td className="px-2 py-4">{banner.type}</td>
           <td className="px-2 py-4">
             <Link
               href={`/admin/banners/edit/${banner._id}?banner_name=${banner.title}`}
@@ -108,9 +114,11 @@ const BannersPage = () => {
             <table className="w-full whitespace-nowrap">
               <thead className="h-9 bg-emerald-50">
                 <tr className="text-emerald-500">
+                  {category_name && <th className="border-gray-100 border-x-2">图片</th>}
                   <th className="px-2 border-gray-100 border-x-2">
                     {category_name ? 'banner标题' : '分类名称'}
                   </th>
+                  {category_name && <th className="border-gray-100 border-x-2">类型</th>}
                   <th className="border-gray-100 border-x-2">操作</th>
                 </tr>
               </thead>

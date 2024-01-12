@@ -9,7 +9,7 @@ const ReviewProductCard = props => {
   return (
     <article className="flex py-3">
       <span
-        className={`farsi-digits w-5 h-5 text-center pt-0.5 inline-block rounded-md text-white  ${
+        className={`w-5 h-5 text-center pt-0.5 inline-block rounded-md text-white  ${
           item.rating <= 2 ? 'bg-red-500' : item.rating === 3 ? 'bg-amber-500' : 'bg-green-500'
         }`}
       >
@@ -18,9 +18,7 @@ const ReviewProductCard = props => {
       <div className="flex-1 px-2.5 space-y-3 lg:px-6">
         <div className="w-full border-b border-gray-100">
           <p className="mb-1">{item.title}</p>
-          <span className="text-xs farsi-digits">
-            {moment(item.updatedAt).format('YYYY-MM-DD')}
-          </span>
+          <span className="text-xs">{moment(item.updatedAt).format('YYYY-MM-DD')}</span>
           <span className="inline-block w-1 h-1 mx-3 bg-gray-400 rounded-full" />
           <span className="text-xs">{item.user?.name}</span>
         </div>

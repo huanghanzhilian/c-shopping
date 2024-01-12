@@ -7,8 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
-    #command: sh -c "/wait && npm run build && npm run start"
-    # command: sh -c "echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start"
     ports:
       - "3000:3000"
     environment:

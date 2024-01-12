@@ -1,12 +1,9 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-
-import { EmptyCustomList, PageContainer, TableSkeleton } from 'components'
-
 import { useGetCategoriesQuery, useGetSlidersQuery } from '@/store/services'
 import { useTitle, useUrlQuery } from '@/hooks'
+import { ResponsiveImage, EmptyCustomList, PageContainer, TableSkeleton } from '@/components'
 
 const SlidersPage = () => {
   const query = useUrlQuery()
@@ -72,7 +69,15 @@ const SlidersPage = () => {
           className="text-xs text-center transition-colors border-b border-gray-100 md:text-sm hover:bg-gray-50/50"
           key={slider._id}
         >
-          <td className="w-3/4 px-2 py-4">{slider.title}</td>
+          <td className="px-2 py-4">
+            <ResponsiveImage
+              dimensions="h-7 w-32"
+              className="mx-auto"
+              src={slider.image?.url}
+              alt=""
+            />
+          </td>
+          <td className="w-2/4 px-2 py-4">{slider.title}</td>
           <td className="px-2 py-4">
             <Link
               href={`/admin/sliders/edit/${slider._id}?slider_name=${slider.title}`}
@@ -109,6 +114,7 @@ const SlidersPage = () => {
             <table className="w-full whitespace-nowrap">
               <thead className="h-9 bg-emerald-50">
                 <tr className="text-emerald-500">
+                  {category_name && <th className="border-gray-100 border-x-2">图片</th>}
                   <th className="px-2 border-gray-100 border-x-2">
                     {category_name ? '标题' : '分类名称'}
                   </th>

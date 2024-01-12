@@ -19,9 +19,7 @@ const CartButtons = props => {
         <Icons.Plus onClick={() => dispatch(increase(item.itemID))} className="text-red-500 icon" />
       </button>
 
-      <span className="text-sm farsi-digits min-w-[22px] text-center">
-        {formatNumber(item.quantity)}
-      </span>
+      <span className="text-sm min-w-[22px] text-center">{formatNumber(item.quantity)}</span>
 
       {item.quantity === 1 ? (
         <button className="active:scale-90" type="button">

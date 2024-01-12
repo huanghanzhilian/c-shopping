@@ -47,7 +47,7 @@ const UserNameModal = props => {
           onClose={onClose}
           className="flex flex-col h-full px-5 py-3 bg-white md:rounded-lg gap-y-5 "
         >
-          <Modal.Header onClose={onClose}>身份信息的注册和编辑</Modal.Header>
+          <Modal.Header onClose={onClose}>身份信息的提交和编辑</Modal.Header>
           <Modal.Body>
             <p className="text-sm">请输入身份信息，包括名字和姓氏</p>
 

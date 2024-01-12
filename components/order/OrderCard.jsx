@@ -48,9 +48,7 @@ const OrderCard = props => {
           </div>
           {/* <Icons.ArrowLeft className='icon w-7 h-7' /> */}
           {order.delivered && (
-            <span className="farsi-digits">
-              {moment(order.updatedAt).format('YYYY-MM-DD HH:mm:ss')}
-            </span>
+            <span className="">{moment(order.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</span>
           )}
           {singleOrder && (
             <div className="relative h-fit px-1.5 group self-end">
@@ -86,7 +84,7 @@ const OrderCard = props => {
             <span className="ml-2 text-sm text-black">{order._id}</span>
           </div>
           <div className="flex items-center gap-x-1">
-            <span className="text-black farsi-digits">
+            <span className="text-black">
               {formatNumber(order.totalPrice - order.totalDiscount)}
             </span>
             <span className="">¥</span>

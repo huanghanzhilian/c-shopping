@@ -53,7 +53,7 @@ const BasicAddresses = ({ addressModalProps }) => {
               <div className="flex items-center gap-x-2 ">
                 <Icons.UserLocation className="text-gray-500 icon" />
                 <span className="text-xs md:text-sm">
-                  {address?.province.name}, {address?.city.name}
+                  {address?.province.name}, {address?.city.name}, {address?.area.name}
                 </span>
               </div>
               <div className="flex items-center gap-x-2 ">
@@ -75,7 +75,7 @@ const BasicAddresses = ({ addressModalProps }) => {
         ) : (
           <section className="flex flex-col items-center py-20 gap-y-4">
             <Address className="h-52 w-52" />
-            <p>您尚未注册地址</p>
+            <p>您尚未填写地址</p>
             <button
               className="flex items-center px-3 py-2 text-red-600 border-2 border-red-600 rounded-lg gap-x-3"
               onClick={openAddressModal}

@@ -6,7 +6,7 @@ import { useGetSingleReviewQuery } from '@/store/services'
 import { BigLoading, PageContainer, ReveiwCard } from 'components'
 
 const SingleCommentPage = ({ params: { id } }) => {
-  useTitle('评论详情')
+  useTitle('评价详情')
   //? Get Single Review Data
   const { data, isLoading } = useGetSingleReviewQuery({
     id,
@@ -15,7 +15,7 @@ const SingleCommentPage = ({ params: { id } }) => {
   //? Render(s)
   return (
     <main>
-      <PageContainer title="评论详情">
+      <PageContainer title="评价详情">
         {isLoading ? (
           <div className="px-3 py-20">
             <BigLoading />

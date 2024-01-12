@@ -17,7 +17,7 @@ const updateProduct = apiHandler(
     const body = await req.json()
     await productRepo.update(id, body)
     return setJson({
-      message: '产品更新成功',
+      message: '商品更新成功',
     })
   },
   {
@@ -45,7 +45,7 @@ const deleteProduct = apiHandler(
     const { id } = params
     await productRepo.delete(id)
     return setJson({
-      message: '产品已成功删除',
+      message: '商品已成功删除',
     })
   },
   {

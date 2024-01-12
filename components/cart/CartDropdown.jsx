@@ -55,7 +55,7 @@ export default function CartDropdown() {
               <>
                 {/* Header */}
                 <div className="flex items-center justify-between px-3 py-4">
-                  <span className="farsi-digits">{totalItems} 个商品</span>
+                  <span className="">{totalItems} 个商品</span>
                   <ArrowLink path="/checkout/cart">查看购物车</ArrowLink>
                 </div>
                 {/* Itmes */}
@@ -69,9 +69,7 @@ export default function CartDropdown() {
                   <div>
                     <span>应付金额</span>
                     <div className="flex-center">
-                      <span className="text-sm farsi-digits">
-                        {formatNumber(totalPrice - totalDiscount)}
-                      </span>
+                      <span className="text-sm">{formatNumber(totalPrice - totalDiscount)}</span>
                       <span className="ml-1">¥</span>
                     </div>
                   </div>

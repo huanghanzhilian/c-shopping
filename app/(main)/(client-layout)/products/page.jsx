@@ -94,7 +94,7 @@ const ProductsHome = () => {
 
               <div className="flex justify-between py-2">
                 <span>所有商品</span>
-                <span className="farsi-digits">{data?.data?.productsLength} 件商品</span>
+                <span className="">{data?.data?.productsLength} 件商品</span>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ const ProductsHome = () => {
               </section>
             ) : (
               <section className="text-center text-red-500 xl:border xl:border-gray-200 xl:rounded-md xl:py-4">
-                没有找到产品
+                没有找到商品
               </section>
             )}
           </div>

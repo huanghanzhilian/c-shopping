@@ -22,7 +22,7 @@ export default function Pagination(props) {
   //? Render(s)
   return (
     <nav>
-      <ul className="inline-flex items-center w-full px-10 gap-x-2 farsi-digits">
+      <ul className="inline-flex items-center w-full px-10 gap-x-2">
         <div className="ml-auto">
           {hasPreviousPage && (
             <li

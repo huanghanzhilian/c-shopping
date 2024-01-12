@@ -175,7 +175,7 @@ const Products = () => {
   return (
     <>
       <ConfirmDeleteModal
-        title="该产品"
+        title="该商品"
         isLoading={isLoadingDelete}
         isShow={isShowConfirmDeleteModal}
         onClose={confirmDeleteModalHandlers.close}
@@ -215,7 +215,7 @@ const Products = () => {
                 </button>
                 <input
                   type="text"
-                  placeholder="产品名称..."
+                  placeholder="商品名称..."
                   className="flex-grow p-2 text-left input"
                   value={search}
                   onChange={handleSearchChange}
@@ -240,9 +240,11 @@ const Products = () => {
                 <table className="w-full overflow-scroll table-auto">
                   <thead className="h-9 bg-emerald-50">
                     <tr className="text-emerald-500">
-                      <th className="border-gray-100 border-x-2">ID</th>
+                      <th className="border-gray-50 border-x-2">ID</th>
                       <th className="border-gray-100 border-x-2">名称</th>
                       <th className="border-gray-100 border-x-2">价格</th>
+                      <th className="border-gray-100 border-x-2">销量</th>
+                      <th className="border-gray-100 border-x-2">库存</th>
                       <th className="border-r-2 border-gray-100">操作</th>
                     </tr>
                   </thead>
@@ -256,6 +258,8 @@ const Products = () => {
                           <td className="px-2 py-4">{item._id}</td>
                           <td className="px-2 py-4">{item.title}</td>
                           <td className="px-2 py-4">{item.price}</td>
+                          <td className="px-2 py-4">{item.sold}</td>
+                          <td className="px-2 py-4">{item.inStock}</td>
                           <td className="px-2 py-4">
                             <DeleteIconBtn onClick={() => handleDelete(item._id)} />
                             <Link href={`/admin/products/edit/${item._id}`}>

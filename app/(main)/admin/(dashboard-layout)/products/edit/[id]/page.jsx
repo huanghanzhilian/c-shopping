@@ -80,7 +80,7 @@ const EditProductPage = ({ params: { id } }) => {
   return (
     <>
       <ConfirmUpdateModal
-        title="产品"
+        title="商品"
         isLoading={isLoadingUpdate}
         isShow={isShowConfirmUpdateModal}
         onClose={confirmUpdateModalHandlers.close}

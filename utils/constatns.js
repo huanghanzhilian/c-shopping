@@ -12,12 +12,12 @@ export const sorts = [
     value: 3,
   },
   {
-    name: '最重要的',
+    name: '最重磅的',
     value: 4,
   },
 ]
 
-export const ratingStatus = ['', '太糟糕了', '令人不快的', '典型的', '可以', '太棒了']
+export const ratingStatus = ['', '最糟糕的', '糟糕的', '一般', '很好', '非常好']
 
 export const siteTitle = '精选好物'
 export const enSiteTitle = 'ChoiceShop'

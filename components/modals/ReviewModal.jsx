@@ -150,7 +150,7 @@ const ReviewModal = props => {
 
               {/* title */}
               <TextField
-                label="评论标题"
+                label="评价标题"
                 control={control}
                 errors={formErrors.title}
                 name="title"
@@ -240,7 +240,7 @@ const ReviewModal = props => {
               {/* comment */}
               <div className="space-y-3 ">
                 <label className="text-xs text-gray-700 lg:text-sm md:min-w-max" htmlFor="comment">
-                  评论文字
+                  评价文字
                 </label>
                 <textarea
                   className="h-24 resize-none input"
@@ -251,7 +251,7 @@ const ReviewModal = props => {
               </div>
 
               <div className="py-3 border-t-2 border-gray-200 lg:pb-0 ">
-                <SubmitModalBtn isLoading={isLoading}>注册评论</SubmitModalBtn>
+                <SubmitModalBtn isLoading={isLoading}>提交评价</SubmitModalBtn>
               </div>
             </form>
           </Modal.Body>

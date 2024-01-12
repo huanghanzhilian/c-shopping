@@ -25,8 +25,8 @@ const Description = props => {
             className="flex items-center py-2 text-sm text-sky-400"
             onClick={showDescHandlers.toggle}
           >
-            {isShowDesc ? '关闭' : '查看更多'}
-            <Icons.ArrowRight2 className="icon text-sky-400" />
+            {isShowDesc ? '收起' : '查看更多'}
+            {!isShowDesc && <Icons.ArrowRight2 className="icon text-sky-400" />}
           </button>
         )}
       </div>

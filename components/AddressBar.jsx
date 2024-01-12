@@ -31,7 +31,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
       >
         <Icons.Location2 className="icon" />
         <span>
-          发送{address?.province.name}, {address?.city.name}
+          发送{address?.province.name}, {address?.city.name}, {address?.area.name}
         </span>
         <Icons.ArrowRight2 className="mr-auto icon" />
       </button>

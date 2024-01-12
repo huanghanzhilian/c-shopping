@@ -58,7 +58,7 @@ const ProductCard = props => {
                 <Depot inStock={product.inStock} />
               </div>
               <div className="flex items-center gap-x-1">
-                <span className="farsi-digits">{product.rating.toFixed(1)}</span>
+                <span className="">{product.rating.toFixed(1)}</span>
                 <Icons.Star className="icon text-amber-400" />
               </div>
             </div>

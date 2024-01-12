@@ -114,7 +114,7 @@ const FilterOperation = props => {
             <span className="text-base">从</span>
             <input
               type="number"
-              className="w-3/4 px-1 text-xl text-left border-b border-gray-200 outline-none farsi-digits"
+              className="w-3/4 px-1 text-xl text-left border-b border-gray-200 outline-none"
               style={{ direction: 'ltr' }}
               name="minPrice"
               value={filters.minPrice || 0}
@@ -126,7 +126,7 @@ const FilterOperation = props => {
             <span className="text-base">到</span>
             <input
               type="number"
-              className="w-3/4 px-1 text-xl text-left border-b border-gray-200 outline-none farsi-digits"
+              className="w-3/4 px-1 text-xl text-left border-b border-gray-200 outline-none"
               style={{ direction: 'ltr' }}
               name="maxPrice"
               value={filters.maxPrice || 0}

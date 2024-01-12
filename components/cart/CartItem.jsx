@@ -42,7 +42,7 @@ const CartItem = props => {
           {item.size && (
             <div className="flex items-center gap-x-2">
               <Icons.Rule className="icon" />
-              <span className="farsi-digits">{item.size.size}</span>
+              <span className="">{item.size.size}</span>
             </div>
           )}
           <div className="flex items-center gap-x-2">
@@ -57,7 +57,7 @@ const CartItem = props => {
             <DiscountCartItem discount={item.discount} price={item.price} />
           ) : (
             <div className="flex items-center gap-x-2">
-              <span className="text-sm text-gray-700 farsi-digits">{formatNumber(item.price)}</span>
+              <span className="text-sm text-gray-700">{formatNumber(item.price)}</span>
               <span className="">¥</span>
             </div>
           )}

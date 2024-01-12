@@ -16,7 +16,7 @@ const SelectSize = props => {
 
   //? Render(s)
   return (
-    <section className="farsi-digits">
+    <section className="">
       <div className="flex justify-between p-4">
         <span className="text-sm text-gray-700">尺寸: {tempSize?.size}</span>
         <span className="text-sm">{formatNumber(sizes.length)} 尺寸</span>

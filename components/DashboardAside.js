@@ -35,7 +35,7 @@ export default function ProfileAside() {
       path: '/admin/users',
     },
     {
-      name: '评论管理',
+      name: '评价管理',
       Icon: Icons.Comment,
       path: '/admin/reviews',
     },

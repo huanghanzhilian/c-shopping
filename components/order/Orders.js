@@ -55,12 +55,10 @@ export default function Orders() {
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
                 <Image src="/icons/status-processing.svg" fill alt="当前订单" />
-                <span className="absolute farsi-digits order-badge">
-                  {formatNumber(pendingOrder)}
-                </span>
+                <span className="absolute order-badge">{formatNumber(pendingOrder)}</span>
               </div>
               <div className="text-gray-700">
-                <span className="hidden farsi-digits lg:block lg:text-black lg:text-md">
+                <span className="hidden lg:block lg:text-black lg:text-md">
                   {formatNumber(pendingOrder)} 条记录
                 </span>
                 <span className="text-xs lg:text-sm">当前订单</span>
@@ -76,12 +74,10 @@ export default function Orders() {
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
                 <Image src="/icons/status-delivered.svg" fill alt="成功订单" />
-                <span className="absolute farsi-digits order-badge">
-                  {formatNumber(successOrder)}
-                </span>
+                <span className="absolute order-badge">{formatNumber(successOrder)}</span>
               </div>
               <div className="text-gray-700">
-                <span className="hidden farsi-digits lg:block lg:text-black lg:text-md">
+                <span className="hidden lg:block lg:text-black lg:text-md">
                   {formatNumber(successOrder)} 条记录
                 </span>
                 <span className="text-xs lg:text-sm">成功订单</span>
@@ -97,12 +93,10 @@ export default function Orders() {
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
                 <Image src="/icons/status-returned.svg" fill alt="退款订单" />
-                <span className="absolute order-badge farsi-digits">0</span>
+                <span className="absolute order-badge">0</span>
               </div>
               <div className="text-gray-700">
-                <span className="hidden lg:block lg:text-black lg:text-md farsi-digits">
-                  0 条记录
-                </span>
+                <span className="hidden lg:block lg:text-black lg:text-md">0 条记录</span>
                 <span className="text-xs lg:text-sm">退款订单</span>
               </div>
             </div>
