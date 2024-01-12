@@ -26,7 +26,7 @@ const createDetails = apiHandler(
   },
   {
     isJwt: true,
-    identity: 'root',
+    identity: 'admin',
     schema: joi.object({
       category_id: joi.string().required(),
       info: joi.array().required(),

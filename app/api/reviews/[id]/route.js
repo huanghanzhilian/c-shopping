@@ -47,7 +47,7 @@ const update = apiHandler(
   },
   {
     isJwt: true,
-    identity: 'root',
+    identity: 'admin',
     schema: joi.object({
       status: joi.number().required(),
     }),

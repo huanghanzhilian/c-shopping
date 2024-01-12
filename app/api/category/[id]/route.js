@@ -13,7 +13,7 @@ const deleteCategory = apiHandler(
   },
   {
     isJwt: true,
-    identity: 'admin',
+    identity: 'root',
   }
 )
 

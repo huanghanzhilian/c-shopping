@@ -50,7 +50,7 @@ const deleteProduct = apiHandler(
   },
   {
     isJwt: true,
-    identity: 'admin',
+    identity: 'root',
   }
 )
 
