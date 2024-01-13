@@ -63,6 +63,8 @@
 |--|--|--|
 |首页|<img src="https://www.cheerspublishing.com/uploads/article/cb1e4f8f-aab4-4b83-8cf5-13558bb8f6dc.gif" height="200" />|<img src="https://www.cheerspublishing.com/uploads/article/cb1e4f8f-aab4-4b83-8cf5-13558bb8f6dc.gif" height="200" />|
 |二级分类|<img src="https://www.cheerspublishing.com/uploads/article/8efc14ac-66c6-4ced-a024-a5386a6d6a99.png" height="200" />|<img src="https://www.cheerspublishing.com/uploads/article/8efc14ac-66c6-4ced-a024-a5386a6d6a99.png" height="200" />|
+|三级分类|<img src="https://www.cheerspublishing.com/uploads/article/f90b95ba-4b43-48fa-bf70-7736fcc7f9c5.png" height="200" />|<img src="https://www.cheerspublishing.com/uploads/article/f90b95ba-4b43-48fa-bf70-7736fcc7f9c5.png" height="200" />|
+|商品详情|<img src="https://www.cheerspublishing.com/uploads/article/eb4ae7db-c490-4af2-a99c-d0b10fd6c01e.png" height="200" />|<img src="https://www.cheerspublishing.com/uploads/article/eb4ae7db-c490-4af2-a99c-d0b10fd6c01e.png" height="200" />|
 
 
 
