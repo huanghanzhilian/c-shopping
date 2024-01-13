@@ -26,7 +26,7 @@ const OrdersHome = () => {
   //? Get Orders Query
   const { data, isSuccess, isFetching, error, isError, refetch } = useGetOrdersListQuery({
     page,
-    pageSize: 5,
+    pageSize: 10,
   })
 
   //? Render(s)

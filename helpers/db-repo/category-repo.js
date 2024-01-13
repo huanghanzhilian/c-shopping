@@ -4,7 +4,12 @@ import Product from 'models/Product'
 
 const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Category.find(filter).lean().exec()
+  const result = await Category.find(filter)
+    .lean()
+    .sort({
+      createdAt: 'desc',
+    })
+    .exec()
   await db.disconnect()
   return result
 }

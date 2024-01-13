@@ -2,10 +2,10 @@ import '/styles/main.css'
 import '/styles/browser-styles.css'
 import '/styles/swiper.css'
 
-import { siteDescription } from '@/utils'
+import { enSiteTitle, siteDescription, siteTitle } from '@/utils'
 
 export const metadata = {
-  title: 'ChoiceShop',
+  title: `${siteTitle} | ${enSiteTitle}`,
   description: `${siteDescription}`,
   icons: {
     icon: '/favicon.ico',

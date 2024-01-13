@@ -3,7 +3,12 @@ import Banner from '@/models/Banner'
 
 const getAll = async (query = {}, filter = {}, sort = {}) => {
   await db.connect()
-  const result = await Banner.find(filter).lean().exec()
+  const result = await Banner.find(filter)
+    .lean()
+    .sort({
+      createdAt: 'desc',
+    })
+    .exec()
   await db.disconnect()
   return result
 }

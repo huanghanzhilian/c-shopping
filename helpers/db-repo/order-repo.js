@@ -7,6 +7,9 @@ const getAll = async ({ page, page_size }, filter) => {
     .populate('user', '-password')
     .skip((page - 1) * page_size)
     .limit(page_size)
+    .sort({
+      createdAt: 'desc',
+    })
   const ordersLength = await Order.countDocuments(filter)
   await db.disconnect()
 

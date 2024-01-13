@@ -1,4 +1,5 @@
 import { EditIconBtn } from 'components/common/IconBtns'
+import moment from 'moment-jalaali'
 import Link from 'next/link'
 
 const OrdersTable = props => {
@@ -15,6 +16,7 @@ const OrdersTable = props => {
             <th>收件人姓名</th>
             <th>状态</th>
             <th className="border-gray-100 border-x-2">电子邮件</th>
+            <th>下单时间</th>
             <th>更改状态</th>
           </tr>
         </thead>
@@ -37,6 +39,7 @@ const OrdersTable = props => {
                   )}
                 </td>
                 <td className="py-3 px-1.5">{order.user.email}</td>
+                <td>{moment(order.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
                 <td className="p-2">
                   <Link href={`/admin/orders/${order._id}`}>
                     <EditIconBtn />

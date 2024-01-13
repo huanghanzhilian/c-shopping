@@ -3,7 +3,9 @@ import Details from 'models/Details'
 
 const getAll = async () => {
   await db.connect()
-  const result = await Details.find()
+  const result = await Details.find().sort({
+    createdAt: 'desc',
+  })
   await db.disconnect()
   return result
 }
