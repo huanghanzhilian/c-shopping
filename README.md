@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+	<img alt="logo" src="https://www.cheerspublishing.com/uploads/article/3ce26e55-1e14-4e51-aec1-1c18533f953c.png" width="300">
+</p>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">C-Shopping v1.1.1</h1>
+<h4 align="center">基于Nextjs开发同时适配Desktop、Tablet、Phone多种设备的精美购物平台</h4>
 
-## Getting Started
+## 前言
 
-First, run the development server:
+`c-shopping`是一个精美的web电商系统，支持响应式交互，界面优雅，功能丰富，小巧迅速，包含一个电商平台MVP完整功能，具备良好的审美风格与编码设计。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+希望来的人，有所收获。故事不结束，青春不散场。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 项目介绍
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 项目在线演示
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+项目在线演示地址：[http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
 
-## Learn More
+### 使用技术
 
-To learn more about Next.js, take a look at the following resources:
+- NextJs
+- TailwindCss
+- Headless UI
+- MongoDB
+- Redux - Toolkit - RTK Query
+- JWT
+- Docker
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 功能
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+用户端：
+- 登录 JWT认证
+- 注册
+- 首页（分类navBar、banner、slider、特价板块、hot板块、畅销板块）
+- 搜索
+- 二级分类页（分类navBar、banner、slider、特价板块、hot板块、畅销板块）
+- 三级分类页（排序、筛选）
+- 商品详情（购物车）
+- 购物车页
+- 支付页
+- 购物车
+- 个人中心
+- 我的订单
+- 我的评论
+- 地址管理
+- 近期访问
 
-## Deploy on Vercel
+管理端：
+- 登录 JWT认证
+- 注册
+- 用户管理
+- 分类管理
+- 规格管理
+- 商品管理
+- 订单管理
+- 评论管理
+- 滑块管理
+- banner管理
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 演示图
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+|模块|Desktop|Mobile devices|
+|--|--|--|
+|首页|![](https://huanghanzhilian-test.oss-cn-beijing.aliyuncs.com/shop.huanghanlian.com_.png)|![](https://huanghanzhilian-test.oss-cn-beijing.aliyuncs.com/shop.huanghanlian.com_%28iPhone%2014%20Pro%20Max%29.png)|
+|分类二级|![](https://huanghanzhilian-test.oss-cn-beijing.aliyuncs.com/shop.huanghanlian.com_main_apparel.png)|![](https://huanghanzhilian-test.oss-cn-beijing.aliyuncs.com/shop.huanghanlian.com_main_apparel%28iPhone%2014%20Pro%20Max%29.png)|
+
