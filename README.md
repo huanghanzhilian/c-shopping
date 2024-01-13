@@ -61,6 +61,5 @@
 
 |模块|Desktop devices|Mobile devices|
 |--|--|--|
-|首页|![](https://www.cheerspublishing.com/uploads/article/7d858905-6fe9-48d0-b3a3-8e1bd6dfdbba.png)<br>![](https://www.cheerspublishing.com/uploads/article/f264f085-c26f-4124-b484-8a638747220b.png)<br>![](https://www.cheerspublishing.com/uploads/article/681911ab-adf6-491c-b054-cd3c83507f4c.png)<br>![](https://www.cheerspublishing.com/uploads/article/41ca0757-7a1c-4df3-8331-b62a380a4306.png)<br>![](https://www.cheerspublishing.com/uploads/article/d62a3fea-de22-4038-8ab7-afa579d6637c.png)|![](https://www.cheerspublishing.com/uploads/article/ae95afa8-a994-441d-9dff-443f942d2701.png)<br>![](https://www.cheerspublishing.com/uploads/article/b136a8ed-b05d-4c36-84c7-8703bf06dd27.png)<br>![](https://www.cheerspublishing.com/uploads/article/368616e9-93b5-48be-8180-0d132cb19ff3.png)|
-
+|首页|![](https://www.cheerspublishing.com/uploads/article/0b5d8bbf-d02e-4b8c-9f0a-7b3da49dfc32.gif)|![](https://www.cheerspublishing.com/uploads/article/2c1e4a7e-4acc-4512-b41b-713eb0e256b3.gif)|
 
