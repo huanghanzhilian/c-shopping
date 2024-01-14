@@ -175,6 +175,9 @@
 	```
 4. 在本地机器上安装MongoDB
 5. 运行项目
+	```
+	npm run dev 
+	```
 6. 注册一个账户
 	```
 	http://localhost:3000/register
