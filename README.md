@@ -1,7 +1,7 @@
 <p align="center">
 	<img alt="logo" src="https://www.cheerspublishing.com/uploads/article/3ce26e55-1e14-4e51-aec1-1c18533f953c.png" width="300">
 </p>
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">C-Shopping v1.1.1</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">C-Shopping v1.0.0</h1>
 <h4 align="center">基于Nextjs开发同时适配Desktop、Tablet、Phone多种设备的精美购物平台</h4>
 
 ## 前言
