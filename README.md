@@ -204,5 +204,8 @@ docker compose up -d --build
 
 ## 许可证
 
+[Apache License 2.0](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
 
+MIT License
 
+Copyright (c) 2024 Jipeng Huang
