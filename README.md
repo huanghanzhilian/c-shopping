@@ -94,7 +94,58 @@
 |滑块管理|<img src="https://www.cheerspublishing.com/uploads/article/6419e018-3322-40f6-b796-105e125d7052.png" />|<img src="https://www.cheerspublishing.com/uploads/article/b695af32-cd0e-4009-a278-adb2a4f22b2f.png" />|
 |banner管理|<img src="https://www.cheerspublishing.com/uploads/article/c8fd0a19-f020-41b1-8590-8e88d7d4f659.png" />|<img src="https://www.cheerspublishing.com/uploads/article/7bc682e2-60c2-45f3-80c3-e94ade1223b2.png" />|
 
+## 环境搭建与部署
 
+### 开发环境
+
+1. 通过在终端运行以下命令克隆或下载存储库:
+
+	```
+	git clone https://github.com/kamalheydari/digikala-clone-nextjs.git
+	```
+2. 使用npm或yarn安装项目依赖项:
+
+	```
+	npm install
+	```
+	or
+	```
+	yarn
+	```
+3. 修改.env的文件，在项目根目录，定义所需的环境变量。这个步骤是重要的（图片上传OSS）:
+
+	```
+	NEXT_PUBLIC_ALI_REGION=<your ali endpoint>
+	NEXT_PUBLIC_ALI_BUCKET_NAME=<your ali bucket name>
+	NEXT_PUBLIC_ALI_ACCESS_KEY=<your ali access key>
+	NEXT_PUBLIC_ALI_SECRET_KEY=<your ali secret key>
+	NEXT_PUBLIC_ALI_ACS_RAM_NAME=<your ali acs:ram name>
+	NEXT_PUBLIC_ALI_FILES_PATH=<your ali files pathname>
+	```
+4. 在本地机器上安装MongoDB
+5. 运行项目
+6. 注册一个账户
+	```
+	http://localhost:3000/authentication/register
+	```
+7. 创建帐户后，在数据库中找到您的帐户，并将root字段修改为true。role字段修改为admin，这将授予您访问所有管理仪表板功能的权限
+
+### docker 部署
+
+项目根目录已经配置好docker compose，在安装docker环境后，直接运行部署
+
+```
+docker compose up -d --build
+```
+
+## 公众号
+
+关注公众号获得更多资讯，有任何意见或建议都欢迎提issue，或者到公众号。
+
+![继小鹏公众号](https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg)
+
+
+## 许可证
 
 
 
