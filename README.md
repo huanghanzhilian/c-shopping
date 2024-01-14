@@ -26,6 +26,57 @@
 - JWT
 - Docker
 
+
+### 项目结构
+
+```
+├── Dockerfile
+├── README.md
+├── app
+│   ├── (main)
+│   │   ├── (client-layout)
+│   │   ├── (empty-layout)
+│   │   ├── admin
+│   │   ├── layout.js
+│   │   └── profile
+│   ├── StoreProvider.js
+│   ├── api
+│   │   ├── auth
+│   │   ├── banner
+│   │   ├── category
+│   │   ├── details
+│   │   ├── order
+│   │   ├── products
+│   │   ├── reviews
+│   │   ├── slider
+│   │   ├── upload
+│   │   └── user
+│   ├── layout.js
+│   └── not-found.js
+├── commitlint.config.js
+├── components
+├── docker-compose.yml
+├── helpers
+│   ├── api
+│   ├── auth.js
+│   ├── db-repo
+│   ├── db.js
+│   ├── getQuery.js
+│   └── index.js
+├── hooks
+├── jsconfig.json
+├── models
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+├── store
+├── styles
+├── tailwind.config.js
+└── utils
+```
+
 ### 功能
 
 用户端：
@@ -62,7 +113,7 @@
 
 |模块|Desktop devices|Mobile devices|
 |--|------------|--|
-|首页|<img src="https://www.cheerspublishing.com/uploads/article/e0764932-deae-4932-89a0-09ef23d82448.gif" />|<img src="https://www.cheerspublishing.com/uploads/article/cb1e4f8f-aab4-4b83-8cf5-13558bb8f6dc.gif" />|
+|首页|<img src="https://www.cheerspublishing.com/uploads/article/901edcbd-b143-4f33-9d35-74fda6dbcb0d.gif" />|<img src="https://www.cheerspublishing.com/uploads/article/cb1e4f8f-aab4-4b83-8cf5-13558bb8f6dc.gif" />|
 |二级分类|<img src="https://www.cheerspublishing.com/uploads/article/6b53db16-d55b-4c7b-8088-fb637aad3921.png" />|<img src="https://www.cheerspublishing.com/uploads/article/542c8bf9-344a-4c19-a9e3-27bc0ec92bd5.png" />|
 |三级分类|<img src="https://www.cheerspublishing.com/uploads/article/94ca43fa-3381-45a5-a5bf-80499533f3d5.png" />|<img src="https://www.cheerspublishing.com/uploads/article/f90b95ba-4b43-48fa-bf70-7736fcc7f9c5.png" />|
 |商品详情|<img src="https://www.cheerspublishing.com/uploads/article/183dd238-2f33-48b3-85f6-d917bf78ba01.png" />|<img src="https://www.cheerspublishing.com/uploads/article/eb4ae7db-c490-4af2-a99c-d0b10fd6c01e.png" />|
@@ -101,7 +152,7 @@
 1. 通过在终端运行以下命令克隆或下载存储库:
 
 	```
-	git clone https://github.com/kamalheydari/digikala-clone-nextjs.git
+	git clone https://github.com/huanghanzhilian/c-shopping.git
 	```
 2. 使用npm或yarn安装项目依赖项:
 
@@ -126,9 +177,12 @@
 5. 运行项目
 6. 注册一个账户
 	```
-	http://localhost:3000/authentication/register
+	http://localhost:3000/register
 	```
 7. 创建帐户后，在数据库中找到您的帐户，并将root字段修改为true。role字段修改为admin，这将授予您访问所有管理仪表板功能的权限
+	```
+	http://localhost:3000/admin
+	```
 
 ### docker 部署
 
