@@ -44,57 +44,6 @@
 - JWT
 - Docker
 
-
-### 项目结构
-
-```
-├── Dockerfile
-├── README.md
-├── app
-│   ├── (main)
-│   │   ├── (client-layout)
-│   │   ├── (empty-layout)
-│   │   ├── admin
-│   │   ├── layout.js
-│   │   └── profile
-│   ├── StoreProvider.js
-│   ├── api
-│   │   ├── auth
-│   │   ├── banner
-│   │   ├── category
-│   │   ├── details
-│   │   ├── order
-│   │   ├── products
-│   │   ├── reviews
-│   │   ├── slider
-│   │   ├── upload
-│   │   └── user
-│   ├── layout.js
-│   └── not-found.js
-├── commitlint.config.js
-├── components
-├── docker-compose.yml
-├── helpers
-│   ├── api
-│   ├── auth.js
-│   ├── db-repo
-│   ├── db.js
-│   ├── getQuery.js
-│   └── index.js
-├── hooks
-├── jsconfig.json
-├── models
-├── next.config.js
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── public
-├── store
-├── styles
-├── tailwind.config.js
-└── utils
-```
-
 ### 功能
 
 用户端：
@@ -162,6 +111,93 @@
 |评论管理|<img src="https://www.cheerspublishing.com/uploads/article/3979c2fc-87ca-4604-8258-5be1e5af97b9.png" />|<img src="https://www.cheerspublishing.com/uploads/article/0df0021a-626f-452c-b4dc-d9b0c927d4e3.png" />|
 |滑块管理|<img src="https://www.cheerspublishing.com/uploads/article/6419e018-3322-40f6-b796-105e125d7052.png" />|<img src="https://www.cheerspublishing.com/uploads/article/b695af32-cd0e-4009-a278-adb2a4f22b2f.png" />|
 |banner管理|<img src="https://www.cheerspublishing.com/uploads/article/c8fd0a19-f020-41b1-8590-8e88d7d4f659.png" />|<img src="https://www.cheerspublishing.com/uploads/article/7bc682e2-60c2-45f3-80c3-e94ade1223b2.png" />|
+
+
+### 项目结构
+
+🏗️ **C-Shopping 项目结构：**
+
+```
+📂 c-shopping
+  ├── 📁 app
+  │   ├── 📁 main
+  │   │   ├── 📁 client-layout
+  │   │   ├── 📁 empty-layout
+  │   │   ├── 📁 admin
+  │   │   ├── 📄 layout.js
+  │   │   └── 📁 profile
+  │   ├── 📄 StoreProvider.js
+  │   ├── 📁 api
+  │   │   ├── 📁 auth
+  │   │   ├── 📁 banner
+  │   │   ├── 📁 category
+  │   │   ├── 📁 details
+  │   │   ├── 📁 order
+  │   │   ├── 📁 products
+  │   │   ├── 📁 reviews
+  │   │   ├── 📁 slider
+  │   │   ├── 📁 upload
+  │   │   └── 📁 user
+  │   ├── 📄 layout.js
+  │   └── 📄 not-found.js
+  ├── 📄 commitlint.config.js
+  ├── 📁 components
+  ├── 📄 docker-compose.yml
+  ├── 📁 helpers
+  │   ├── 📁 api
+  │   ├── 📄 auth.js
+  │   ├── 📁 db-repo
+  │   ├── 📄 db.js
+  │   ├── 📄 getQuery.js
+  │   └── 📄 index.js
+  ├── 📁 hooks
+  ├── 📄 jsconfig.json
+  ├── 📁 models
+  ├── 📄 next.config.js
+  ├── 📄 package-lock.json
+  ├── 📄 package.json
+  ├── 📄 postcss.config.js
+  ├── 📂 public
+  ├── 📁 store
+  ├── 📁 styles
+  ├── 📄 tailwind.config.js
+  └── 📁 utils
+```
+
+**主要结构解释：**
+
+- 📁 **app**: 应用程序的主要代码
+  - 📁 **main**: 主要应用程序组件
+    - 📁 **client-layout**: 用户端通用布局页面
+    - 📁 **empty-layout**: 通用空白布局页面
+    - 📁 **admin**: 管理端页面
+    - 📄 **layout.js**: 主要布局配置
+    - 📁 **profile**: 用户个人资料页面
+  - 📄 **StoreProvider.js**: 全局状态管理提供者
+  - 📁 **api**: API 请求相关路由
+    - 📁 **auth**: 用户认证 API
+    - 📁 **banner**: 广告横幅 API
+    - 📁 **category**: 商品分类 API
+    - ...
+
+- 📁 **components**: 可复用的 React 组件
+- 📁 **helpers**: 辅助函数和工具
+  - 📁 **api**: API 请求相关的辅助函数
+  - 📄 **auth.js**: 用户认证相关的辅助函数
+  - ...
+
+- 📁 **hooks**: 自定义 React hooks
+- 📁 **models**: 数据模型定义
+- 📁 **public**: 静态资源，如图片、字体等
+- 📁 **store**: Redux 状态管理相关配置
+   - 📁 **services**: RTK Query
+   - 📁 **slices**: Redux Toolkit
+- 📁 **styles**: 样式文件
+- 📁 **utils**: 通用工具
+- ...
+
+这个结构旨在使项目组织有序，易于维护和扩展。每个部分都按照功能和职责进行划分，使团队成员更容易理解和协作。
+
 
 ## 环境搭建与部署
 
