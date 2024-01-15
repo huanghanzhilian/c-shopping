@@ -121,6 +121,7 @@ const SingleProduct = async ({ params }) => {
 }
 
 export default SingleProduct
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }) {
   const { product, smilarProducts } = await getData(params)

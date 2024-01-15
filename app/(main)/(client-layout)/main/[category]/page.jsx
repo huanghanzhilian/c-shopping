@@ -13,7 +13,8 @@ import {
 } from 'components'
 import { siteTitle } from '@/utils'
 
-export const revalidate = 20
+// export const revalidate = 20
+export const dynamic = 'force-dynamic'
 
 export const getData = async category => {
   await db.connect()
@@ -77,19 +78,6 @@ const MainCategory = async ({ params: { category } }) => {
       </div>
     </main>
   )
-}
-
-export async function generateStaticParams() {
-  await db.connect()
-
-  const categories = await Category.find({
-    level: 1,
-  }).lean()
-
-  await db.disconnect()
-
-  const paths = categories.map(cat => ({ params: { category: cat.slug } }))
-  return paths
 }
 
 export default MainCategory

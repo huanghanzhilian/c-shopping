@@ -15,7 +15,8 @@ export const metadata = {
   title: `${siteTitle} | ${enSiteTitle}`,
 }
 
-export const revalidate = 20
+// export const revalidate = 20
+export const dynamic = 'force-dynamic'
 
 export default async function Home({ searchParams }) {
   const currentCategory = await categoryRepo.getOne({

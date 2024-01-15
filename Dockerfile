@@ -7,7 +7,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # 设置环境变量
-ENV MONGODB_URL "mongodb://host.docker.internal:27017/choiceshop"
+ENV MONGODB_URL "mongodb://db:27017/choiceshop"
 
 # 安装项目依赖
 COPY package.json /app
