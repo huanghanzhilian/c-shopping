@@ -49,3 +49,4 @@ const createOrder = apiHandler(
 
 export const GET = getOrders
 export const POST = createOrder
+export const dynamic = 'force-dynamic'

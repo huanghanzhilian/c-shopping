@@ -111,3 +111,4 @@ const createProduct = apiHandler(
 
 export const GET = getAllProduct
 export const POST = createProduct
+export const dynamic = 'force-dynamic'

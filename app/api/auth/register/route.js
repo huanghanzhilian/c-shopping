@@ -21,3 +21,4 @@ const register = apiHandler(
 )
 
 export const POST = register
+export const dynamic = 'force-dynamic'

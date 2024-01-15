@@ -50,3 +50,4 @@ const _delete = apiHandler(
 export const GET = getDetail
 export const PUT = update
 export const DELETE = _delete
+export const dynamic = 'force-dynamic'

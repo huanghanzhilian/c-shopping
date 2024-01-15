@@ -38,3 +38,4 @@ const createDetails = apiHandler(
 
 export const GET = getAllDetails
 export const POST = createDetails
+export const dynamic = 'force-dynamic'

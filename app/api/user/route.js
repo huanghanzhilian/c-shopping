@@ -45,3 +45,4 @@ const uploadInfo = apiHandler(
 
 export const GET = getUsers
 export const PATCH = uploadInfo
+export const dynamic = 'force-dynamic'

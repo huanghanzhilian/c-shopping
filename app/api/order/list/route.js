@@ -21,3 +21,4 @@ const getOrders = apiHandler(
 )
 
 export const GET = getOrders
+export const dynamic = 'force-dynamic'

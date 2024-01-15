@@ -25,3 +25,4 @@ const getToken = apiHandler(
 )
 
 export const GET = getToken
+export const dynamic = 'force-dynamic'

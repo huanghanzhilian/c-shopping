@@ -42,3 +42,4 @@ const updateCategory = apiHandler(
 
 export const DELETE = deleteCategory
 export const PUT = updateCategory
+export const dynamic = 'force-dynamic'

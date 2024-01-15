@@ -57,3 +57,4 @@ const deleteProduct = apiHandler(
 export const GET = getProduct
 export const PUT = updateProduct
 export const DELETE = deleteProduct
+export const dynamic = 'force-dynamic'

@@ -39,3 +39,4 @@ const deleteUser = apiHandler(
 
 export const PATCH = updateRole
 export const DELETE = deleteUser
+export const dynamic = 'force-dynamic'

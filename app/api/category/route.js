@@ -59,3 +59,4 @@ const createCategory = apiHandler(
 
 export const GET = getCategory
 export const POST = createCategory
+export const dynamic = 'force-dynamic'

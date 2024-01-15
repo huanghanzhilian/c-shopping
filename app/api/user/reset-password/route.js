@@ -23,3 +23,4 @@ const resetPassword = apiHandler(
 )
 
 export const PATCH = resetPassword
+export const dynamic = 'force-dynamic'

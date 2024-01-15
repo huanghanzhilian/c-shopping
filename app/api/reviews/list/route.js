@@ -24,3 +24,4 @@ const getAll = apiHandler(
 )
 
 export const GET = getAll
+export const dynamic = 'force-dynamic'

@@ -47,3 +47,4 @@ const create = apiHandler(
 
 export const GET = getAll
 export const POST = create
+export const dynamic = 'force-dynamic'

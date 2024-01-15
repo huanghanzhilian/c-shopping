@@ -30,3 +30,4 @@ const getReviews = apiHandler(
 )
 
 export const GET = getReviews
+export const dynamic = 'force-dynamic'

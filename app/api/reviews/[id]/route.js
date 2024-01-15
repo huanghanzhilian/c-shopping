@@ -71,3 +71,4 @@ const _delete = apiHandler(
 export const GET = getDetail
 export const PATCH = update
 export const DELETE = _delete
+export const dynamic = 'force-dynamic'

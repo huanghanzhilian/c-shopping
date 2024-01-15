@@ -21,3 +21,4 @@ const login = apiHandler(
 )
 
 export const POST = login
+export const dynamic = 'force-dynamic'

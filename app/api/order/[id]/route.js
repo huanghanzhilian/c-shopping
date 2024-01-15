@@ -26,3 +26,4 @@ const updateOrder = apiHandler(
 
 export const PATCH = updateOrder
 export const GET = getOrder
+export const dynamic = 'force-dynamic'

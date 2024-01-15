@@ -49,3 +49,4 @@ const deleteDetails = apiHandler(
 export const GET = getDetails
 export const PUT = updateDetails
 export const DELETE = deleteDetails
+export const dynamic = 'force-dynamic'

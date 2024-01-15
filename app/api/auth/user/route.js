@@ -25,3 +25,4 @@ const getUertInfo = apiHandler(
 )
 
 export const GET = getUertInfo
+export const dynamic = 'force-dynamic'
