@@ -7,7 +7,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # 设置环境变量
-ENV MONGODB_URL "mongodb://db:27017/choiceshop"
+ENV MONGODB_URL "mongodb://host.docker.internal:27017/choiceshop"
 
 # 安装项目依赖
 COPY package.json /app
@@ -15,8 +15,11 @@ COPY package.json /app
 RUN npm install --registry https://registry.npm.taobao.org
 COPY . /app
 
+RUN npm run build
+
 # 对外暴露端口
 EXPOSE 3000
 
 # 启动 Image 时执行命令
-CMD echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start
+# CMD echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start
+CMD npm run start
