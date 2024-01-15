@@ -1,4 +1,7 @@
-![](https://www.cheerspublishing.com/uploads/article/d8fa50fe-f73a-4b00-88b5-9cc1d4786dca.png)
+<p align="center">
+	<img alt="logo" src="https://www.cheerspublishing.com/uploads/article/3ce26e55-1e14-4e51-aec1-1c18533f953c.png" width="300">
+</p>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">C-Shopping v1.0.0</h1>
 
 ## README.md
 - en [English](README.md)
@@ -16,7 +19,7 @@ If you find this helpful, please give me a Star. It will be a great encouragemen
 
 ## Project Background
 
-![Project Background](https://www.cheerspublishing.com/uploads/article/2a34d3aa-90c1-4e96-a851-6b85d0566c26.jpeg)
+![Project Background](https://www.cheerspublishing.com/uploads/article/c1f2d5ba-6fa9-4994-9f9d-c4f49497fd0c.jpeg)
 
 **Background:**
 - Traditional front-end UI frameworks have long been constrained by fixed forms (limited by traditional UI frameworks), leading to visual fatigue. When developing highly customized projects, there is often a sense of powerlessness.
