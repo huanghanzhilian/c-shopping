@@ -3,9 +3,10 @@ version: "3.8"
 services:
   web:
     container_name: web
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: 'choiceshop'
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
     restart: always
     ports:
       - "3000:3000"
