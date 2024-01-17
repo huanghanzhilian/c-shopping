@@ -9,9 +9,13 @@
 
 Hello, everyone! Welcome to C-Shopping, a journey into the world of e-commerce unveiling the technological wonders. I am "Ji Xiaopeng," the open-source author of C-Shopping, and today, I will introduce you to an open-source e-commerce platform based on the latest technologies. Let's explore together!
 
-Click [here](http://shop.huanghanlian.com/) or [http://shop.huanghanlian.com/](http://shop.huanghanlian.com/) to embark on the C-Shopping experience!
+**Project Live Demo Links:**
 
-Project gateway: Click [here](https://github.com/huanghanzhilian/c-shopping) or [https://github.com/huanghanzhilian/c-shopping](https://github.com/huanghanzhilian/c-shopping).
+- Docker Deployment Address: [http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
+- Vercel Address: [https://c-shopping-seven.vercel.app/](https://c-shopping-seven.vercel.app/)
+
+
+Project gateway: [https://github.com/huanghanzhilian/c-shopping](https://github.com/huanghanzhilian/c-shopping).
 
 If you find this helpful, please give me a Star. It will be a great encouragement.
 

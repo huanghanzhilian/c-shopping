@@ -32,8 +32,9 @@
 
 ### 项目在线演示
 
-项目在线演示地址：[http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
-
+项目在线演示地址：
+- docker 部署地址：[http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
+- vercel 部署地址：[https://c-shopping-seven.vercel.app/](https://c-shopping-seven.vercel.app/)
 ### 使用技术
 
 - NextJs

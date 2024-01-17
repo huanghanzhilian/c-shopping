@@ -3,11 +3,14 @@ version: "3.8"
 services:
   web:
     container_name: web
-    image: 'choiceshop'
     build:
       context: .
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - ./:/app/
+      - /app/node_modules
+      - /app/.next
     ports:
       - "3000:3000"
     environment:
