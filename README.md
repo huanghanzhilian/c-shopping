@@ -12,7 +12,7 @@ Hello, everyone! Welcome to C-Shopping, a journey into the world of e-commerce u
 **Project Live Demo Links:**
 
 - Docker Deployment Address: [http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
-- Vercel Address: [https://c-shopping-seven.vercel.app/](https://c-shopping-seven.vercel.app/)
+- Vercel Address: [https://c-shopping-three.vercel.app/](https://c-shopping-three.vercel.app/)
 
 
 Project gateway: [https://github.com/huanghanzhilian/c-shopping](https://github.com/huanghanzhilian/c-shopping).
