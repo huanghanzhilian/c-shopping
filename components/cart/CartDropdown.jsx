@@ -11,9 +11,7 @@ import { ArrowLink, CartItem, RedirectToLogin, Button, CartBadge, EmptyCart } fr
 export default function CartDropdown() {
   //? Assets
   const { push } = useRouter()
-
   const { isVerify } = useUserInfo()
-
   const [isShowRedirectModal, redirectModalHandlers] = useDisclosure()
 
   //? Store

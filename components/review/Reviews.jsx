@@ -8,10 +8,10 @@ import {
   ReviewModal,
   ReveiwSkeleton,
   ReviewProductCard,
+  RedirectToLogin,
 } from 'components'
 
-import { useDisclosure, useChangeRoute } from 'hooks'
-import { useUrlQuery } from '@/hooks'
+import { useUrlQuery, useUserInfo, useDisclosure, useChangeRoute } from '@/hooks'
 
 const Reviews = props => {
   //? Props
@@ -21,6 +21,9 @@ const Reviews = props => {
   const query = useUrlQuery()
   const changeRoute = useChangeRoute()
   const page = query.page ? +query.page : 1
+
+  const { isVerify } = useUserInfo()
+  const [isShowRedirectModal, redirectModalHandlers] = useDisclosure()
 
   //? Modals
   const [isShowReviewModal, reviewModalHandlers] = useDisclosure()
@@ -35,11 +38,20 @@ const Reviews = props => {
   )
 
   //? Handlers
-  const handleOpenCommentModal = () => reviewModalHandlers.open()
+  const handleOpenCommentModal = () => {
+    if (!isVerify) return redirectModalHandlers.open()
+    reviewModalHandlers.open()
+  }
 
   //? Render(s)
   return (
     <>
+      <RedirectToLogin
+        title="您尚未登录"
+        text=""
+        onClose={redirectModalHandlers.close}
+        isShow={isShowRedirectModal}
+      />
       <ReviewModal
         isShow={isShowReviewModal}
         onClose={reviewModalHandlers.close}
