@@ -10,9 +10,6 @@ RUN npm install --registry https://registry.npm.taobao.org
 
 COPY . /app
 
-RUN mkdir -p /app/.next/cache/images
-VOLUME /app/.next/cache/images
-
 RUN npm run build
 
 ENV MONGODB_URL "mongodb://db:27017/choiceshop"
