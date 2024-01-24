@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server'
 import { setJson } from './set-json'
 
-export { errorHandler }
-
 function errorHandler(err) {
   if (typeof err === 'string') {
     // custom application error
@@ -48,3 +46,5 @@ function errorHandler(err) {
     { status: 500 }
   )
 }
+
+export { errorHandler }

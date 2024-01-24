@@ -1,7 +1,3 @@
-import joi from 'joi'
-
-export { validateMiddleware }
-
 async function validateMiddleware(req, schema) {
   if (!schema) return
 
@@ -21,3 +17,5 @@ async function validateMiddleware(req, schema) {
   // update req.json() to return sanitized req body
   req.json = () => value
 }
+
+export { validateMiddleware }
