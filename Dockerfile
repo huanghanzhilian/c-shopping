@@ -21,5 +21,10 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 ENV MONGODB_URL "mongodb://db:27017/choiceshop"
 EXPOSE 3000
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+RUN mkdir -p .next/cache/fetch-cache
+RUN chown -R nextjs:nodejs .next
+USER nextjs
 # CMD echo 'Waiting for db service start...' && while ! nc -z db 27017; do sleep 1; done; echo 'Connected!' && npm run build && npm run start
 CMD npm run start
