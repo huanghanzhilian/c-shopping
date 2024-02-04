@@ -1,7 +1,7 @@
 FROM node:18-alpine as dependencies
 WORKDIR /app
 COPY package.json package-lock.json* ./
-RUN npm install --registry https://registry.npm.taobao.org
+RUN npm install
 
 FROM node:18-alpine as builder
 WORKDIR /app
