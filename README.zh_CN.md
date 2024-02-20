@@ -14,6 +14,19 @@
 
 希望来的人，有所收获。故事不结束，青春不散场。
 
+## 项目在线演示
+
+**项目在线演示地址：**
+
+- docker 部署地址：[http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
+- vercel 部署地址：[https://c-shopping-three.vercel.app/](https://c-shopping-three.vercel.app/)
+
+项目传送门: [https://github.com/huanghanzhilian/c-shopping](https://github.com/huanghanzhilian/c-shopping)
+
+**React Native 移动app应用:**
+
+项目传送门: [https://github.com/huanghanzhilian/c-shopping-rn](https://github.com/huanghanzhilian/c-shopping-rn)
+
 ## 项目介绍
 
 **背景：**
@@ -30,11 +43,9 @@
 
 打造一个完整的，适合web端的良好生态。
 
-### 项目在线演示
 
-项目在线演示地址：
-- docker 部署地址：[http://shop.huanghanlian.com/](http://shop.huanghanlian.com/)
-- vercel 部署地址：[https://c-shopping-three.vercel.app/](https://c-shopping-three.vercel.app/)
+
+
 ### 使用技术
 
 - NextJs
