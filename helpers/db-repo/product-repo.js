@@ -79,10 +79,44 @@ const update = async (id, params) => {
   await db.disconnect()
 }
 
+const getItemDetail = async id => {
+  await db.connect()
+  const product = await Product.findById({ _id: id })
+    .populate('category_levels.level_one')
+    .populate('category_levels.level_two')
+    .populate('category_levels.Level_three')
+    .lean()
+
+  if (!product) return { notFound: true }
+
+  const productCategoryID = product.category.pop()
+
+  const smilarProducts = await Product.find({
+    category: { $in: productCategoryID },
+    inStock: { $gte: 1 },
+    _id: { $ne: product._id },
+  })
+    .select(
+      '-description -info -specification -category -category_levels -sizes  -reviews -numReviews'
+    )
+    .limit(11)
+    .lean()
+
+  await db.disconnect()
+  return {
+    product,
+    smilarProducts: {
+      title: '类似商品',
+      products: smilarProducts,
+    },
+  }
+}
+
 export const productRepo = {
   getAll,
   getById,
   create,
   update,
   delete: _delete,
+  getItemDetail,
 }
