@@ -34,7 +34,7 @@ const SearchModal = props => {
     {
       search,
     },
-    { skip: !Boolean(debouncedSearch) }
+    { skip: !Boolean(debouncedSearch) || search !== debouncedSearch }
   )
 
   //? Re-Renders
