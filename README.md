@@ -188,9 +188,10 @@ functionality and responsibilities, making it easier for team members to underst
     yarn
     ```
 
-3. Modify the `.env` file in the project root directory to define the required environment variables. This step is crucial (for image upload to OSS):
+3. Please create a new `.env` file from `.env.example` file in the project root directory to define the required environment variables. This step is crucial (for image upload to OSS):
 
     ```
+    NEXT_PUBLIC_ACCESS_TOKEN_SECRET=<your token secret>
     NEXT_PUBLIC_ALI_REGION=<your ali endpoint>
     NEXT_PUBLIC_ALI_BUCKET_NAME=<your ali bucket name>
     NEXT_PUBLIC_ALI_ACCESS_KEY=<your ali access key>

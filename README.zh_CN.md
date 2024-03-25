@@ -229,9 +229,10 @@
 	```
 	yarn
 	```
-3. 修改.env的文件，在项目根目录，定义所需的环境变量。这个步骤是重要的（图片上传OSS）:
+3. 查看`.env.example`内容，创建新的`.env`的文件，在项目根目录，定义所需的环境变量。这个步骤是重要的（图片上传OSS）:
 
 	```
+  NEXT_PUBLIC_ACCESS_TOKEN_SECRET=<your token secret>
 	NEXT_PUBLIC_ALI_REGION=<your ali endpoint>
 	NEXT_PUBLIC_ALI_BUCKET_NAME=<your ali bucket name>
 	NEXT_PUBLIC_ALI_ACCESS_KEY=<your ali access key>
