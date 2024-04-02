@@ -1,9 +1,9 @@
 class LocalStorage {
-  constructor() {}
+  constructor() { }
 
   static setItem(key, value) {
     if (typeof window !== 'undefined') {
-      localStorage.setItem(key, value)
+      localStorage.setItem(key, JSON.stringify(value))
     }
   }
 
