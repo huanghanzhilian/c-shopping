@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 import { addToCart, showAlert } from 'store'
 
-import { exsitItem } from 'utils'
+import { existItem } from 'utils'
 
 import { ArrowLink, ProductPrice, CartButtons } from 'components'
 
@@ -25,7 +25,7 @@ const AddToCartOperation = props => {
 
   //? Re-Renders
   useEffect(() => {
-    const item = exsitItem(cartItems, product._id, tempColor, tempSize)
+    const item = existItem(cartItems, product._id, tempColor, tempSize)
     setCurrentItemInCart(item)
   }, [tempColor, tempSize, cartItems])
 
