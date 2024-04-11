@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice, nanoid } from '@reduxjs/toolkit'
 
-import { exsitItem, getTotal } from 'utils'
+import { existItem, getTotal } from 'utils'
 
 const getCartItems = () => {
   if (typeof window !== 'undefined') {
@@ -28,7 +28,7 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const { color, size, productID } = action.payload
 
-      let isItemExist = exsitItem(state.cartItems, productID, color, size)
+      let isItemExist = existItem(state.cartItems, productID, color, size)
 
       if (isItemExist) {
         isItemExist.quantity += 1
