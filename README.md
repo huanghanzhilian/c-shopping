@@ -215,10 +215,18 @@ functionality and responsibilities, making it easier for team members to underst
     ```
 
 7. After creating an account, find your account in the database and modify the `root` field to true and the `role` field to admin. This grants you access to all admin dashboard features:
+    ```
+    mongo
+    ```
+    ```
+    use choiceshop
+    ```
+    ```
+    db.users.update({name:"admin"},{$set:{role:"admin"}})
+    db.users.update({name:"admin"},{$set:{root:true}})
+    ```
 
-    ```
-    http://localhost:3000/admin
-    ```
+    Administrator entrance: http://localhost:3000/admin
 
 8. In MongoDB, create the root category:
 

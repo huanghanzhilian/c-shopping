@@ -221,7 +221,6 @@
 	git clone https://github.com/huanghanzhilian/c-shopping.git
 	```
 2. 使用npm或yarn安装项目依赖项:
-
 	```
 	npm install
 	```
@@ -230,9 +229,8 @@
 	yarn
 	```
 3. 查看`.env.example`内容，创建新的`.env`的文件，在项目根目录，定义所需的环境变量。这个步骤是重要的（图片上传OSS）:
-
 	```
-  NEXT_PUBLIC_ACCESS_TOKEN_SECRET=<your token secret>
+	NEXT_PUBLIC_ACCESS_TOKEN_SECRET=<your token secret>
 	NEXT_PUBLIC_ALI_REGION=<your ali endpoint>
 	NEXT_PUBLIC_ALI_BUCKET_NAME=<your ali bucket name>
 	NEXT_PUBLIC_ALI_ACCESS_KEY=<your ali access key>
@@ -251,8 +249,16 @@
 	```
 7. 创建帐户后，在数据库中找到您的帐户，并将root字段修改为true。role字段修改为admin，这将授予您访问所有管理仪表板功能的权限
 	```
-	http://localhost:3000/admin
+	mongo
 	```
+	```
+	use choiceshop
+	```
+	```
+	db.users.update({name:"admin"},{$set:{role:"admin"}})
+	db.users.update({name:"admin"},{$set:{root:true}})
+	```
+	管理员入口：http://localhost:3000/admin
 8. 操作MongoDB，创建根分类
 	```
 	mongo
