@@ -271,9 +271,7 @@ Follow the public account for more information. Feel free to provide feedback or
 
 ## License
 
-[Apache License 2.0](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
-
-MIT License
+[MIT](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
 
 Copyright (c) 2024 Jipeng Huang
 

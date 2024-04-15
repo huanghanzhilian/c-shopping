@@ -293,10 +293,8 @@ docker compose up -d --build
 ![继小鹏公众号](https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg)
 
 
-## 许可证
+## License
 
-[Apache License 2.0](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
-
-MIT License
+[MIT](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
 
 Copyright (c) 2024 Jipeng Huang
