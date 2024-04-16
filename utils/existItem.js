@@ -1,4 +1,4 @@
-export default function exsitItem(cartItems, productID, color, size) {
+export default function existItem(cartItems, productID, color, size) {
   let result
   if (color) {
     result = cartItems.find(item => item.productID === productID && item.color?.id === color?.id)

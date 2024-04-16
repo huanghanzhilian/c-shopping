@@ -17,6 +17,11 @@ Hello, everyone! Welcome to C-Shopping, a journey into the world of e-commerce u
 
 Project gateway: [https://github.com/huanghanzhilian/c-shopping](https://github.com/huanghanzhilian/c-shopping).
 
+
+**React Native mobile app application:**
+
+Project gateway: [https://github.com/huanghanzhilian/c-shopping-rn](https://github.com/huanghanzhilian/c-shopping-rn).
+
 If you find this helpful, please give me a Star. It will be a great encouragement.
 
 ---
@@ -183,9 +188,10 @@ functionality and responsibilities, making it easier for team members to underst
     yarn
     ```
 
-3. Modify the `.env` file in the project root directory to define the required environment variables. This step is crucial (for image upload to OSS):
+3. Please create a new `.env` file from `.env.example` file in the project root directory to define the required environment variables. This step is crucial (for image upload to OSS):
 
     ```
+    NEXT_PUBLIC_ACCESS_TOKEN_SECRET=<your token secret>
     NEXT_PUBLIC_ALI_REGION=<your ali endpoint>
     NEXT_PUBLIC_ALI_BUCKET_NAME=<your ali bucket name>
     NEXT_PUBLIC_ALI_ACCESS_KEY=<your ali access key>
@@ -209,10 +215,18 @@ functionality and responsibilities, making it easier for team members to underst
     ```
 
 7. After creating an account, find your account in the database and modify the `root` field to true and the `role` field to admin. This grants you access to all admin dashboard features:
+    ```
+    mongo
+    ```
+    ```
+    use choiceshop
+    ```
+    ```
+    db.users.update({name:"admin"},{$set:{role:"admin"}})
+    db.users.update({name:"admin"},{$set:{root:true}})
+    ```
 
-    ```
-    http://localhost:3000/admin
-    ```
+    Administrator entrance: http://localhost:3000/admin
 
 8. In MongoDB, create the root category:
 
@@ -257,9 +271,7 @@ Follow the public account for more information. Feel free to provide feedback or
 
 ## License
 
-[Apache License 2.0](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
-
-MIT License
+[MIT](https://github.com/huanghanzhilian/c-shopping/blob/main/LICENSE)
 
 Copyright (c) 2024 Jipeng Huang
 
