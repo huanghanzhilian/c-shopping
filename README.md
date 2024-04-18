@@ -261,11 +261,13 @@ docker compose up -d --build
 
 ---
 
-## Public Account
+## WeChat Official Account | My WeChat
 
-Follow the public account for more information. Feel free to provide feedback or suggestions through issues or the public account.
+Follow our WeChat Official Account for more information. Feel free to provide any feedback or suggestions by opening an issue or leaving a message on the Official Account. You're also welcome to add me on WeChat for further communication.
 
-![Ji Xiaopeng Public Account](https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg)
+| My WeChat Official Account | My WeChat |
+| -------------------------- | --------- |
+| <img alt="Ji Xiao Peng Official Account" src="https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg" width="150"> | <img alt="My WeChat" src="https://www.cheerspublishing.com/uploads/article/6f041fb6-2141-49d8-b20b-6e989687bf9a.png" width="150"> |
 
 ---
 
