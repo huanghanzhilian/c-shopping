@@ -261,7 +261,25 @@ docker compose up -d --build
 
 ---
 
-## WeChat Official Account | My WeChat
+## Contact Me
+
+I am a technology explorer, a eager learner, and a problem solver.
+<br/>
+我是一个技术的探索者，一个渴望学习的人，一个解决问题的人。
+
+- Email: [h1319639755@gmail.com](mailto:h1319639755@gmail.com)
+- Twitter: [继小鹏](https://twitter.com/Huanghanzhilian)
+- Github: [Github](https://github.com/huanghanzhilian)
+- Blog: [继小鹏](https://blog.huanghanlian.com/)
+- 我的中文渠道:
+  - 微博：[继小鹏1](https://weibo.com/u/5653497957)
+  - 微信公众号：「继小鹏的博客」
+  - 掘金：[继小鹏](https://juejin.cn/user/2119514150414686)
+  - 知乎：[继小鹏](https://www.zhihu.com/people/huang-han-zhi-lian)
+  - 即刻：[继小鹏](https://web.okjike.com/u/BA3424F7-4D6E-4A2C-BA7E-138B616EED05)
+  - bilibili：[继小鹏](https://space.bilibili.com/191128853)
+
+### WeChat Official Account | My WeChat
 
 Follow our WeChat Official Account for more information. Feel free to provide any feedback or suggestions by opening an issue or leaving a message on the Official Account. You're also welcome to add me on WeChat for further communication.
 
