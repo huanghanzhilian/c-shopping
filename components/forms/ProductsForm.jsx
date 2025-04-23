@@ -63,7 +63,7 @@ const ProductsForm = props => {
 
   //*   Set Details
   useEffect(() => {
-    if (details) {
+    if (details && details.data) {
       setValue('info', details.data.info)
       setValue('specification', details.data.specification)
       setValue('optionsType', details.data.optionsType)
